@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f6f8fd;
+}
+
+nav .navbar-brand {
+  font-weight: 800;
+  font-size: 36px;
+}
+
+nav .navbar-nav .nav-item .nav-link {
+  line-height: 55px;
+  margin-left: 35px;
+  font-size: 22px;
+}
+
+nav .navbar-nav .nav-item .nav-link img {
+  max-height: 55px;
+  max-width: 55px;
+}
+
+nav .navbar-nav .nav-item .nav-link:hover::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #0b63dc;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 5px;
+  margin-bottom: -8px;
+}
+
+header {
+  margin-top: 90px;
+}
+
+header .text__hero h2 {
+  margin-bottom: 15px;
+}
+
+header .text__hero p {
+  margin-bottom: 30px;
+}
+
+header img {
+  width: 100%;
+}
+
+main {
+  margin-top: 100px;
+}
+
+main .kajian__pranikah h3 {
+  margin-bottom: 30px;
+}
+
+main .kajian__pranikah .video__pranikah {
+  width: 100%;
+  height: 380px;
+}
+
+main .taaruf__quotes {
+  margin-top: 50px;
+}
+
+main .taaruf__quotes h3 {
+  margin-bottom: 30px;
+}
+
+main .taaruf__quotes img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+main .stories {
+  margin: 50px 0;
+}
+
+main .stories img {
+  width: 100%;
+}
+
+footer hr {
+  border: none;
+  height: 2px;
+  background-color: silver;
+}
+
+footer h5 {
+  font-weight: 800;
+  font-size: 26px;
+}
+
+footer h5 ~ p {
+  font-weight: bold;
+}
+
+footer .footer__item {
+  margin: 50px 0;
+}
+
+@media screen and (max-width: 991px) {
+  header .text__hero h2 {
+    margin: 25px 0;
+    font-size: 26px;
+  }
+  header .text__hero p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header .text__hero {
+    text-align: center;
+    margin: 0 auto;
+  }
+  header .text__hero h2 {
+    font-weight: 800;
+    font-size: 42px;
+  }
+  header .text__hero p {
+    display: block;
+  }
+  header .image__hero {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main.css.map */
