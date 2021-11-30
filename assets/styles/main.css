@@ -226,6 +226,44 @@ main .section__detail__content .card__detail__aside .btn__ajak__taaruf a {
   border-radius: 0px;
 }
 
+main .check__image .header__check__image,
+main .check__image .footer__check__image {
+  margin-bottom: 25px;
+}
+
+main .check__image .header__check__image img,
+main .check__image .footer__check__image img {
+  width: 100%;
+}
+
+main .pertanyaan__taaruf {
+  background-color: #ffffff;
+  border-radius: 8px;
+  min-height: 680px;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+main .pertanyaan__taaruf .form-group {
+  margin-top: 30px;
+}
+
+main .pertanyaan__taaruf .form-group label {
+  font-size: 18px;
+}
+
+main .pertanyaan__taaruf .form-group button {
+  margin: 50px auto 20px;
+}
+
+main .pertanyaan__taaruf .form-group a {
+  color: #3f3f3f;
+}
+
+main .pertanyaan__taaruf .form-group a:hover {
+  text-decoration: underline;
+}
+
 footer hr {
   border: none;
   height: 2px;
@@ -281,6 +319,9 @@ footer .footer__item {
     display: block;
   }
   header .image__hero {
+    display: none;
+  }
+  main .check__image {
     display: none;
   }
 }

@@ -216,6 +216,42 @@ main {
       }
     }
   }
+
+  // check page
+  .check__image {
+    .header__check__image,
+    .footer__check__image {
+      margin-bottom: 25px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .pertanyaan__taaruf {
+    background-color: #ffffff;
+    border-radius: 8px;
+    min-height: 680px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+
+    .form-group {
+      margin-top: 30px;
+      label {
+        font-size: 18px;
+      }
+
+      button {
+        margin: 50px auto 20px;
+      }
+      a {
+        color: #3f3f3f;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 // footer
@@ -294,6 +330,13 @@ footer {
     }
 
     .image__hero {
+      display: none;
+    }
+  }
+
+  main {
+    //check
+    .check__image {
       display: none;
     }
   }
