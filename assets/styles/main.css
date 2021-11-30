@@ -269,6 +269,11 @@ main .pertanyaan__taaruf .form-group a:hover {
   text-decoration: underline;
 }
 
+main .stories__content .card {
+  max-width: 255px;
+  margin-bottom: 30px;
+}
+
 footer hr {
   border: none;
   height: 2px;
@@ -286,6 +291,13 @@ footer h5 ~ p {
 
 footer .footer__item {
   margin: 50px 0;
+}
+
+@media screen and (max-width: 1200px) {
+  main .stories__content .card {
+    max-width: 220px;
+    margin-bottom: 30px;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -343,6 +355,14 @@ footer .footer__item {
   }
   main .content .card a {
     margin-bottom: 15px !important;
+  }
+  main .stories__content .stories__item {
+    margin: 0 auto;
+  }
+  main .stories__content .card {
+    margin: 0 auto;
+    max-width: 350px;
+    margin-bottom: 30px;
   }
 }
 /*# sourceMappingURL=main.css.map */

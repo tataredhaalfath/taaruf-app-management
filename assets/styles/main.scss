@@ -56,6 +56,7 @@ header {
 main {
   margin-top: 100px;
 
+  //landing page
   .kajian__pranikah {
     h3 {
       margin-bottom: 30px;
@@ -255,6 +256,14 @@ main {
       }
     }
   }
+
+  // stories page
+  .stories__content {
+    .card {
+      max-width: 255px;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 // footer
@@ -276,6 +285,18 @@ footer {
 
   .footer__item {
     margin: 50px 0;
+  }
+}
+// layar large
+@media screen and (max-width: 1200px) {
+  main {
+    // stories page
+    .stories__content {
+      .card {
+        max-width: 220px;
+        margin-bottom: 30px;
+      }
+    }
   }
 }
 //layar medium
@@ -303,6 +324,7 @@ footer {
   }
 
   main {
+    //taaruf
     .content {
       .card {
         img {
@@ -348,6 +370,7 @@ footer {
 // layar xtrasmall
 @media screen and(max-width: 575px) {
   main {
+    // taaruf
     .content {
       .card {
         margin-left: auto;
@@ -361,7 +384,18 @@ footer {
         }
         height: auto !important;
         width: 80% !important;
-        // margin-bottom: 40px;
+      }
+    }
+
+    // stories page
+    .stories__content {
+      .stories__item {
+        margin: 0 auto;
+      }
+      .card {
+        margin: 0 auto;
+        max-width: 350px;
+        margin-bottom: 30px;
       }
     }
   }
