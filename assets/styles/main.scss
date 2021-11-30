@@ -7,6 +7,7 @@ body {
   background-color: #f6f8fd;
 }
 nav {
+  background-color: #f6f8fd !important;
   .navbar-brand {
     font-weight: 800;
     font-size: 36px;
@@ -132,6 +133,84 @@ main {
       }
     }
   }
+
+  // detail
+
+  .section__detail__header {
+    background: #e4e6eb;
+    min-height: 230px;
+    margin-top: -100px;
+    margin-bottom: 0;
+  }
+
+  .section__detail__content {
+    margin-top: -230px;
+
+    .breadcrumb {
+      height: 100px;
+      margin: 0;
+      margin-top: 0;
+      background-color: transparent;
+      line-height: 100px;
+    }
+    .detail__cv {
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      border-radius: 8px;
+      background-color: #ffffff;
+      margin-bottom: 30px;
+      padding: 20px 50px;
+
+      .cv__profile {
+        margin: 20px 0;
+        .profile__image {
+          img {
+            margin-bottom: 20px;
+            width: 100%;
+          }
+        }
+
+        .profile__detail {
+          p {
+            margin: 0;
+          }
+        }
+      }
+
+      .cv__gambar__fisik,
+      .cv__pendidikan,
+      .cv__gambaran__diri,
+      .cv__kriteria__pasangan,
+      .cv__harapan__pernikahan {
+        margin: 20px 0;
+        p {
+          margin: 0;
+        }
+      }
+    }
+    .card__detail__aside {
+      border-radius: 8px 8px 0;
+      // aside detail
+      .card-body {
+        width: 100%;
+        min-height: 253px;
+        padding: 35px;
+
+        p {
+          font-size: 18px;
+        }
+      }
+
+      .btn__ajak__taaruf a {
+        width: 100%;
+        line-height: 58px;
+        height: 67px;
+        font-size: 22px;
+        font-weight: bold;
+        border-radius: 0px;
+      }
+    }
+  }
 }
 
 // footer
@@ -157,6 +236,16 @@ footer {
 }
 //layar medium
 @media screen and(max-width: 991px) {
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        &:hover::after {
+          content: "";
+          display: none !important;
+        }
+      }
+    }
+  }
   header {
     .text__hero {
       h2 {

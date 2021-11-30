@@ -8,6 +8,10 @@ body {
   background-color: #f6f8fd;
 }
 
+nav {
+  background-color: #f6f8fd !important;
+}
+
 nav .navbar-brand {
   font-weight: 800;
   font-size: 36px;
@@ -136,6 +140,87 @@ main .content .card .card-body a {
   margin-left: 65%;
 }
 
+main .section__detail__header {
+  background: #e4e6eb;
+  min-height: 230px;
+  margin-top: -100px;
+  margin-bottom: 0;
+}
+
+main .section__detail__content {
+  margin-top: -230px;
+}
+
+main .section__detail__content .breadcrumb {
+  height: 100px;
+  margin: 0;
+  margin-top: 0;
+  background-color: transparent;
+  line-height: 100px;
+}
+
+main .section__detail__content .detail__cv {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  padding: 20px 50px;
+}
+
+main .section__detail__content .detail__cv .cv__profile {
+  margin: 20px 0;
+}
+
+main .section__detail__content .detail__cv .cv__profile .profile__image img {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+main .section__detail__content .detail__cv .cv__profile .profile__detail p {
+  margin: 0;
+}
+
+main .section__detail__content .detail__cv .cv__gambar__fisik,
+main .section__detail__content .detail__cv .cv__pendidikan,
+main .section__detail__content .detail__cv .cv__gambaran__diri,
+main .section__detail__content .detail__cv .cv__kriteria__pasangan,
+main .section__detail__content .detail__cv .cv__harapan__pernikahan {
+  margin: 20px 0;
+}
+
+main .section__detail__content .detail__cv .cv__gambar__fisik p,
+main .section__detail__content .detail__cv .cv__pendidikan p,
+main .section__detail__content .detail__cv .cv__gambaran__diri p,
+main .section__detail__content .detail__cv .cv__kriteria__pasangan p,
+main .section__detail__content .detail__cv .cv__harapan__pernikahan p {
+  margin: 0;
+}
+
+main .section__detail__content .card__detail__aside {
+  border-radius: 8px 8px 0;
+}
+
+main .section__detail__content .card__detail__aside .card-body {
+  width: 100%;
+  min-height: 253px;
+  padding: 35px;
+}
+
+main .section__detail__content .card__detail__aside .card-body p {
+  font-size: 18px;
+}
+
+main .section__detail__content .card__detail__aside .btn__ajak__taaruf a {
+  width: 100%;
+  line-height: 58px;
+  height: 67px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 0px;
+}
+
 footer hr {
   border: none;
   height: 2px;
@@ -156,6 +241,10 @@ footer .footer__item {
 }
 
 @media screen and (max-width: 991px) {
+  .navbar-nav .nav-item .nav-link:hover::after {
+    content: "";
+    display: none !important;
+  }
   header .text__hero h2 {
     margin: 25px 0;
     font-size: 26px;
