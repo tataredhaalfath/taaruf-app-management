@@ -111,6 +111,8 @@ main {
       img {
         width: 100%;
         height: 200px;
+        filter: blur(8px);
+        margin-bottom: 5px;
       }
       .card-body {
         margin: 0;
@@ -133,7 +135,7 @@ main {
         }
 
         a {
-          margin-top: 15px;
+          margin-top: 10px;
           margin-left: 65%;
         }
       }
@@ -172,6 +174,7 @@ main {
           img {
             margin-bottom: 20px;
             width: 100%;
+            filter: blur(8px);
           }
         }
 
