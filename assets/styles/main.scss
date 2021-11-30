@@ -87,6 +87,7 @@ main {
     }
   }
 
+  // taaruf page
   aside {
     .filter {
       text-align: center;
@@ -124,6 +125,11 @@ main {
           padding: 0;
           color: #3f3f3f;
           font-size: 14px;
+
+          &.card-text {
+            height: 63px;
+            overflow-y: hidden;
+          }
         }
 
         a {
@@ -134,8 +140,7 @@ main {
     }
   }
 
-  // detail
-
+  // detail page
   .section__detail__header {
     background: #e4e6eb;
     min-height: 230px;

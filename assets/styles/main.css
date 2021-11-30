@@ -135,6 +135,11 @@ main .content .card .card-body p {
   font-size: 14px;
 }
 
+main .content .card .card-body p.card-text {
+  height: 63px;
+  overflow-y: hidden;
+}
+
 main .content .card .card-body a {
   margin-top: 15px;
   margin-left: 65%;
