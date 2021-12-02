@@ -39,7 +39,7 @@
                             <div class="pertanyaan__taaruf justify-content-center">
                                 <div class="col-xl-10 col-lg-10 mx-auto mt-5">
                                     <h4 class="text-center"><strong>3 Pertanyaan Ta'aruf</strong></h4>
-                                    <form action="success.html">
+                                    <form action="{{ route('success') }}" method="POST">
                                         <div class="form-group">
                                             <label for="pertanyaan1">1. Apa sikap anda sebagai suami apabila saya
                                                 sebagai istri melakukan
@@ -61,7 +61,8 @@
                                                 required></textarea>
                                         </div>
                                         <div class="form-group form-check text-center mb-5">
-                                            <button type="submit" class="btn btn-success d-block">Mulai Ta'aruf</button>
+                                            <a href="{{ route('success') }}" type="submit"
+                                                class="btn btn-success d-block">Mulai Ta'aruf</a>
                                             <a href="{{ route('detail') }}">Batal Ta'aruf</a>
 
                                         </div>
