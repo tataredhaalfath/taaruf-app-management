@@ -32,15 +32,15 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</span></a>
+                        <a class="nav-link" href="{{ route('home') }}">Home</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="taaruf.html">Ta'aruf</a>
+                        <a class="nav-link" href="{{ route('taaruf') }}">Ta'aruf</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="stories.html">Stories</a>
+                        <a class="nav-link" href="">Stories</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="  nav-item">
                         <a class="nav-link" href="#"><img
                                 src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile"></a>
                     </li>
