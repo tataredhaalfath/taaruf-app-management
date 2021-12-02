@@ -8,9 +8,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item @if (route('home'))
-                active
-              @endif">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">Home</span></a>
                 </li>
                 <li class="nav-item">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoriesController;
 use App\Http\Controllers\TaarufController;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/taaruf', [TaarufController::class, 'index'])->name('taaruf');
 Route::get('/stories', [StoriesController::class, 'index'])->name('stories');
-
+Route::get('/detail/{id?}', [DetailController::class, 'index'])->name('detail');
 //admin page (url => /admin/)
 Route::prefix('admin')
     ->namespace('Admin')

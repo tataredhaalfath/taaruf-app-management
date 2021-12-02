@@ -61,7 +61,7 @@
                                         <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
                                             bisa memimpin, punya
                                             pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
+                                        <a href="{{ route('detail') }}" class="btn btn-sm btn-success">Lihat CV</a>
                                     </div>
                                 </div>
                             </div>
