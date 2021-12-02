@@ -24,16 +24,27 @@
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <div class="navbar-nav ml-auto mr-auro mr-sm-auto mr-md-0 mr-sm-auto">
-        <a class="navbar-brand" href="index.html">Ta'aruf.id</a>
+      <a class="navbar-brand" href="index.html">Ta'aruf.id</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="taaruf.html">Ta'aruf</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="stories.html">Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><img src="assets/images/icon/avatar_1.png" alt="user profile"></a>
+          </li>
+        </ul>
       </div>
-      <ul class="navbar-nav mr-auto d-none d-md-block">
-        <li>
-          <span class="text-muted">
-            | &nbsp; Ta’aruf Khitbah Nikah
-          </span>
-        </li>
-      </ul>
     </div>
   </nav>
 
@@ -63,35 +74,35 @@
                   <div class="main__menu  my-3">
                     <div class="item d-flex align-items-center my-3">
                       <img src="./assets/images/icon/speedometer.png" alt="Dashboard icon">
-                      <a href="#" class="text-dark">Dashboard</a>
+                      <a href="dashboard.html" class="text-dark">Dashboard</a>
                     </div>
                     <div class="item d-flex align-items-center my-3">
                       <img src="./assets/images/icon/user.png" alt="My Account icon">
-                      <a href="#" class="text-dark">My Account</a>
+                      <a href="my-account.html" class="text-dark">My Account</a>
                     </div>
                     <div class="item d-flex align-items-center my-3">
                       <img src="./assets/images/icon/document.png" alt="Curriculum Vitae icon">
-                      <a href="#" class="text-dark">Curriculum Vitae</a>
+                      <a href="cv-document.html" class="text-dark">Curriculum Vitae</a>
                     </div>
                     <div class="item d-flex align-items-center my-3">
                       <img src="./assets/images/icon/sent.png" alt="CV Sent icon">
-                      <a href="#" class="text-dark">CV Sent</a>
+                      <a href="cv-sent.html" class="text-dark">CV Sent</a>
                     </div>
                     <div class="item d-flex align-items-center my-3">
                       <img src="./assets/images/icon/incoming-mail.png" alt="Incoming Ta'aruf icon">
-                      <a href="#" class="btn-cta">Incoming Ta'aruf</a>
+                      <a href="incoming.html" class="btn-cta">Incoming Ta'aruf</a>
                     </div>
                     <div class="item d-flex align-items-center my-3">
                       <img src="./assets/images/icon/approved-document.png" alt="Ta'aruf Approve icon">
-                      <a href="#" class="text-dark">Ta'aruf Approve</a>
+                      <a href="approved.html" class="text-dark">Ta'aruf Approve</a>
                     </div>
                     <div class="item d-flex align-items-center my-3">
                       <img src="./assets/images/icon/rejected.png" alt="Rejected CV icon">
-                      <a href="#" class="text-dark">Rejected CV</a>
+                      <a href="rejected.html" class="text-dark">Rejected CV</a>
                     </div>
                     <div class="item d-flex align-items-center my-3">
                       <img src="./assets/images/icon/logout.png" alt="Sign Out icon">
-                      <a href="#" class="text-dark">Sign Out</a>
+                      <a href="sign-out.html" class="text-dark">Sign Out</a>
                     </div>
                   </div>
                 </div>
@@ -99,90 +110,53 @@
             </aside>
           </div>
           <div class="col-xl-9 col-lg-9 col-md-12">
-            <div class="profile__container content bg-white p-lg-4 mb-5">
-              <h2 class="text-center">Incoming Ta'aruf</h2>
+            <div class="profile__container content bg-white px-lg-5 py-lg-4 mb-5">
+              <h3>Incoming Ta'aruf</h3>
               <div class="row my-3">
-                <div class="col-lg-10 col-md-8">
-                  <h4>Gambaran Diri</h4>
-                  <table class="table">
+                <div class="col-lg-12 col-md-10">
+                  <table class="table table-bordered">
                     <tbody>
-                      <tr>
-                        <td>Motto Hidup</td>
-                        <td>: Kalau orang lain bisa. Kenapa harus kita?</td>
+                      <tr class="text-center">
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
+                        <th>Action</th>
                       </tr>
-                      <tr>
-                        <td>Target Hidup</td>
-                        <td>: Sekolah ke luar negeri</td>
+                      <tr class="text-center">
+                        <td>1</td>
+                        <td>Riska Soekanti</td>
+                        <td>12/09/201</td>
+                        <td>Mengajukan</td>
+                        <td><a href="#" class="btn-cta">Detail</a></td>
                       </tr>
-                      <tr>
-                        <td>Kegiatan Waktu Luang</td>
-                        <td>: Mempelajari hal-hal baru dan memperdalam skill</td>
+                      <tr class="text-center">
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr>
-                      <tr>
-                        <td>Kesukaan</td>
-                        <td>: Segala sesuatu yang berkaitan dengan teknologi</td>
+                      <tr class="text-center">
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr>
-                      <tr>
-                        <td>Sisi Negatif</td>
-                        <td>: Suka begadang</td>
+                      <tr class="text-center">
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr>
+
                     </tbody>
                   </table>
                 </div>
               </div>
 
-              <div class="row my-3">
-                <div class="col-lg-10 col-md-8">
-                  <h4>Kriteria Pasangan</h4>
-                  <table class="table table-borderless table-sm">
-                    <tbody>
-                      <tr>
-                        <td>Tinggi Badan</td>
-                        <td>: Setara atau tidak terlalu tinggi melebihi saya atau lebih rendah sedikit</td>
-                      </tr>
-                      <tr>
-                        <td>Suku</td>
-                        <td>: Tidak terlalu memikirkan. Yang penting orangnya baik.</td>
-                      </tr>
-                      <tr>
-                        <td>Usia</td>
-                        <td>: tidak lebih dan tidak kurang 5 tahun dari saya</td>
-                      </tr>
-                      <tr>
-                        <td>Pekerjaan</td>
-                        <td>: Tidak membatasi</td>
-                      </tr>
-                      <tr>
-                        <td>Tambahan</td>
-                        <td>: Bisa memasak dan tidak cerewet menjadi nilai plus</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <div class="row my-3">
-                <div class="col-lg-10 col-md-8">
-                  <h4>Harapan Dalam Pernikahan</h4>
-                  <table class="table table-borderless table-sm">
-                    <tbody>
-                      <tr>
-                        <th>Visi dan Misi</th>
-                      </tr>
-                      <tr>
-                        <td>Membangun keluarga yang harmonis, berlandaskan aran ajaran dan syariat agama islam</td>
-                      </tr>
-                      <tr>
-                        <th>Karir Masa Depan</th>
-                      </tr>
-                      <tr>
-                        <td>Diharapkan suami mengizinkan untuk bekerja agar dapat menyalurkan minat dan bakat yang
-                          selama ini di pelajari</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
 
             </div>
           </div>
