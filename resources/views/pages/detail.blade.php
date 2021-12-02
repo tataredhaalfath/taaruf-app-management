@@ -102,7 +102,7 @@
                                 </p>
                             </div>
                             <div class="btn__ajak__taaruf">
-                                <a href="check.html" class="btn btn-success">Ajak Ta'aruf</a>
+                                <a href="{{ route('check') }}" class="btn btn-success">Ajak Ta'aruf</a>
                             </div>
                         </aside>
                     </div>
