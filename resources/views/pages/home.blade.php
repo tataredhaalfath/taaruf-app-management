@@ -45,19 +45,19 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="assets/images/quote.jpg" alt="qoutes" srcset="">
+                        <img src="{{ asset('front-end/assets/images/quote.jpg') }}" alt="qoutes" srcset="">
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="assets/images/quote.jpg" alt="qoutes" srcset="">
+                        <img src="{{ asset('front-end/assets/images/quote.jpg') }}" alt="qoutes" srcset="">
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="assets/images/quote.jpg" alt="qoutes" srcset="">
+                        <img src="{{ asset('front-end/assets/images/quote.jpg') }}" alt="qoutes" srcset="">
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="assets/images/quote.jpg" alt="qoutes" srcset="">
+                        <img src="{{ asset('front-end/assets/images/quote.jpg') }}" alt="qoutes" srcset="">
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="assets/images/quote.jpg" alt="qoutes" srcset="">
+                        <img src="{{ asset('front-end/assets/images/quote.jpg') }}" alt="qoutes" srcset="">
                     </div>
                 </div>
             </section>

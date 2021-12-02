@@ -1,30 +1,29 @@
- <!-- Topbar -->
- <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-     <!-- Sidebar Toggle (Topbar) -->
-     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-         <i class="fa fa-bars"></i>
-     </button>
-
-     <!-- Topbar Navbar -->
-     <ul class="navbar-nav ml-auto">
-         <!-- Nav Item - User Information -->
-         <li class="nav-item dropdown no-arrow">
-             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                 aria-haspopup="true" aria-expanded="false">
-                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                 <img class="img-profile rounded-circle" src="{{ asset('backend/img/undraw_profile.svg') }}">
-             </a>
-             <!-- Dropdown - User Information -->
-             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                     Logout
-                 </a>
-             </div>
-         </li>
-
-     </ul>
-
- </nav>
- <!-- End of Topbar -->
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Ta'aruf.id</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item @if (route('home'))
+                active
+              @endif">
+                    <a class="nav-link" href="{{ route('home') }}">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('taaruf') }}">Ta'aruf</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('stories') }}">Stories</a>
+                </li>
+                <li class="  nav-item">
+                    <a class="nav-link" href="#"><img
+                            src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
