@@ -1,0 +1,448 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f6f8fd;
+}
+
+nav {
+  background-color: #f6f8fd !important;
+}
+
+nav .navbar-brand {
+  font-weight: 800;
+  font-size: 36px;
+}
+
+nav .navbar-nav .nav-item .nav-link {
+  line-height: 55px;
+  margin-left: 35px;
+  font-size: 22px;
+}
+
+nav .navbar-nav .nav-item .nav-link img {
+  max-height: 55px;
+  max-width: 55px;
+}
+
+nav .navbar-nav .nav-item .nav-link:hover::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #0b63dc;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 5px;
+  margin-bottom: -8px;
+}
+
+header {
+  margin-top: 90px;
+}
+
+header .text__hero h2 {
+  margin-bottom: 15px;
+}
+
+header .text__hero p {
+  margin-bottom: 30px;
+}
+
+header img {
+  width: 100%;
+}
+
+main {
+  margin-top: 100px;
+}
+
+main .kajian__pranikah h3 {
+  margin-bottom: 30px;
+}
+
+main .kajian__pranikah .video__pranikah {
+  width: 100%;
+  height: 380px;
+}
+
+main .taaruf__quotes {
+  margin-top: 50px;
+}
+
+main .taaruf__quotes h3 {
+  margin-bottom: 30px;
+}
+
+main .taaruf__quotes img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+main .stories {
+  margin: 50px 0;
+}
+
+main .stories img {
+  width: 100%;
+}
+
+main aside {
+  background: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+main aside .filter {
+  text-align: center;
+}
+
+main aside h5 {
+  font-weight: 400;
+}
+
+main .content .card {
+  height: 370px !important;
+  width: 250px !important;
+  margin-bottom: 40px;
+}
+
+main .content .card img {
+  width: 100%;
+  height: 200px;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+  margin-bottom: 5px;
+}
+
+main .content .card .card-body {
+  margin: 0;
+  padding: 0 10px;
+}
+
+main .content .card .card-body h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+main .content .card .card-body p {
+  margin: 0;
+  padding: 0;
+  color: #3f3f3f;
+  font-size: 14px;
+}
+
+main .content .card .card-body p.card-text {
+  height: 63px;
+  overflow-y: hidden;
+}
+
+main .content .card .card-body a {
+  margin-top: 10px;
+  margin-left: 65%;
+}
+
+main .section__detail__header {
+  background: #e4e6eb;
+  min-height: 230px;
+  margin-top: -100px;
+  margin-bottom: 0;
+}
+
+main .section__detail__content {
+  margin-top: -230px;
+}
+
+main .section__detail__content .breadcrumb {
+  height: 100px;
+  margin: 0;
+  margin-top: 0;
+  background-color: transparent;
+  line-height: 100px;
+}
+
+main .section__detail__content .detail__cv {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  padding: 20px 50px;
+}
+
+main .section__detail__content .detail__cv .cv__profile {
+  margin: 20px 0;
+}
+
+main .section__detail__content .detail__cv .cv__profile .profile__image img {
+  margin-bottom: 20px;
+  width: 100%;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+}
+
+main .section__detail__content .detail__cv .cv__profile .profile__detail p {
+  margin: 0;
+}
+
+main .section__detail__content .detail__cv .cv__gambar__fisik,
+main .section__detail__content .detail__cv .cv__pendidikan,
+main .section__detail__content .detail__cv .cv__gambaran__diri,
+main .section__detail__content .detail__cv .cv__kriteria__pasangan,
+main .section__detail__content .detail__cv .cv__harapan__pernikahan {
+  margin: 20px 0;
+}
+
+main .section__detail__content .detail__cv .cv__gambar__fisik p,
+main .section__detail__content .detail__cv .cv__pendidikan p,
+main .section__detail__content .detail__cv .cv__gambaran__diri p,
+main .section__detail__content .detail__cv .cv__kriteria__pasangan p,
+main .section__detail__content .detail__cv .cv__harapan__pernikahan p {
+  margin: 0;
+}
+
+main .section__detail__content .card__detail__aside {
+  border-radius: 8px 8px 0;
+}
+
+main .section__detail__content .card__detail__aside .card-body {
+  width: 100%;
+  min-height: 253px;
+  padding: 35px;
+}
+
+main .section__detail__content .card__detail__aside .card-body p {
+  font-size: 18px;
+}
+
+main .section__detail__content .card__detail__aside .btn__ajak__taaruf a {
+  width: 100%;
+  line-height: 58px;
+  height: 67px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 0px;
+}
+
+main .check__image .header__check__image,
+main .check__image .footer__check__image {
+  margin-bottom: 25px;
+}
+
+main .check__image .header__check__image img,
+main .check__image .footer__check__image img {
+  width: 100%;
+}
+
+main .pertanyaan__taaruf {
+  background-color: #ffffff;
+  border-radius: 8px;
+  min-height: 680px;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+main .pertanyaan__taaruf .form-group {
+  margin-top: 30px;
+}
+
+main .pertanyaan__taaruf .form-group label {
+  font-size: 18px;
+}
+
+main .pertanyaan__taaruf .form-group button {
+  margin: 50px auto 20px;
+}
+
+main .pertanyaan__taaruf .form-group a {
+  color: #3f3f3f;
+}
+
+main .pertanyaan__taaruf .form-group a:hover {
+  text-decoration: underline;
+}
+
+main .stories__content .card {
+  max-width: 255px;
+  margin-bottom: 30px;
+}
+
+main.signin {
+  margin-top: 70px;
+}
+
+main.signin h2 {
+  margin-bottom: 60px;
+}
+
+main.signin .signin__image {
+  max-height: 700px;
+  padding: 0;
+}
+
+main.signin .signin__image img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+main.signin .row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+main.signin .row.no-gutters > [class^="col-"],
+main.signin .row.no-gutters > [class*=" col-"] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+main.signin .form-signin {
+  min-height: 450px;
+  background: #ffffff;
+  border: 1px solid #c9c4c4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 20px 50px;
+  margin-bottom: 50px;
+}
+
+main.signin .form-signin form h3 {
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 25px;
+}
+
+main.signin .form-signin form .btn-signin {
+  margin-top: 50px;
+}
+
+main.signin .form-signin form .btn-signin button {
+  font-weight: bold;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.signin__gradasi {
+  background: #e4e6eb;
+  color: red;
+  width: 30vh;
+  height: 100vh;
+  position: fixed;
+  width: 100vh !important;
+  top: 0;
+}
+
+footer hr {
+  border: none;
+  height: 2px;
+  background-color: silver;
+}
+
+footer h5 {
+  font-weight: 800;
+  font-size: 26px;
+}
+
+footer h5 ~ p {
+  font-weight: bold;
+}
+
+footer .footer__item {
+  margin: 50px 0;
+}
+
+@media screen and (max-width: 1200px) {
+  main .stories__content .card {
+    max-width: 220px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-nav .nav-item .nav-link:hover::after {
+    content: "";
+    display: none !important;
+  }
+  header .text__hero h2 {
+    margin: 25px 0;
+    font-size: 26px;
+  }
+  header .text__hero p {
+    display: none;
+  }
+  main .content .card {
+    height: 370px !important;
+    width: 230px !important;
+    margin-bottom: 40px;
+  }
+  main .content .card img {
+    width: 100%;
+    height: auto !important;
+  }
+  main.signin .form-signin {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header .text__hero {
+    text-align: center;
+    margin: 0 auto;
+  }
+  header .text__hero h2 {
+    font-weight: 800;
+    font-size: 42px;
+  }
+  header .text__hero p {
+    display: block;
+  }
+  header .image__hero {
+    display: none;
+  }
+  main .check__image {
+    display: none;
+  }
+  main.signin .form-signin {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  main .content .card {
+    margin-left: auto;
+    height: auto !important;
+    width: 80% !important;
+  }
+  main .content .card img {
+    width: 100%;
+    height: auto !important;
+  }
+  main .content .card a {
+    margin-bottom: 15px !important;
+  }
+  main .stories__content .stories__item {
+    margin: 0 auto;
+  }
+  main .stories__content .card {
+    margin: 0 auto;
+    max-width: 350px;
+    margin-bottom: 30px;
+  }
+  main.signin h2 {
+    display: none;
+  }
+  main.signin .signin__image {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main.css.map */
