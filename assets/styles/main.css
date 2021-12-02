@@ -431,7 +431,7 @@ footer .footer__item {
   border-radius: 8px;
 }
 
-.profile__container .card-img-top {
+.profile__container img {
   width: 100%;
   height: 80%;
   -webkit-filter: blur(8px);
