@@ -438,8 +438,8 @@ footer .footer__item {
   filter: blur(8px);
 }
 
-.main__menu .item img {
-  width: 28px;
+.main__menu .item i {
+  font-size: 1.5rem;
 }
 
 .main__menu .item a {
