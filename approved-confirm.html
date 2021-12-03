@@ -17,9 +17,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Assistant&family=Lobster&family=Playfair+Display&family=Roboto:wght@300;400&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <!-- <script src="https://kit.fontawesome.com/62c9469079.js" crossorigin="anonymous"></script> -->
+  <script src="https://kit.fontawesome.com/62c9469079.js" crossorigin="anonymous"></script>
   <title>Ta'aruf App Management</title>
 </head>
 
@@ -142,48 +140,25 @@
                 </div>
               </div>
 
-              <div class="row my-3">
-                <div class="col-lg-12 col-md-10">
-                  <table class="table table-bordered">
-                    <tbody>
-                      <tr class="text-center">
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Tanggal</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                      <tr class="text-center">
-                        <td>1</td>
-                        <td>Riska Soekanti</td>
-                        <td>12/09/201</td>
-                        <td>Approved</td>
-                        <td><a href="#" class="btn-cta">Lanjut</a></td>
-                      </tr>
-                      <tr class="text-center">
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr class="text-center">
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr class="text-center">
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
+              <div class="row my-3 mx-1">
+                <div class="col-lg-7 col-md-5 p-3 border rounded border-secondary">
+                  <div class="confirm-check mb-4">
+                    <label for="confirmation" class="d-block">Memutuskan</label>
+                    <select name="confirmation" id="confirmation" class="p-1">
+                      <option value="melanjutkan">Melanjutkan</option>
+                      <option value="membatalkan">Membatalkan</option>
+                    </select>
+                  </div>
+                  <div class="reasoning-check mt-5 mb-3">
+                    <label for="reason-confirmation">Alasan Melanjutkan / Membatalkan Ta'aruf :</label>
+                    <textarea class="p-2 border rounded border-secondary" name="reason-confirmation"
+                      id="reason-confirmation"
+                      placeholder="Saya ingin melanjutkan ke jenjang pernikahan karena saya sudah merasa yakin..."></textarea>
+                  </div>
+                  <div class="btn-confirm">
+                    <button type="submit" class="btn btn-success d-block">Submit</button>
+                  </div>
 
-                    </tbody>
-                  </table>
                 </div>
               </div>
 
