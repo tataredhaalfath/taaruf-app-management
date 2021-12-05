@@ -149,11 +149,6 @@ main {
     min-height: 230px;
     margin-top: -100px;
     margin-bottom: 0;
-
-    //user page - background
-    &.user__page {
-      // min-height: 100vh !important;
-    }
   }
 
   .section__detail__content {
@@ -162,7 +157,11 @@ main {
     //user page content
     &.user__page__content {
       background-color: #e4e6eb;
+      &.incoming {
+        min-height: 80vh;
+      }
     }
+
     .breadcrumb {
       height: 100px;
       margin: 0;
