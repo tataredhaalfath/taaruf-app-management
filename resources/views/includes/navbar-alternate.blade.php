@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <div class="navbar-nav ml-auto mr-auro mr-sm-auto mr-md-0 mr-sm-auto">
-            <a class="navbar-brand" href="index.html">Ta'aruf.id</a>
+            <a class="navbar-brand" href="{{ route('home') }}">Ta'aruf.id</a>
         </div>
         <ul class="navbar-nav mr-auto d-none d-md-block">
             <li>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+  <!-- css  -->
+  <link rel="stylesheet" href="assets/styles/main.css">
+  <!-- font-family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Assistant&family=Lobster&family=Playfair+Display&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/62c9469079.js" crossorigin="anonymous"></script>
+  <title>Ta'aruf App Management</title>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Ta'aruf.id</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="taaruf.html">Ta'aruf</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="stories.html">Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><img src="assets/images/icon/avatar_1.png" alt="user profile"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- main -->
+  <main>
+    <section class="section__detail__header">
+    </section>
+    <section class="section__detail__content user__page__content">
+      <div class="container">
+        <div class="row">
+          <div class="col-0">
+            <div aria-label="breadcrumb">
+              <div class="breadcrumb">
+                <li class="breadcrumb-item my-2"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item my-2"><a href="taaruf.html">Profile</a></li>
+                <li class="breadcrumb-item my-2 active" aria-current="page" class="text-dark">Incoming Taaruf</li>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-8 col-8">
+            <aside>
+              <div class="row">
+                <div class="col-9 mx-auto my-3">
+                  <h4 class="center text-center">Main Menu</h4>
+                  <div class="main__menu  my-3">
+                    <div class="item d-flex align-items-center my-3 btn-cta">
+                      <i class="fas fa-tachometer-alt mr-2"></i>
+                      <a href="dashboard.html" class="text-dark">Dashboard</a>
+                    </div>
+                    <div class="item d-flex align-items-center my-3">
+                      <i class="fas fa-user mr-2"></i>
+                      <a href="my-account.html" class="text-dark">My Account</a>
+                    </div>
+                    <div class="item d-flex align-items-center my-3">
+                      <i class="fas fa-file-alt mr-2"></i>
+                      <a href="cv-document.html" class="text-dark">Curriculum Vitae</a>
+                    </div>
+                    <div class="item d-flex align-items-center my-3">
+                      <i class="fas fa-paper-plane mr-2"></i>
+                      <a href="cv-sent.html" class="text-dark">CV Sent</a>
+                    </div>
+                    <div class="item d-flex align-items-center my-3">
+                      <i class="fas fa-envelope-open-text mr-2"></i>
+                      <a href="incoming.html" class="active">Incoming Ta'aruf</a>
+                    </div>
+                    <div class="item d-flex align-items-center my-3">
+                      <i class="fas fa-clipboard-check mr-2"></i>
+                      <a href="approved.html" class="text-dark">Ta'aruf Approve</a>
+                    </div>
+                    <div class="item d-flex align-items-center my-3">
+                      <i class="fas fa-file-excel mr-2"></i>
+                      <a href="rejected.html" class="text-dark">Rejected CV</a>
+                    </div>
+                    <div class="item d-flex align-items-center my-3">
+                      <i class="fas fa-sign-out-alt mr-2"></i>
+                      <a href="sign-out.html" class="text-dark">Sign Out</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+          <div class="col-xl-9 col-lg-9 col-md-12">
+            <div class=" detail__cv">
+              <div class="cv__title">
+                <h2 class="text-right">Curriculum Vitae</h2>
+              </div>
+              <div class="cv__profile">
+                <h4 class="cv__nama">Riska Soekanti</h4>
+                <div class="row">
+                  <div class="col-xl-5 col-lg-5 col-md-6 col-sm-8 col-xs-8 profile__image">
+                    <img src="assets/images/users/user_img_3.png" data-caman="stackBlur(8)" alt="user image">
+                  </div>
+                  <div class="col-xl-7 col-lg-7 col-md-12 profile__detail">
+                    <table class="table table-borderless table-sm">
+                      <tbody>
+                        <tr>
+                          <th class="py-0" width="25%">Nama</th>
+                          <td class="py-0">: Riska Soekanti</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Alamat</th>
+                          <td class="py-0">: Ds. Khayalan RT02/RW05 Kec.Pelangi, Kab.Jombang, Indonesia</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Tempat / tgl lahir</th>
+                          <td class="py-0">: Banjarnegara, 24 agustus 2000</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Umur</th>
+                          <td class="py-0">: 21</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Agama</th>
+                          <td class="py-0">: Islam</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Manhaj</th>
+                          <td class="py-0">: Salafi</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Status</th>
+                          <td class="py-0">: Mahasiswa</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Menikah</th>
+                          <td class="py-0">: Belum</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Suku</th>
+                          <td class="py-0">: Jawa</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="cv__gambar__fisik">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <h4>Gambaran Fisik</h4>
+                    <table class="table table-borderless table-sm">
+                      <tbody>
+                        <tr>
+                          <th class="py-0" width="25%">Bentuk Fisik</th>
+                          <td class="py-0">: Berisi. Tidak gemuk dan tidak kurus</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Warna Kulit</th>
+                          <td class="py-0">: Putih bersih</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Berat Badan</th>
+                          <td class="py-0">: 65 kg</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Tinggi Badan</th>
+                          <td class="py-0">: 168 cm</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Riwayat Penyakit</th>
+                          <td class="py-0">: Tidak ada. Setidaknya belum.</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Gol.Darah</th>
+                          <td class="py-0">: AB+</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Cacat Fisik</th>
+                          <td class="py-0">: Tidak ada</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Tipe Rambut</th>
+                          <td class="py-0">: Lurus</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Warna Mata</th>
+                          <td class="py-0">: Biru</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Ciri Khas / tanda lahir</th>
+                          <td class="py-0">: Tahi lalat di dekat bibir</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="cv__gambar__fisik">
+                <div class="row">
+                  <div class="col-lg-10">
+                    <h4>Hobi dan Kebiasaan</h4>
+                    <ul style="list-style: none;">
+                      <li>Membantu Ibu</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="cv__pendidikan">
+                <div class="row">
+                  <div class="col-lg-10">
+                    <h4>Riwayat Pendidikan</h4>
+                    <ul style="list-style: none;">
+                      <li><strong>SMK Bakti Bangsa</strong></li>
+                      <li>Kimia Analisis</li>
+                      <li><strong>Institut Teknologi 10 November</strong></li>
+                      <li>Teknik Kimia Murni</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="cv__gambaran__diri">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <h4>Gambaran Diri</h4>
+                    <table class="table table-borderless table-sm">
+                      <tbody>
+                        <tr>
+                          <th class="py-0" width="25%">Motto</th>
+                          <td class="py-0">: Sesungguhnya Sholatku, Hidupku dan Matiku hanya untuk Allah</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Target Hidup</th>
+                          <td class="py-0">: Menjalani hidup sesuai dengan tuntunan Syariah Islam</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Kegiatan Waktu Luang</th>
+                          <td class="py-0">: Mempelajari hal-hal baru dan memperdalam skill</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Kesukaan</th>
+                          <td class="py-0">: Segala sesuatu yang berkaitan dengan teknologi</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Sisi Negatif</th>
+                          <td class="py-0">: Suka begadang</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="cv__kriteria__pasangan">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <h4>Kriteria Pasangan</h4>
+                    <table class="table table-borderless table-sm">
+                      <tbody>
+                        <tr>
+                          <th class="py-0" width="25%">Tinggi Badan</th>
+                          <td class="py-0">: Diatas 170cm</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Suku</th>
+                          <td class="py-0">: Tidak membatasi.</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Usia</th>
+                          <td class="py-0">: 20 - 27 tahun</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Pekerjaan</th>
+                          <td class="py-0">: Tidak membatasi</td>
+                        </tr>
+                        <tr>
+                          <th class="py-0" width="25%">Tambahan</th>
+                          <td class="py-0">: Memiliki attitude dan omongannya bisa dipegang</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="cv__harapan__pernikahan">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <table class="table table-borderless table-sm">
+                      <tbody>
+                        <tr>
+                          <th>Visi dan Misi</th>
+                        </tr>
+                        <tr>
+                          <td class="py-0">Membangun keluarga yang harmonis, berlandaskan aran ajaran dan syariat agama
+                            islam</td>
+                        </tr>
+                        <tr>
+                          <th>Karir Masa Depan</th>
+                        </tr>
+                        <tr>
+                          <td class="py-0">Diharapkan suami mengizinkan untuk bekerja agar dapat menyalurkan minat dan
+                            bakat yang
+                            selama ini di pelajari</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-3">
+                <div class="pertanyaan__taaruf justify-content-center"
+                  style="box-shadow: none; -webkit-box-shadow: none;">
+                  <div class="col-xl-7 col-lg-7 mx-auto mt-5 border rounded p-4">
+                    <h4 class="text-center"><strong>3 Pertanyaan Ta'aruf</strong></h4>
+                    <form action="approved.html">
+                      <div class="form-group">
+                        <label for="pertanyaan1">1. Apa sikap anda sebagai suami apabila saya sebagai istri melakukan
+                          kesalahan yang serius</label>
+                        <textarea class="form-control" id="pertanyaan1" name="pertanyaan1"
+                          readonly>di ingatkan untuk tidak mengulangi kesalahan yang sama serta dimaafkan</textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="pertanyaan2">2. Seperti apa pandangan anda mengenai hidup berumah tangga</label>
+                        <textarea class="form-control" id="pertanyaan2" name="pertanyaan2"
+                          readonly>hidup dengan menjalani perintah Allah dan menghindari larangannya bersama sama</textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="pertanyaan3">3. Apakah anda berkeinginan untuk poligami ketika seandainya saya sudah
+                          menjadi istri anda ?</label>
+                        <textarea class="form-control" id="pertanyaan3" name="pertanyaan3"
+                          readonly>poligami di halalkan oleh Allah dan itu jelas. akan tetapi saya tidak memiliki keinginan untuk melakukan hal tersebut</textarea>
+                      </div>
+                      <div class="form-group form-check text-center mb-3">
+                        <button type="submit" class="btn btn-success d-block">Terima Ta'aruf</button>
+                        <a href="incoming.html">Batal Ta'aruf</a>
+
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <hr class="my-0">
+    <div class="container">
+      <div class="row footer__item">
+        <div class="col-md-3 col-sm-3">
+          <h5>Ta'aruf</h5>
+          <p>Ta'aruf, Khitbah, Nikah</p>
+        </div>
+
+        <div class="col-md-2 col-sm-3 ml-auto">
+          <p> New Account </p>
+          <p>Let’s Ta’aruf</p>
+          <p>Support us</p>
+        </div>
+        <div class="col-md-2 col-sm-3">
+          <p>Explore Us</p>
+          <p>About</p>
+          <p>Privacy Policy</p>
+          <p>Term & Condition</p>
+        </div>
+        <div class="col-md-2 col-sm-3">
+          <p>Getting Touch</p>
+          <p>support@ta'aruf.id</p>
+          <p>0853-2522-4829</p>
+          <p>Ta’aruf ID, Jakarta</p>
+        </div>
+
+      </div>
+      <div class="row justify-content-center text-center mb-4">
+        <p>Copyright 2021 * All right reserved * Ta’aruf.id</p>
+      </div>
+    </div>
+
+  </footer>
+  <!-- camanjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/3.3.0/caman.full.min.js" />
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

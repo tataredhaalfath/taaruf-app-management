@@ -42,7 +42,11 @@ header {
   margin-top: 90px;
   .text__hero {
     h2 {
+      margin-top: 30px;
       margin-bottom: 15px;
+      font-family: "Playfair Display", serif;
+      font-weight: bold;
+      font-size: 40px;
     }
     p {
       margin-bottom: 30px;
@@ -59,20 +63,24 @@ main {
   //landing page
   .kajian__pranikah {
     h3 {
-      margin-bottom: 30px;
+      font-family: "Playfair Display", serif;
+      font-weight: bold;
+      font-size: 36px;
     }
 
     .video__pranikah {
       width: 100%;
-      height: 380px;
+      min-height: 500px;
     }
   }
   .taaruf__quotes {
     margin-top: 50px;
-    h3 {
-      margin-bottom: 30px;
-    }
 
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: bold;
+      font-size: 36px;
+    }
     img {
       width: 100%;
       height: auto;
@@ -82,9 +90,44 @@ main {
 
   .stories {
     margin: 50px 0;
+    .testimonial__title {
+      font-family: "Playfair Display", serif;
+      font-weight: bold;
+      font-size: 36px;
+    }
+    .card__testimonial {
+      padding: 40px 20px 10px;
+      border-radius: 11px;
+      margin-bottom: 20px;
 
-    img {
-      width: 100%;
+      .testimonial__content {
+        img {
+          border-radius: 50%;
+          filter: blur(8px);
+        }
+        .testimonial {
+          min-height: 200px;
+          font-size: 26px;
+          color: #6e6e6e;
+        }
+        hr {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+      }
+    }
+
+    .stories__btn {
+      margin-top: 20px;
+      margin-bottom: 100px;
+      .btn-taaruf {
+        background-color: rgb(36, 200, 206);
+        color: white;
+
+        &:hover {
+          background-color: rgb(29, 178, 184);
+        }
+      }
     }
   }
 
@@ -153,6 +196,15 @@ main {
 
   .section__detail__content {
     margin-top: -230px;
+
+    //user page content
+    &.user__page__content {
+      background-color: #e4e6eb;
+      &.incoming,
+      &.approve {
+        min-height: 80vh;
+      }
+    }
 
     .breadcrumb {
       height: 100px;
