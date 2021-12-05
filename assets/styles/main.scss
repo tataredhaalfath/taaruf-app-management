@@ -157,7 +157,8 @@ main {
     //user page content
     &.user__page__content {
       background-color: #e4e6eb;
-      &.incoming {
+      &.incoming,
+      &.approve {
         min-height: 80vh;
       }
     }
