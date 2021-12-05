@@ -43,7 +43,11 @@ header {
 }
 
 header .text__hero h2 {
+  margin-top: 30px;
   margin-bottom: 15px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 40px;
 }
 
 header .text__hero p {
@@ -59,12 +63,14 @@ main {
 }
 
 main .kajian__pranikah h3 {
-  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 36px;
 }
 
 main .kajian__pranikah .video__pranikah {
   width: 100%;
-  height: 380px;
+  min-height: 500px;
 }
 
 main .taaruf__quotes {
@@ -72,7 +78,9 @@ main .taaruf__quotes {
 }
 
 main .taaruf__quotes h3 {
-  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 36px;
 }
 
 main .taaruf__quotes img {
@@ -85,8 +93,47 @@ main .stories {
   margin: 50px 0;
 }
 
-main .stories img {
-  width: 100%;
+main .stories .testimonial__title {
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+main .stories .card__testimonial {
+  padding: 40px 20px 10px;
+  border-radius: 11px;
+  margin-bottom: 20px;
+}
+
+main .stories .card__testimonial .testimonial__content img {
+  border-radius: 50%;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
+}
+
+main .stories .card__testimonial .testimonial__content .testimonial {
+  min-height: 200px;
+  font-size: 26px;
+  color: #6e6e6e;
+}
+
+main .stories .card__testimonial .testimonial__content hr {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+main .stories .stories__btn {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+main .stories .stories__btn .btn-taaruf {
+  background-color: #24c8ce;
+  color: white;
+}
+
+main .stories .stories__btn .btn-taaruf:hover {
+  background-color: #1db2b8;
 }
 
 main aside {
