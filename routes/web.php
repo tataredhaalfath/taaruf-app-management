@@ -29,6 +29,9 @@ Route::get('/taaruf/detail/{id?}', [DetailController::class, 'index'])->name('de
 //admin page (url => /admin/)
 Route::prefix('admin')
     ->namespace('Admin')
+    ->middleware('auth', 'admin')
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     });
+
+Auth::routes();
