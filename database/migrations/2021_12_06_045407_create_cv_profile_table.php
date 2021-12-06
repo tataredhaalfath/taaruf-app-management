@@ -15,6 +15,18 @@ class CreateCvProfileTable extends Migration
     {
         Schema::create('cv_profile', function (Blueprint $table) {
             $table->id();
+            $table->integer('cv_id');
+            $table->text('image');
+            $table->string('nama');
+            $table->string('alamat');
+            $table->date('tgl_lahir');
+            $table->integer('umur');
+            $table->string('agama');
+            $table->string('manhaj');
+            $table->string('status');
+            $table->string('menikah');
+            $table->string('suku');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
