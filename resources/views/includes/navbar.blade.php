@@ -22,7 +22,9 @@
 
                         <a class="nav-link far" href="/login">
                             {{-- <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile"> --}}
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-user">
+                                <small>Login</small>
+                            </i>
                         </a>
                     @endguest
 
