@@ -6,27 +6,17 @@
     <main>
         <section class="section__detail__header">
         </section>
+
         <section class="section__detail__content user__page__content">
             <div class="container">
-                <div class="row">
-                    <div class="col-0">
-                        <div aria-label="breadcrumb">
-                            <div class="breadcrumb">
-                                <li class="breadcrumb-item my-2"><a href="/">Home</a></li>
-                                <li class="breadcrumb-item my-2 active" aria-current="page" class="text-dark">User</li>
-                                <li class="breadcrumb-item my-2 active" aria-current="page" class="text-dark">Dashboard
-                                </li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @include('includes.user.breadcrumb')
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-8 col-8">
                         @include('includes.user.menu')
                     </div>
                     <div class="col-xl-9 col-lg-9 col-md-12">
                         <div class=" detail__cv">
-                            <div class="cv__title">
+                            <div class="cv__title mt-3">
                                 <h2 class="text-right">Curriculum Vitae</h2>
                             </div>
                             <div class="cv__profile">

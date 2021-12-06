@@ -6,6 +6,7 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoriesController;
 use App\Http\Controllers\TaarufController;
+use App\Http\Controllers\User\IncomingController;
 use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,7 @@ Route::prefix('user')
     ->middleware('auth', 'user')
     ->group(function () {
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user-dashboard');
+        Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
     });
 //admin page (url => /admin/)
 Route::prefix('admin')

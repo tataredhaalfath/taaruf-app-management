@@ -4,12 +4,12 @@
             <h4 class="center text-center mt-3">Main Menu</h4>
             <div class="main__menu  my-3">
                 <div class="item d-flex align-items-center my-3 btn-cta">
-                    @if (url('/user/dashboard'))
+                    @if (Route::current()->getName() == 'user-dashboard')
                         <i class="fas fa-tachometer-alt mr-2" style="color: blue"></i>
-                        <a href="dashboard.html" class="">Dashboard</a>
+                        <a href="/user/dashboard" class="active">Dashboard</a>
                     @else
                         <i class="fas fa-tachometer-alt mr-2"></i>
-                        <a href="dashboard.html" class="text-dark">Dashboard</a>
+                        <a href="/user/dashboard" class="text-dark">Dashboard</a>
                     @endif
 
                 </div>
@@ -26,8 +26,13 @@
                     <a href="cv-sent.html" class="text-dark">CV Sent</a>
                 </div>
                 <div class="item d-flex align-items-center my-3">
-                    <i class="fas fa-envelope-open-text mr-2"></i>
-                    <a href="incoming.html" class="text-dark">Incoming Ta'aruf</a>
+                    @if (Route::current()->getName() == 'user-incoming')
+                        <i class="fas fa-envelope-open-text mr-2" style="color: blue"></i>
+                        <a href="/user/incoming" class="active">Incoming Ta'aruf</a>
+                    @else
+                        <i class="fas fa-envelope-open-text mr-2"></i>
+                        <a href="/user/incoming" class="text-dark">Incoming Ta'aruf</a>
+                    @endif
                 </div>
                 <div class="item d-flex align-items-center my-3">
                     <i class="fas fa-clipboard-check mr-2"></i>
