@@ -15,6 +15,9 @@ class CreateCvTable extends Migration
     {
         Schema::create('cv', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->string('slug');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
