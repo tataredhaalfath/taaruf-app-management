@@ -9,7 +9,11 @@
 
         <section class="section__detail__content user__page__content">
             <div class="container">
-                @include('includes.user.breadcrumb')
+                <div class="row">
+                    <div class="col-0">
+                        @include('includes.user.breadcrumb')
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-8 col-8">
                         @include('includes.user.menu')

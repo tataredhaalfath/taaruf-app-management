@@ -6,7 +6,7 @@
     <main>
         <section class="section__detail__header">
         </section>
-        <section class="section__detail__content user__page__content incoming">
+        <section class="section__detail__content user__page__content approve">
             <div class="container">
                 <div class="row">
                     <div class="col-0">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-xl-9 col-lg-9 col-md-12">
                         <div class="profile__container content bg-white px-sm-5 px-2 py-sm-4 py-2 mb-5">
-                            <h3>Incoming Ta'aruf</h3>
+                            <h3>Approved Ta'aruf</h3>
                             <div class="row my-3">
                                 <div class="col-lg-12 col-md-10">
                                     <table class="table table-bordered">
@@ -35,8 +35,8 @@
                                                 <td>1</td>
                                                 <td>Riska Soekanti</td>
                                                 <td>12/09/201</td>
-                                                <td>Mengajukan</td>
-                                                <td><a href="incoming-cv-detail.html" class="btn-cta">Detail</a></td>
+                                                <td>Approved</td>
+                                                <td><a href="approved-confirm.html" class="btn-cta">Lanjut</a></td>
                                             </tr>
                                             <tr class="text-center">
                                                 <td>2</td>
@@ -69,5 +69,4 @@
             </div>
         </section>
     </main>
-
 @endsection

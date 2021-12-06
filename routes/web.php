@@ -6,6 +6,7 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoriesController;
 use App\Http\Controllers\TaarufController;
+use App\Http\Controllers\User\ApproveController;
 use App\Http\Controllers\User\IncomingController;
 use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,7 @@ Route::prefix('user')
     ->group(function () {
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user-dashboard');
         Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
+        Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');
     });
 //admin page (url => /admin/)
 Route::prefix('admin')

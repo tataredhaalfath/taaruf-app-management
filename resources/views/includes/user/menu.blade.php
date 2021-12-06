@@ -35,8 +35,13 @@
                     @endif
                 </div>
                 <div class="item d-flex align-items-center my-3">
-                    <i class="fas fa-clipboard-check mr-2"></i>
-                    <a href="approved.html" class="text-dark">Ta'aruf Approve</a>
+                    @if (Route::current()->getName() == 'user-approve')
+                        <i class="fas fa-clipboard-check mr-2" style="color: blue"></i>
+                        <a href="/user/approve" class="active">Ta'aruf Approve</a>
+                    @else
+                        <i class="fas fa-clipboard-check mr-2"></i>
+                        <a href="/user/approve" class="text-dark">Ta'aruf Approve</a>
+                    @endif
                 </div>
                 <div class="item d-flex align-items-center my-3">
                     <i class="fas fa-file-excel mr-2"></i>
