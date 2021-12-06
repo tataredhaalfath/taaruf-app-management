@@ -1,6 +1,6 @@
 <!-- footer -->
 <footer>
-    <hr>
+    <hr class="my-0">
     <div class="container">
         <div class="row footer__item">
             <div class="col-md-3 col-sm-3">
