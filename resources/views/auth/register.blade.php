@@ -143,8 +143,8 @@
                             </div>
 
                             <div class="form-group btn-signin text-center">
-                                <button type="submit" class="btn btn-success mb-3">Register</button>
-                                <a href="/login">Sign In</a>
+                                <button type="submit" class="btn btn-primary mb-3">Register</button>
+                                <a class="btn btn-login" href="/login">Sign In</a>
 
                             </div>
                         </form>

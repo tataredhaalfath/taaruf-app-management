@@ -129,7 +129,7 @@
                             </div>
                             <div class="form-group form-check">
                                 <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Remember</label> -->
+                                                                <label class="form-check-label" for="exampleCheck1">Remember</label> -->
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                     {{ old('remember') ? 'checked' : '' }}>
 
@@ -138,9 +138,10 @@
                                 </label>
                             </div>
                             <div class="form-group btn-signin text-center">
-                                <button type="submit" class="btn btn-success mb-3">{{ __('Login') }}</button>
-                                <a href="/register">Register</a>
+                                <button type="submit" class="btn btn-primary mb-3">{{ __('Login') }}</button>
+                                <a class="btn btn-regist" width="100" href="/register">Register</a>
                                 <br>
+                                <hr>
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}

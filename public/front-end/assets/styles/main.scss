@@ -1,542 +1,557 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
 }
 body {
-  background-color: #f6f8fd;
+    background-color: #f6f8fd;
 }
 nav {
-  background-color: #f6f8fd !important;
-  .navbar-brand {
-    font-weight: 800;
-    font-size: 36px;
-  }
-  .navbar-nav {
-    .nav-item {
-      .nav-link {
-        line-height: 55px;
-        margin-left: 35px;
-        font-size: 22px;
-
-        img {
-          max-height: 55px;
-          max-width: 55px;
-        }
-
-        &:hover::after {
-          content: "";
-          display: block;
-          border-bottom: 3px solid #0b63dc;
-          width: 80%;
-          margin: auto;
-          padding-bottom: 5px;
-          margin-bottom: -8px;
-        }
-      }
+    background-color: #f6f8fd !important;
+    .navbar-brand {
+        font-weight: 800;
+        font-size: 36px;
     }
-  }
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                line-height: 55px;
+                margin-left: 35px;
+                font-size: 22px;
+
+                img {
+                    max-height: 55px;
+                    max-width: 55px;
+                }
+
+                &:hover::after {
+                    content: "";
+                    display: block;
+                    border-bottom: 3px solid #0b63dc;
+                    width: 80%;
+                    margin: auto;
+                    padding-bottom: 5px;
+                    margin-bottom: -8px;
+                }
+            }
+        }
+    }
 }
 
 header {
-  margin-top: 90px;
-  .text__hero {
-    h2 {
-      margin-top: 30px;
-      margin-bottom: 15px;
-      font-family: "Playfair Display", serif;
-      font-weight: bold;
-      font-size: 40px;
+    margin-top: 90px;
+    .text__hero {
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-family: "Playfair Display", serif;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        p {
+            margin-bottom: 30px;
+        }
     }
-    p {
-      margin-bottom: 30px;
+    img {
+        width: 100%;
     }
-  }
-  img {
-    width: 100%;
-  }
 }
 
 main {
-  margin-top: 100px;
+    margin-top: 100px;
 
-  //landing page
-  .kajian__pranikah {
-    h3 {
-      font-family: "Playfair Display", serif;
-      font-weight: bold;
-      font-size: 36px;
-    }
-
-    .video__pranikah {
-      width: 100%;
-      min-height: 500px;
-    }
-  }
-  .taaruf__quotes {
-    margin-top: 50px;
-
-    h3 {
-      font-family: "Playfair Display", serif;
-      font-weight: bold;
-      font-size: 36px;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 30px;
-    }
-  }
-
-  .stories {
-    margin: 50px 0;
-    .testimonial__title {
-      font-family: "Playfair Display", serif;
-      font-weight: bold;
-      font-size: 36px;
-    }
-    .card__testimonial {
-      padding: 40px 20px 10px;
-      border-radius: 11px;
-      margin-bottom: 20px;
-
-      .testimonial__content {
-        img {
-          border-radius: 50%;
-          filter: blur(8px);
-        }
-        .testimonial {
-          min-height: 200px;
-          font-size: 26px;
-          color: #6e6e6e;
-        }
-        hr {
-          margin-left: -20px;
-          margin-right: -20px;
-        }
-      }
-    }
-
-    .stories__btn {
-      margin-top: 20px;
-      margin-bottom: 100px;
-      .btn-taaruf {
-        background-color: rgb(36, 200, 206);
-        color: white;
-
-        &:hover {
-          background-color: rgb(29, 178, 184);
-        }
-      }
-    }
-  }
-
-  // taaruf page
-  aside {
-    .filter {
-      text-align: center;
-    }
-    h5 {
-      font-weight: 400;
-    }
-    background: #ffffff;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    border-radius: 8px;
-    margin-bottom: 40px;
-  }
-
-  .content {
-    .card {
-      height: 370px !important;
-      width: 250px !important;
-      margin-bottom: 40px;
-
-      img {
-        width: 100%;
-        height: 200px;
-        filter: blur(8px);
-        margin-bottom: 5px;
-      }
-      .card-body {
-        margin: 0;
-        padding: 0 10px;
-        h5 {
-          margin: 0;
-          padding: 0;
-          font-size: 20px;
-        }
-        p {
-          margin: 0;
-          padding: 0;
-          color: #3f3f3f;
-          font-size: 14px;
-
-          &.card-text {
-            height: 63px;
-            overflow-y: hidden;
-          }
-        }
-
-        a {
-          margin-top: 10px;
-          margin-left: 65%;
-        }
-      }
-    }
-  }
-
-  // detail page
-  .section__detail__header {
-    background: #e4e6eb;
-    min-height: 230px;
-    margin-top: -100px;
-    margin-bottom: 0;
-  }
-
-  .section__detail__content {
-    margin-top: -230px;
-
-    //user page content
-    &.user__page__content {
-      background-color: #e4e6eb;
-      &.incoming,
-      &.approve {
-        min-height: 80vh;
-      }
-    }
-
-    .breadcrumb {
-      height: 100px;
-      margin: 0;
-      margin-top: 0;
-      background-color: transparent;
-      line-height: 100px;
-    }
-    .detail__cv {
-      border: 2px solid rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-      border-radius: 8px;
-      background-color: #ffffff;
-      margin-bottom: 30px;
-      padding: 20px 50px;
-
-      .cv__profile {
-        margin: 20px 0;
-        .profile__image {
-          img {
-            margin-bottom: 20px;
-            width: 100%;
-            filter: blur(8px);
-          }
-        }
-
-        .profile__detail {
-          p {
-            margin: 0;
-          }
-        }
-      }
-
-      .cv__gambar__fisik,
-      .cv__pendidikan,
-      .cv__gambaran__diri,
-      .cv__kriteria__pasangan,
-      .cv__harapan__pernikahan {
-        margin: 20px 0;
-        p {
-          margin: 0;
-        }
-      }
-    }
-    .card__detail__aside {
-      border-radius: 8px 8px 0;
-      // aside detail
-      .card-body {
-        width: 100%;
-        min-height: 253px;
-        padding: 35px;
-
-        p {
-          font-size: 18px;
-        }
-      }
-
-      .btn__ajak__taaruf a {
-        width: 100%;
-        line-height: 58px;
-        height: 67px;
-        font-size: 22px;
-        font-weight: bold;
-        border-radius: 0px;
-      }
-    }
-  }
-
-  // check page
-  .check__image {
-    .header__check__image,
-    .footer__check__image {
-      margin-bottom: 25px;
-
-      img {
-        width: 100%;
-      }
-    }
-  }
-
-  .pertanyaan__taaruf {
-    background-color: #ffffff;
-    border-radius: 8px;
-    min-height: 680px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-
-    .form-group {
-      margin-top: 30px;
-      label {
-        font-size: 18px;
-      }
-
-      button {
-        margin: 50px auto 20px;
-      }
-      a {
-        color: #3f3f3f;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  // stories page
-  .stories__content {
-    .card {
-      max-width: 255px;
-      margin-bottom: 30px;
-    }
-  }
-
-  //signin / register
-  &.signin {
-    margin-top: 70px;
-    h2 {
-      margin-bottom: 60px;
-    }
-
-    .signin__image {
-      max-height: 700px;
-      padding: 0;
-      img {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-    }
-    .row.no-gutters {
-      margin-right: 0;
-      margin-left: 0;
-    }
-    .row.no-gutters > [class^="col-"],
-    .row.no-gutters > [class*=" col-"] {
-      padding-right: 5px;
-      padding-left: 5px;
-    }
-
-    .form-signin {
-      min-height: 450px;
-      background: #ffffff;
-      border: 1px solid #c9c4c4;
-      box-sizing: border-box;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 8px;
-      padding: 20px 50px;
-      margin-bottom: 50px;
-      form {
+    //landing page
+    .kajian__pranikah {
         h3 {
-          text-align: center;
-          margin-top: 16px;
-          margin-bottom: 25px;
-        }
-        .btn-signin {
-          margin-top: 50px;
-          button {
+            font-family: "Playfair Display", serif;
             font-weight: bold;
-            width: 100%;
-            margin: 0 auto;
-          }
+            font-size: 36px;
         }
-      }
+
+        .video__pranikah {
+            width: 100%;
+            min-height: 500px;
+        }
     }
-  }
+    .taaruf__quotes {
+        margin-top: 50px;
+
+        h3 {
+            font-family: "Playfair Display", serif;
+            font-weight: bold;
+            font-size: 36px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+    }
+
+    .stories {
+        margin: 50px 0;
+        .testimonial__title {
+            font-family: "Playfair Display", serif;
+            font-weight: bold;
+            font-size: 36px;
+        }
+        .card__testimonial {
+            padding: 40px 20px 10px;
+            border-radius: 11px;
+            margin-bottom: 20px;
+
+            .testimonial__content {
+                img {
+                    border-radius: 50%;
+                    filter: blur(8px);
+                }
+                .testimonial {
+                    min-height: 200px;
+                    font-size: 26px;
+                    color: #6e6e6e;
+                }
+                hr {
+                    margin-left: -20px;
+                    margin-right: -20px;
+                }
+            }
+        }
+
+        .stories__btn {
+            margin-top: 20px;
+            margin-bottom: 100px;
+            .btn-taaruf {
+                background-color: rgb(36, 200, 206);
+                color: white;
+
+                &:hover {
+                    background-color: rgb(29, 178, 184);
+                }
+            }
+        }
+    }
+
+    // taaruf page
+    aside {
+        .filter {
+            text-align: center;
+        }
+        h5 {
+            font-weight: 400;
+        }
+        background: #ffffff;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        border-radius: 8px;
+        margin-bottom: 40px;
+    }
+
+    .content {
+        .card {
+            height: 370px !important;
+            width: 250px !important;
+            margin-bottom: 40px;
+
+            img {
+                width: 100%;
+                height: 200px;
+                filter: blur(8px);
+                margin-bottom: 5px;
+            }
+            .card-body {
+                margin: 0;
+                padding: 0 10px;
+                h5 {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 20px;
+                }
+                p {
+                    margin: 0;
+                    padding: 0;
+                    color: #3f3f3f;
+                    font-size: 14px;
+
+                    &.card-text {
+                        height: 63px;
+                        overflow-y: hidden;
+                    }
+                }
+
+                a {
+                    margin-top: 10px;
+                    margin-left: 65%;
+                }
+            }
+        }
+    }
+
+    // detail page
+    .section__detail__header {
+        background: #e4e6eb;
+        min-height: 230px;
+        margin-top: -100px;
+        margin-bottom: 0;
+    }
+
+    .section__detail__content {
+        margin-top: -230px;
+
+        //user page content
+        &.user__page__content {
+            background-color: #e4e6eb;
+            &.incoming,
+            &.approve {
+                min-height: 80vh;
+            }
+        }
+
+        .breadcrumb {
+            height: 100px;
+            margin: 0;
+            margin-top: 0;
+            background-color: transparent;
+            line-height: 100px;
+        }
+        .detail__cv {
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            border-radius: 8px;
+            background-color: #ffffff;
+            margin-bottom: 30px;
+            padding: 20px 50px;
+
+            .cv__profile {
+                margin: 20px 0;
+                .profile__image {
+                    img {
+                        margin-bottom: 20px;
+                        width: 100%;
+                        filter: blur(8px);
+                    }
+                }
+
+                .profile__detail {
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .cv__gambar__fisik,
+            .cv__pendidikan,
+            .cv__gambaran__diri,
+            .cv__kriteria__pasangan,
+            .cv__harapan__pernikahan {
+                margin: 20px 0;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+        .card__detail__aside {
+            border-radius: 8px 8px 0;
+            // aside detail
+            .card-body {
+                width: 100%;
+                min-height: 253px;
+                padding: 35px;
+
+                p {
+                    font-size: 18px;
+                }
+            }
+
+            .btn__ajak__taaruf a {
+                width: 100%;
+                line-height: 58px;
+                height: 67px;
+                font-size: 22px;
+                font-weight: bold;
+                border-radius: 0px;
+            }
+        }
+    }
+
+    // check page
+    .check__image {
+        .header__check__image,
+        .footer__check__image {
+            margin-bottom: 25px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .pertanyaan__taaruf {
+        background-color: #ffffff;
+        border-radius: 8px;
+        min-height: 680px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+
+        .form-group {
+            margin-top: 30px;
+            label {
+                font-size: 18px;
+            }
+
+            button {
+                margin: 50px auto 20px;
+            }
+            a {
+                color: #3f3f3f;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    // stories page
+    .stories__content {
+        .card {
+            max-width: 255px;
+            margin-bottom: 30px;
+        }
+    }
+
+    //signin / register
+    &.signin {
+        margin-top: 70px;
+        h2 {
+            margin-bottom: 60px;
+        }
+
+        .signin__image {
+            max-height: 700px;
+            padding: 0;
+            img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        .row.no-gutters {
+            margin-right: 0;
+            margin-left: 0;
+        }
+        .row.no-gutters > [class^="col-"],
+        .row.no-gutters > [class*=" col-"] {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+
+        .form-signin {
+            min-height: 450px;
+            background: #ffffff;
+            border: 1px solid #c9c4c4;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            padding: 20px 50px;
+            margin-bottom: 50px;
+            form {
+                h3 {
+                    text-align: center;
+                    margin-top: 16px;
+                    margin-bottom: 25px;
+                }
+                .btn-signin {
+                    margin-top: 50px;
+                    button {
+                        font-weight: bold;
+                        width: 100%;
+                        margin: 0 auto;
+                        border-radius: 8px;
+                    }
+
+                    .btn-regist,
+                    .btn-login {
+                        font-weight: bold;
+                        width: 100%;
+                        margin: 0 auto;
+                        color: rgb(85, 85, 85);
+                        border-radius: 8px;
+                        background-color: #e4e6eb;
+
+                        &:hover {
+                            background-color: #dededf;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // gradasi untuk signin / register
 .signin__gradasi {
-  background: #e4e6eb;
-  color: red;
-  width: 30vh;
-  height: 100vh;
-  // z-index: -999;
-  position: fixed;
-  width: 100vh !important;
-  top: 0;
+    background: #e4e6eb;
+    color: red;
+    width: 30vh;
+    height: 100vh;
+    // z-index: -999;
+    position: fixed;
+    width: 100vh !important;
+    top: 0;
 }
 
 // footer
 footer {
-  hr {
-    border: none;
-    height: 2px;
-    background-color: rgb(192, 192, 192);
-  }
-
-  h5 {
-    font-weight: 800;
-    font-size: 26px;
-
-    & ~ p {
-      font-weight: bold;
+    hr {
+        border: none;
+        height: 2px;
+        background-color: rgb(192, 192, 192);
     }
-  }
 
-  .footer__item {
-    margin: 50px 0;
-  }
+    h5 {
+        font-weight: 800;
+        font-size: 26px;
+
+        & ~ p {
+            font-weight: bold;
+        }
+    }
+
+    .footer__item {
+        margin: 50px 0;
+    }
 }
 // layar large
 @media screen and (max-width: 1200px) {
-  main {
-    // stories page
-    .stories__content {
-      .card {
-        max-width: 220px;
-        margin-bottom: 30px;
-      }
+    main {
+        // stories page
+        .stories__content {
+            .card {
+                max-width: 220px;
+                margin-bottom: 30px;
+            }
+        }
     }
-  }
 }
 //layar medium
 @media screen and(max-width: 991px) {
-  .navbar-nav {
-    .nav-item {
-      .nav-link {
-        &:hover::after {
-          content: "";
-          display: none !important;
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                &:hover::after {
+                    content: "";
+                    display: none !important;
+                }
+            }
         }
-      }
     }
-  }
-  header {
-    .text__hero {
-      h2 {
-        margin: 25px 0;
-        font-size: 26px;
-      }
-      p {
-        display: none;
-      }
-    }
-  }
-
-  main {
-    //taaruf
-    .content {
-      .card {
-        img {
-          width: 100%;
-          height: auto !important;
+    header {
+        .text__hero {
+            h2 {
+                margin: 25px 0;
+                font-size: 26px;
+            }
+            p {
+                display: none;
+            }
         }
-        height: 370px !important;
-        width: 230px !important;
-        margin-bottom: 40px;
-      }
     }
 
-    //signin / register
-    &.signin {
-      .form-signin {
-        padding: 20px;
-      }
+    main {
+        //taaruf
+        .content {
+            .card {
+                img {
+                    width: 100%;
+                    height: auto !important;
+                }
+                height: 370px !important;
+                width: 230px !important;
+                margin-bottom: 40px;
+            }
+        }
+
+        //signin / register
+        &.signin {
+            .form-signin {
+                padding: 20px;
+            }
+        }
     }
-  }
 }
 
 // layar small
 @media screen and(max-width: 767px) {
-  header {
-    .text__hero {
-      text-align: center;
-      margin: 0 auto;
-      h2 {
-        font-weight: 800;
-        font-size: 42px;
-      }
-      p {
-        display: block;
-      }
+    header {
+        .text__hero {
+            text-align: center;
+            margin: 0 auto;
+            h2 {
+                font-weight: 800;
+                font-size: 42px;
+            }
+            p {
+                display: block;
+            }
+        }
+
+        .image__hero {
+            display: none;
+        }
     }
 
-    .image__hero {
-      display: none;
-    }
-  }
+    main {
+        //check
+        .check__image {
+            display: none;
+        }
 
-  main {
-    //check
-    .check__image {
-      display: none;
+        //signin / register
+        &.signin {
+            .form-signin {
+                padding: 20px;
+            }
+        }
     }
-
-    //signin / register
-    &.signin {
-      .form-signin {
-        padding: 20px;
-      }
-    }
-  }
 }
 
 // layar xtrasmall
 @media screen and(max-width: 575px) {
-  main {
-    // taaruf
-    .content {
-      .card {
-        margin-left: auto;
-        img {
-          width: 100%;
-          height: auto !important;
+    main {
+        // taaruf
+        .content {
+            .card {
+                margin-left: auto;
+                img {
+                    width: 100%;
+                    height: auto !important;
+                }
+
+                a {
+                    margin-bottom: 15px !important;
+                }
+                height: auto !important;
+                width: 80% !important;
+            }
         }
 
-        a {
-          margin-bottom: 15px !important;
+        // stories page
+        .stories__content {
+            .stories__item {
+                margin: 0 auto;
+            }
+            .card {
+                margin: 0 auto;
+                max-width: 350px;
+                margin-bottom: 30px;
+            }
         }
-        height: auto !important;
-        width: 80% !important;
-      }
-    }
 
-    // stories page
-    .stories__content {
-      .stories__item {
-        margin: 0 auto;
-      }
-      .card {
-        margin: 0 auto;
-        max-width: 350px;
-        margin-bottom: 30px;
-      }
+        //signin / register
+        &.signin {
+            h2 {
+                display: none;
+            }
+            .signin__image {
+                display: none;
+            }
+        }
     }
-
-    //signin / register
-    &.signin {
-      h2 {
-        display: none;
-      }
-      .signin__image {
-        display: none;
-      }
-    }
-  }
 }

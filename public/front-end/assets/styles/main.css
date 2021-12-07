@@ -385,6 +385,22 @@ main.signin .form-signin form .btn-signin button {
   font-weight: bold;
   width: 100%;
   margin: 0 auto;
+  border-radius: 8px;
+}
+
+main.signin .form-signin form .btn-signin .btn-regist,
+main.signin .form-signin form .btn-signin .btn-login {
+  font-weight: bold;
+  width: 100%;
+  margin: 0 auto;
+  color: #555555;
+  border-radius: 8px;
+  background-color: #e4e6eb;
+}
+
+main.signin .form-signin form .btn-signin .btn-regist:hover,
+main.signin .form-signin form .btn-signin .btn-login:hover {
+  background-color: #dededf;
 }
 
 .signin__gradasi {
