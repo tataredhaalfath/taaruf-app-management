@@ -1,7 +1,6 @@
 USER
-- status user (PENDING, VERIFY, ACTIVE, INACTIVE)
+- status user (PENDING, ACTIVE, INACTIVE)
 pending = belum verifikasi email
-verify = sudah verifiksi email
 active = sudah aktive dan bisa mengajukan taaruf
 inactive = sudah selesai masa taaruf dan melanjutkan ke jenjang pernikahan
 
@@ -13,6 +12,7 @@ inactive = sudah selesai masa taaruf dan melanjutkan ke jenjang pernikahan
 -> bisa akses ke home, stories, taaruf page
 
 3. user sudah login / regist tapi belum isi cv dan profile
+-> system check email_verified_at !== NULL
 -> bisa akses ke home, stories, taaruf page, detail (/home, /taaruf, /stories, /taaruf/detail) 
 -> belum bisa mengajukan taaruf sebelum mengisi profile dan cv secara lengkap dan harus nunggu di konfimasi oleh admin cv nya
 -> belum bisa mengisi profile dan cv
@@ -34,11 +34,12 @@ masuk ke profile
 - tunggu cv di cek oleh admin
 
 4. user udah dapet konfirmasi cv
+-> tampilan taaruf page akan di filter sesuai gender user
 -> bisa mengajukan taaruf ke siapa aja
 -> profile/cv nya sudah bisa dilihat oleh orang lain
 
 dashboard user menampilkan
-- status user (PENDING, VERIFY, ACTIVE)
+- status user (PENDING, ACTIVE)
 
 
 ADMIN
