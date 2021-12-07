@@ -1,0 +1,57 @@
+USER
+- status user (PENDING, VERIFY, ACTIVE, INACTIVE)
+pending = belum verifikasi email
+verify = sudah verifiksi email
+active = sudah aktive dan bisa mengajukan taaruf
+inactive = sudah selesai masa taaruf dan melanjutkan ke jenjang pernikahan
+
+
+1. user belum login / regist . 
+-> hanya bisa akses halaman home dan stories.
+
+2. user sudah login / regist tapi helum verify email
+-> bisa akses ke home, stories, taaruf page
+
+3. user sudah login / regist tapi belum isi cv dan profile
+-> bisa akses ke home, stories, taaruf page, detail (/home, /taaruf, /stories, /taaruf/detail) 
+-> belum bisa mengajukan taaruf sebelum mengisi profile dan cv secara lengkap dan harus nunggu di konfimasi oleh admin cv nya
+-> belum bisa mengisi profile dan cv
+
+
+alur pengisian profile
+masuk ke profile
+- menu my account
+- mengisikan form yang telah tersedia
+
+alur pengisian cv
+masuk ke profile
+- menu cv 
+- tampil form untuk membuat lampiran cv (id, user_id, slug)
+- isi nama untuk mulai membuat lampiran cv (nama akan dikonversi menjadi slug)
+- masuk ke tampilan form cv yang lengkap
+- isi form
+- submit
+- tunggu cv di cek oleh admin
+
+4. user udah dapet konfirmasi cv
+-> bisa mengajukan taaruf ke siapa aja
+-> profile/cv nya sudah bisa dilihat oleh orang lain
+
+dashboard user menampilkan
+- status user (PENDING, VERIFY, ACTIVE)
+
+
+ADMIN
+1. akses halaman web. kecuali tampilan untuk mengajukan taaruf
+/home, /taaruf, /stories, /taaruf/detail
+2. akses dashboard admin
+3. admin bisa melakukan pengecekan vc user dan mengubah status user menjadi aktive
+4. bisa menambahkan akun consoler
+5. bisa mengubah status user yang selesai taaruf dari ACTIVE menjadi INACTIVE
+
+CONSOLER
+1. akses halaman web. kecuali tampilan untuk mengajukan taaruf
+/home, /taaruf, /stories, /taaruf/detail
+2. akses dashboard consoler
+3. bisa memilih pasangan yang akan didampingi
+4. bisa mengubah status user yang selesai taaruf dari ACTIVE menjadi INACTIVE
