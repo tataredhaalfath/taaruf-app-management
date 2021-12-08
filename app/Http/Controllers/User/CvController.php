@@ -60,6 +60,16 @@ class CvController extends Controller
         UserQuestion::create($data);
         return redirect(route('user-cv'))->with('message', 'Pertanyaan Berhasil Dibuat');
     }
+
+    //edit question
+    public function question_edit()
+    {
+        $question = UserQuestion::where('user_id', Auth::user()->id)->first();
+        return view('pages.user.cv.edit-question', [
+            'question' => $question,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

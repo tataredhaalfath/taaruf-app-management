@@ -61,6 +61,8 @@ Route::prefix('user')
         Route::POST('/cv/gambar-diri', [CvController::class, 'gambar_diri'])->name('user-store-gambar-diri');
         Route::POST('/cv/kriteria', [CvController::class, 'kriteria'])->name('user-store-kriteria');
         Route::POST('/cv/harapan', [CvController::class, 'harapan'])->name('user-store-harapan');
+        //menu cv - question
+        Route::GET('/cv/question', [CvController::class, 'question_edit'])->name('user-question-edit');
         Route::POST('/cv/question', [CvController::class, 'question'])->name('user-question');
 
         //menu incoming

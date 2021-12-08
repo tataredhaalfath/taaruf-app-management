@@ -119,8 +119,8 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <a href="" class="btn btn-warning" style="float: right;"><i
-                                                class="fa fa-pen"></i> Edit</a>
+                                        <a href="{{ route('user-question-edit') }}" class="btn btn-warning"
+                                            style="float: right;"><i class="fa fa-pen"></i> Edit</a>
                                         <p style="clear: both"></p>
                                     </div>
                                 </div>
