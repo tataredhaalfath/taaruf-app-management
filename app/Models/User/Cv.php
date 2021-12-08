@@ -30,4 +30,9 @@ class Cv extends Model
     {
         return $this->hasOne(Cv_Hobi::class, 'cv_id', 'id');
     }
+
+    public function Cv_Pendidikan()
+    {
+        return $this->hasOne(Cv_Pendidikan::class, 'cv_id', 'id');
+    }
 }

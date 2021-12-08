@@ -19,7 +19,7 @@ class Cv_Hobi extends Model
 
     protected $table = 'cv_hobi';
 
-    public function cv()
+    public function Cv()
     {
         return $this->belongsTo(Cv::class, 'cv_id', 'id');
     }

@@ -28,7 +28,7 @@ class Cv_Gambar_Fisik extends Model
 
     protected $table = 'cv_gambar_fisik';
 
-    public function cv()
+    public function Cv()
     {
         return $this->belongsTo(Cv::class, 'cv_id', 'id');
     }
