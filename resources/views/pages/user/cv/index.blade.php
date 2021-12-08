@@ -33,18 +33,20 @@
                                                 <tr class="text-center">
                                                     <th>No</th>
                                                     <th>Judul CV</th>
-                                                    <th>Tanggal</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                                 <tr class="text-center">
                                                     <td>1</td>
                                                     <td>{{ $cv->slug }}</td>
-                                                    <td>{{ $cv->updated_at }}</td>
                                                     <td>{{ Auth::user()->status }}</td>
-                                                    <td><a href="{{ route('user-create-cv') }}"
-                                                            class="btn-cta">Lengkapi
-                                                            Data</a>
+                                                    <td>
+                                                        <a href="" class="btn btn-warning btn-sm"><i class="fa fa-pen">
+                                                                Edit</i></a>
+                                                        |
+                                                        <a href="{{ route('user-create-cv') }}"
+                                                            class="btn btn-success btn-sm"><i
+                                                                class="fas fa-file-signature"></i> Lengkapi</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
