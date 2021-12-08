@@ -40,4 +40,9 @@ class Cv extends Model
     {
         return $this->hasOne(Cv_Gambar_Diri::class, 'cv_id', 'id');
     }
+
+    public function Cv_Kriteria()
+    {
+        return $this->hasOne(Cv_Kriteria::class, 'cv_id', 'id');
+    }
 }
