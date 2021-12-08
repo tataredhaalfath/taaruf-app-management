@@ -52,6 +52,8 @@ Route::prefix('user')
         Route::get('/cv', [CvController::class, 'index'])->name('user-cv');
         Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');
         Route::get('/cv/create', [CvController::class, 'create'])->name('user-create-cv');
+        Route::POST('/cv/profile', [CvController::class, 'profile'])->name('user-store-profile');
+
         //menu incoming
         Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
         Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');

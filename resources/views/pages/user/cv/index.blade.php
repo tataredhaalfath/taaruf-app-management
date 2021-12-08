@@ -32,7 +32,7 @@
                                             <tbody>
                                                 <tr class="text-center">
                                                     <th>No</th>
-                                                    <th>Nama</th>
+                                                    <th>Judul CV</th>
                                                     <th>Tanggal</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
@@ -58,13 +58,13 @@
                                     <h5>BUAT CV BARU</h5>
                                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Nama</label>
-                                        <input type="slug" class="form-control @error('slug') is-invalid @enderror"
-                                            id="slug" name="slug" aria-describedby="emailHelp" required>
+                                        <label for="slug">Judul CV</label>
+                                        <input type="text" class="form-control @error('slug') is-invalid @enderror"
+                                            id="slug" name="slug" value="{{ old('slug') }}">
                                         @error('slug')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
+                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
                                         @enderror
                                     </div>
                                     <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>

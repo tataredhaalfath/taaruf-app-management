@@ -6,18 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Cv extends Model
+class CvProfile extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
-        'user_id', 'slug'
+        'cv_id', 'image', 'nama', 'alamat', 'tgl_lahir', 'umur', 'agama', 'manhaj', 'status', 'menikah', 'suku'
     ];
-    protected $hidden = [];
-    protected $table = 'cv';
 
-    public function cv_prifle()
+    protected $hidden = [];
+
+    protected $table = 'cv_profile';
+
+    public function cv_profile()
     {
-        return $this->hasOne(CvProfile::class, 'cv_id', 'id');
+        return $this->belongsTo(Cv::class, 'cv_id', 'id');
     }
 }
