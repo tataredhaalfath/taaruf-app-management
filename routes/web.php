@@ -24,11 +24,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/taaruf', [TaarufController::class, 'index'])->name('taaruf');
 Route::get('/stories', [StoriesController::class, 'index'])->name('stories');
-Route::get('/taaruf/check', [CheckController::class, 'index'])->name('check');
-Route::get('/taaruf/success', [CheckController::class, 'success'])->name('success');
-Route::get('/taaruf/detail/{id?}', [DetailController::class, 'index'])->name('detail');
+
+// harus login dulu 
+Route::middleware('auth')
+    ->group(function () {
+        Route::get('/taaruf', [TaarufController::class, 'index'])->name('taaruf');
+
+        //user sudah verify email
+        Route::middleware(['verified'])
+            ->group(function () {
+                Route::get('/taaruf/detail', [DetailController::class, 'index'])->name('detail');
+                Route::get('/taaruf/check', [CheckController::class, 'index'])->name('check');
+                Route::get('/taaruf/success', [CheckController::class, 'success'])->name('success');
+            });
+    });
+
+
 
 //user page (url => /user/ )
 Route::prefix('user')

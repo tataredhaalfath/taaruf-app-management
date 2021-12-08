@@ -1,5 +1,5 @@
-@extends('layouts.app');
-@section('title', 'Stories Page');
+@extends('layouts.app')
+@section('title', 'Stories Page')
 @section('content')
     <!-- main -->
     <main>
