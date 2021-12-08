@@ -79,11 +79,55 @@
                                 </div>
                             @endif
                             @if ($question !== null)
-                                ada
+                                <div class="row my-3">
+                                    <div class="col-lg-12 col-md-10" style="border: 1px solid #dedede;">
+
+                                        <h5 class="mt-3">3 Pertanyaan Taaruf</h5>
+                                        <small class="text-muted">pertanyaan akan dijawab oleh pengguna yang ingin
+                                            pengajukan taaruf kepada anda</small>
+                                        <br><br>
+                                        <div class="form-group">
+                                            <label for="pertanyaan_1">Pertanyaan 1</label>
+                                            <textarea name="pertanyaan_1" id="pertanyaan_1"
+                                                class="d-block form-control @error('pertanyaan_1') is-invalid @enderror"
+                                                rows="3" readonly>{{ $question->pertanyaan_1 }}</textarea>
+                                            @error('pertanyaan_1')
+                                                <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pertanyaan_2">Pertanyaan 2</label>
+                                            <textarea class="form-control @error('pertanyaan_2') is-invalid @enderror"
+                                                id="pertanyaan_2" name="pertanyaan_2" rows="3"
+                                                readonly>{{ $question->pertanyaan_2 }}</textarea>
+                                            @error('pertanyaan_2')
+                                                <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pertanyaan_3">Pertanyaan 3</label>
+                                            <textarea class="form-control @error('pertanyaan_3') is-invalid @enderror"
+                                                id="pertanyaan_3" name="pertanyaan_3" rows="3"
+                                                readonly>{{ $question->pertanyaan_3 }}</textarea>
+                                            @error('pertanyaan_3')
+                                                <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <a href="" class="btn btn-warning" style="float: right;"><i
+                                                class="fa fa-pen"></i> Edit</a>
+                                        <p style="clear: both"></p>
+                                    </div>
+                                </div>
                             @else
                                 <div class="row my-3">
                                     <div class="col-lg-12 col-md-10" style="border: 1px solid #dedede;">
-                                        <form action="{{ route('user-storecv') }}" method="POST"
+                                        <form action="{{ route('user-question') }}" method="POST"
                                             class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                             @csrf
                                             <h5>Buat 3 Pertanyaan Taaruf</h5>
@@ -93,8 +137,8 @@
                                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                             <div class="form-group">
                                                 <label for="pertanyaan_1">Pertanyaan 1</label>
-                                                <textarea class="form-control @error('pertanyaan_1') is-invalid @enderror"
-                                                    id="pertanyaan_1" name="pertanyaan_1`"
+                                                <textarea name="pertanyaan_1" id="pertanyaan_1"
+                                                    class="d-block form-control @error('pertanyaan_1') is-invalid @enderror"
                                                     rows="3">{{ old('pertanyaan_1') }}</textarea>
                                                 @error('pertanyaan_1')
                                                     <div id=" invalidCheck3Feedback" class="invalid-feedback">
@@ -105,7 +149,7 @@
                                             <div class="form-group">
                                                 <label for="pertanyaan_2">Pertanyaan 2</label>
                                                 <textarea class="form-control @error('pertanyaan_2') is-invalid @enderror"
-                                                    id="pertanyaan_2" name="pertanyaan_2`"
+                                                    id="pertanyaan_2" name="pertanyaan_2"
                                                     rows="3">{{ old('pertanyaan_2') }}</textarea>
                                                 @error('pertanyaan_2')
                                                     <div id=" invalidCheck3Feedback" class="invalid-feedback">
@@ -116,7 +160,7 @@
                                             <div class="form-group">
                                                 <label for="pertanyaan_3">Pertanyaan 3</label>
                                                 <textarea class="form-control @error('pertanyaan_3') is-invalid @enderror"
-                                                    id="pertanyaan_3" name="pertanyaan_3`"
+                                                    id="pertanyaan_3" name="pertanyaan_3"
                                                     rows="3">{{ old('pertanyaan_3') }}</textarea>
                                                 @error('pertanyaan_3')
                                                     <div id=" invalidCheck3Feedback" class="invalid-feedback">

@@ -40,10 +40,25 @@ class CvController extends Controller
         $data['slug'] = Str::slug($request->slug);
         //validasi
         $request->validate([
-            'slug' => 'required'
+            'user_id' => 'required|integer',
+            'slug' => 'required',
         ]);
         CV::create($data);
         return redirect(route('user-cv'))->with('message', 'CV Berhasil Dibuat');
+    }
+    //store question
+    public function question(Request $request)
+    {
+        $data = $request->all();
+        //validasi
+        $request->validate([
+            'user_id' => 'required|integer',
+            'pertanyaan_1' => 'required|max:255',
+            'pertanyaan_2' => 'required|max:255',
+            'pertanyaan_3' => 'required|max:255',
+        ]);
+        UserQuestion::create($data);
+        return redirect(route('user-cv'))->with('message', 'Pertanyaan Berhasil Dibuat');
     }
     /**
      * Show the form for creating a new resource.

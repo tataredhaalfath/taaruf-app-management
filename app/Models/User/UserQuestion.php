@@ -11,7 +11,7 @@ class UserQuestion extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'use_id',
+        'user_id',
         'pertanyaan_1',
         'pertanyaan_2',
         'pertanyaan_3',
