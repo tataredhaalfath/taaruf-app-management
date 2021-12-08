@@ -20,4 +20,9 @@ class Cv extends Model
     {
         return $this->hasOne(CvProfile::class, 'cv_id', 'id');
     }
+
+    public function cv_gambar_fisik()
+    {
+        return $this->hasOne(Cv_Gambar_Fisik::class, 'cv_id', 'id');
+    }
 }
