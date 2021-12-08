@@ -411,7 +411,19 @@
                                 </div>
                             @endif
                             @if ($pendidikan !== null)
-                                ada
+                                <div class="cv__pendidikan">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <h4>Riwayat Pendidikan</h4>
+                                            <ul style="list-style: none;">
+                                                <li><strong>{{ $pendidikan->sma }}</strong></li>
+                                                <li class="text-muted">{{ $pendidikan->jurusan_sma }}</li>
+                                                <li><strong>{{ $pendidikan->univ }}</strong></li>
+                                                <li class="text-muted">{{ $pendidikan->jurusan_univ }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
