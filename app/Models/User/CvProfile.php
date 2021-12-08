@@ -18,7 +18,7 @@ class CvProfile extends Model
 
     protected $table = 'cv_profile';
 
-    public function cv_profile()
+    public function cv()
     {
         return $this->belongsTo(Cv::class, 'cv_id', 'id');
     }
