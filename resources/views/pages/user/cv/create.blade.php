@@ -704,7 +704,35 @@
                                 </div>
                             @endif
                             @if ($harapan !== null)
-                                ada
+                                <div class="cv__harapan__pernikahan">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <table class="table table-borderless table-sm">
+                                                <h5>Rencana Dalam Pernikahan</h5>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Visi</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="py-0 text-muted">{{ $harapan->visi }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Misi</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="py-0 text-muted">{{ $harapan->misi }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Karir Masa Depan</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="py-0 text-muted">{{ $harapan->karir }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
