@@ -11,6 +11,7 @@ use App\Models\User\Cv_Hobi;
 use App\Models\User\Cv_Kriteria;
 use App\Models\User\Cv_Pendidikan;
 use App\Models\User\CvProfile;
+use App\Models\User\UserQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -25,7 +26,11 @@ class CvController extends Controller
     public function index()
     {
         $cv = Cv::where('user_id', Auth::user()->id)->first();
-        return view('pages.user.cv.index', compact('cv'));
+        $question = UserQuestion::where('user_id', Auth::user()->id)->first();
+        return view('pages.user.cv.index', [
+            'cv' => $cv,
+            'question' => $question,
+        ]);
     }
 
     //store cv

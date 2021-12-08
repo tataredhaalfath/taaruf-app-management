@@ -16,7 +16,7 @@ class Cv extends Model
     protected $hidden = [];
     protected $table = 'cv';
 
-    public function cv_prifle()
+    public function cv_profile()
     {
         return $this->hasOne(CvProfile::class, 'cv_id', 'id');
     }

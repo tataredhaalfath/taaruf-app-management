@@ -54,24 +54,82 @@
                                     </div>
                                 </div>
                             @else
-                                <form action="{{ route('user-storecv') }}" method="POST"
-                                    class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
-                                    @csrf
-                                    <h5>BUAT CV BARU</h5>
-                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                    <div class="form-group">
-                                        <label for="slug">Judul CV</label>
-                                        <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                            id="slug" name="slug" value="{{ old('slug') }}">
-                                        @error('slug')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
+                                <div class="row my-3">
+                                    <div class="col-lg-12 col-md-10" style="border: 1px solid #dedede;">
+                                        <form action="{{ route('user-storecv') }}" method="POST"
+                                            class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                            @csrf
+                                            <h5>BUAT CV BARU</h5>
+                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                            <div class="form-group">
+                                                <label for="slug">Judul CV</label>
+                                                <input type="text" class="form-control @error('slug') is-invalid @enderror"
+                                                    id="slug" name="slug" value="{{ old('slug') }}">
+                                                @error('slug')
+                                                    <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
-                                        @enderror
+                                            <button type="submit" class="btn btn-primary"
+                                                style="float: right;">Submit</button>
+                                            <p style="clear: both"></p>
+                                        </form>
                                     </div>
-                                    <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
-                                    <p style="clear: both"></p>
-                                </form>
+                                </div>
+                            @endif
+                            @if ($question !== null)
+                                ada
+                            @else
+                                <div class="row my-3">
+                                    <div class="col-lg-12 col-md-10" style="border: 1px solid #dedede;">
+                                        <form action="{{ route('user-storecv') }}" method="POST"
+                                            class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                            @csrf
+                                            <h5>Buat 3 Pertanyaan Taaruf</h5>
+                                            <small class="text-muted">pertanyaan akan dijawab oleh pengguna yang ingin
+                                                pengajukan taaruf kepada anda</small>
+                                            <br><br>
+                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                            <div class="form-group">
+                                                <label for="pertanyaan_1">Pertanyaan 1</label>
+                                                <textarea class="form-control @error('pertanyaan_1') is-invalid @enderror"
+                                                    id="pertanyaan_1" name="pertanyaan_1`"
+                                                    rows="3">{{ old('pertanyaan_1') }}</textarea>
+                                                @error('pertanyaan_1')
+                                                    <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pertanyaan_2">Pertanyaan 2</label>
+                                                <textarea class="form-control @error('pertanyaan_2') is-invalid @enderror"
+                                                    id="pertanyaan_2" name="pertanyaan_2`"
+                                                    rows="3">{{ old('pertanyaan_2') }}</textarea>
+                                                @error('pertanyaan_2')
+                                                    <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pertanyaan_3">Pertanyaan 3</label>
+                                                <textarea class="form-control @error('pertanyaan_3') is-invalid @enderror"
+                                                    id="pertanyaan_3" name="pertanyaan_3`"
+                                                    rows="3">{{ old('pertanyaan_3') }}</textarea>
+                                                @error('pertanyaan_3')
+                                                    <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                            <button type="submit" class="btn btn-primary"
+                                                style="float: right;">Submit</button>
+                                            <p style="clear: both"></p>
+                                        </form>
+                                    </div>
+                                </div>
                             @endif
                         </div>
                     </div>
