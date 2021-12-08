@@ -483,7 +483,45 @@
                                 </div>
                             @endif
                             @if ($gambar_diri !== null)
-                                ada
+                                <div class="cv__gambaran__diri">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <h4>Gambaran Diri</h4>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Motto</th>
+                                                        <td class="py-0">: {{ $gambar_diri->moto }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Target Hidup</th>
+                                                        <td class="py-0">: {{ $gambar_diri->target_hidup }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Kegiatan Waktu Luang</th>
+                                                        <td class="py-0">: {{ $gambar_diri->kegiatan_wl }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Hal yang disukai</th>
+                                                        <td class="py-0">: {{ $gambar_diri->hal_disukai }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Sisi Negatif</th>
+                                                        <td class="py-0">: {{ $gambar_diri->sisi_negatif }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Merokok</th>
+                                                        <td class="py-0">: {{ $gambar_diri->merokok }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
