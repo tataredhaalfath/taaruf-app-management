@@ -415,10 +415,11 @@
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-gambar-fisik') }}" method="POST"
+                                    <form action="{{ route('user-store-pendidikan') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
                                         <h5>Riwayat Pendidikan</h5>
+                                        <input type="hidden" name="cv_id" value="{{ $cv->id }}">
                                         <div class="form-group">
                                             <label for="sma">SMA / SMK</label>
                                             <input type="text" class="form-control @error('sma') is-invalid @enderror"

@@ -117,6 +117,22 @@ class CvController extends Controller
         Cv_Hobi::create($data);
         return redirect()->route('user-create-cv');
     }
+
+    //store pendidikan
+    public function pendidikan(Request $request)
+    {
+        $data = $request->all();
+        //validasi
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'sma' => 'required|max:255',
+            'jurusan_sma' => 'required|max:255',
+            'univ' => 'required|max:255',
+            'jurusan_univ' => 'required|max:255'
+        ]);
+        Cv_Pendidikan::create($data);
+        return redirect()->route('user-create-cv');
+    }
     /**
      * Store a newly created resource in storage.
      *
