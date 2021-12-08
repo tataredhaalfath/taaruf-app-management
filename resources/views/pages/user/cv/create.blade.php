@@ -376,6 +376,31 @@
                                     </form>
                                 </div>
                             @endif
+                            @if ($hobi !== null)
+                                ada
+                            @else
+                                <hr>
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <form action="{{ route('user-store-gambar-fisik') }}" method="POST"
+                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        @csrf
+                                        <h5>Hobi</h5>
+                                        <input type="hidden" name="cv_id" value="{{ $cv->id }}">
+                                        <div class="form-group">
+                                            <label for="hobi">Hobi</label>
+                                            <input type="text" class="form-control @error('hobi') is-invalid @enderror"
+                                                id="hobi" name="hobi" value="{{ old('hobi') }}" placeholder="hobi">
+                                            @error('hobi')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                                        <p style="clear: both"></p>
+                                    </form>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
