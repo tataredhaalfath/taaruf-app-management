@@ -56,6 +56,8 @@ Route::prefix('user')
         Route::POST('/cv/gambar-fisik', [CvController::class, 'gambar_fisik'])->name('user-store-gambar-fisik');
         Route::POST('/cv/hobi', [CvController::class, 'hobi'])->name('user-store-hobi');
         Route::POST('/cv/pendidikan', [CvController::class, 'pendidikan'])->name('user-store-pendidikan');
+        Route::POST('/cv/gambar-diri', [CvController::class, 'gambar_diri'])->name('user-store-gambar-diri');
+
 
 
 

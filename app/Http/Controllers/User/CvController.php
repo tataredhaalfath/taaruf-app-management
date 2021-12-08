@@ -136,6 +136,25 @@ class CvController extends Controller
         Cv_Pendidikan::create($data);
         return redirect()->route('user-create-cv');
     }
+
+    //store gambaran diri
+    public function gambar_diri(Request $request)
+    {
+        $data = $request->all();
+        //validasi
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'moto' => 'required|max:255',
+            'target_hidup' => 'required|max:255',
+            'kegiatan_wl' => 'required|max:255',
+            'hal_disukai' => 'required|max:255',
+            'sisi_negatif' => 'required|max:255',
+            'merokok' => 'required|max:255',
+        ]);
+
+        Cv_Gambar_Diri::create($data);
+        return redirect()->route('user-create-cv');
+    }
     /**
      * Store a newly created resource in storage.
      *
