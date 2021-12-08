@@ -63,7 +63,7 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                                        <button type="submit" class="btn btn-success" style="float: right;">Submit</button>
                                         <p style="clear: both"></p>
                                     </form>
                                 </div>
