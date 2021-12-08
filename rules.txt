@@ -1,15 +1,15 @@
 USER
 - status user (PENDING, ACTIVE, INACTIVE)
-pending = belum verifikasi email
+pending = Belum acc cv oleh admin
 active = sudah aktive dan bisa mengajukan taaruf
 inactive = sudah selesai masa taaruf dan melanjutkan ke jenjang pernikahan
 
 
 1. user belum login / regist . 
--> hanya bisa akses halaman home dan stories.
+-> hanya bisa akses halaman home, stories, user page
 
 2. user sudah login / regist tapi helum verify email
--> bisa akses ke home, stories, taaruf page
+-> bisa akses ke home, stories, taaruf page, user page
 
 3. user sudah login / regist tapi belum isi cv dan profile
 -> system check email_verified_at !== NULL

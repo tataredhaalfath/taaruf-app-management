@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoriesController;
 use App\Http\Controllers\TaarufController;
 use App\Http\Controllers\User\ApproveController;
+use App\Http\Controllers\User\CvController;
 use App\Http\Controllers\User\IncomingController;
 use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
@@ -41,20 +42,26 @@ Route::middleware('auth')
     });
 
 
-
 //user page (url => /user/ )
 Route::prefix('user')
     ->namespace('User')
-    ->middleware('auth', 'user')
+    ->middleware(['auth', 'user'])
     ->group(function () {
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user-dashboard');
+        //menu cv
+        Route::get('/cv', [CvController::class, 'index'])->name('user-cv');
+        Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');
+        Route::get('/cv/create', [CvController::class, 'create'])->name('user-create-cv');
+        //menu incoming
         Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
         Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');
     });
+
+
 //admin page (url => /admin/)
 Route::prefix('admin')
     ->namespace('Admin')
-    ->middleware('auth', 'admin')
+    ->middleware(['auth', 'admin'])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     });

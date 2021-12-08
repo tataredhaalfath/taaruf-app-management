@@ -6,10 +6,10 @@
                 <div class="item d-flex align-items-center my-3 btn-cta">
                     @if (Route::current()->getName() == 'user-dashboard')
                         <i class="fas fa-tachometer-alt mr-2" style="color: blue"></i>
-                        <a href="/user/dashboard" class="active">Dashboard</a>
+                        <a href="{{ route('user-dashboard') }}" class="active">Dashboard</a>
                     @else
                         <i class="fas fa-tachometer-alt mr-2"></i>
-                        <a href="/user/dashboard" class="text-dark">Dashboard</a>
+                        <a href="{{ route('user-dashboard') }}" class="text-dark">Dashboard</a>
                     @endif
 
                 </div>
@@ -18,8 +18,13 @@
                     <a href="my-account.html" class="text-dark">My Account</a>
                 </div>
                 <div class="item d-flex align-items-center my-3">
-                    <i class="fas fa-file-alt mr-2"></i>
-                    <a href="cv-document.html" class="text-dark">Curriculum Vitae</a>
+                    @if (Route::current()->getName() == 'user-cv')
+                        <i class="fas fa-file-alt mr-2" style="color: blue"></i>
+                        <a href="/user/cv" class="active">Curriculum Vitae</a>
+                    @else
+                        <i class="fas fa-file-alt mr-2"></i>
+                        <a href="/user/cv" class="text-dark">Curriculum Vitae</a>
+                    @endif
                 </div>
                 <div class="item d-flex align-items-center my-3">
                     <i class="fas fa-paper-plane mr-2"></i>
@@ -28,19 +33,19 @@
                 <div class="item d-flex align-items-center my-3">
                     @if (Route::current()->getName() == 'user-incoming')
                         <i class="fas fa-envelope-open-text mr-2" style="color: blue"></i>
-                        <a href="/user/incoming" class="active">Incoming Ta'aruf</a>
+                        <a href="{{ route('user-incoming') }}" class="active">Incoming Ta'aruf</a>
                     @else
                         <i class="fas fa-envelope-open-text mr-2"></i>
-                        <a href="/user/incoming" class="text-dark">Incoming Ta'aruf</a>
+                        <a href="{{ route('user-incoming') }}" class="text-dark">Incoming Ta'aruf</a>
                     @endif
                 </div>
                 <div class="item d-flex align-items-center my-3">
                     @if (Route::current()->getName() == 'user-approve')
                         <i class="fas fa-clipboard-check mr-2" style="color: blue"></i>
-                        <a href="/user/approve" class="active">Ta'aruf Approve</a>
+                        <a href="{{ route('user-approve') }}" class="active">Ta'aruf Approve</a>
                     @else
                         <i class="fas fa-clipboard-check mr-2"></i>
-                        <a href="/user/approve" class="text-dark">Ta'aruf Approve</a>
+                        <a href="{{ route('user-approve') }}" class="text-dark">Ta'aruf Approve</a>
                     @endif
                 </div>
                 <div class="item d-flex align-items-center my-3">

@@ -9,6 +9,6 @@ class IncomingController extends Controller
 {
     public function index()
     {
-        return view('pages.user.incoming');
+        return view('pages.user.incoming.index');
     }
 }

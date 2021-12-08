@@ -9,6 +9,6 @@ class ApproveController extends Controller
 {
     public function index(Request $request)
     {
-        return view('pages.user.approve');
+        return view('pages.user.approve.index');
     }
 }
