@@ -19,184 +19,135 @@
                     </div>
                     <div class="col-xl-9 col-lg-9 col-md-12">
                         <div class=" detail__cv">
-                            <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                <div class="cv__title mt-3">
-                                    <h2 class="text-right">Curriculum Vitae</h2>
-                                </div>
-                                <form action="{{ route('user-update-profile') }}" method="POST"
-                                    class="px-sm-5 px-2 py-sm-4 py-2 mb-5" enctype="multipart/form-data">
-                                    @csrf
-                                    @method('PUT')
-                                    <h5>Profile</h5>
-                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 profile__image">
-                                        <img src="{{ Storage::url($profile->image) }}" width="150" height="150"
-                                            data-caman="stackBlur(8)" alt="user image">
+                            @if ($profile !== null)
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="cv__title mt-3">
+                                        <h2 class="text-right">Curriculum Vitae</h2>
                                     </div>
-                                    <input type="hidden" name="old_image" value="{{ $profile->image }}">
-                                    <input type="hidden" name="cv_id" value="{{ $cv->id }}">
-                                    <div class="form-group">
-                                        <label for="image">Image <small>(max 2mb)</small></label>
-                                        <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                            id="image" name="image" placeholder="image">
-                                        @error('image')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nama">Nama</label>
-                                        <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                            id="nama" name="nama" value="{{ $profile->nama }}" placeholder="nama">
-                                        @error('nama')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="alamat">Alamat</label>
-                                        <input type="text" class="form-control @error('alamat') is-invalid @enderror"
-                                            id="alamat" name="alamat" value="{{ $profile->alamat }}" placeholder="alamat">
-                                        @error('alamat')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tinggi">Tanggal Lahir</label>
-                                        <input type="date" class="form-control @error('tgl_lahir') is-invalid @enderror"
-                                            id="tgl_lahir" name="tgl_lahir" value="{{ $profile->tgl_lahir }}"
-                                            placeholder="tanggal lahir">
-                                        @error('tgl_lahir')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="umur">Umur</label>
-                                        <input type="number" class="form-control @error('umur') is-invalid @enderror"
-                                            id="umur" name="umur" value="{{ $profile->umur }}" placeholder="umur">
-                                        @error('umur')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="agama">Agama</label>
-                                        <input type="text" class="form-control @error('agama') is-invalid @enderror"
-                                            id="agama" name="agama" value="{{ $profile->agama }}" placeholder="agama">
-                                        @error('agama')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="manhaj">Manhaj</label>
-                                        <input type="text" class="form-control @error('manhaj') is-invalid @enderror"
-                                            id="manhaj" name="manhaj" value="{{ $profile->manhaj }}"
-                                            placeholder="manhaj">
-                                        @error('manhaj')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="status">Status</label>
-                                        <input type="text" class="form-control @error('status') is-invalid @enderror"
-                                            id="status" name="status" value="{{ $profile->status }}"
-                                            placeholder="status">
-                                        @error('status')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="menikah">Menikah ?</label>
-                                        <input type="text" class="form-control @error('menikah') is-invalid @enderror"
-                                            id="menikah" name="menikah" value="{{ $profile->menikah }}"
-                                            placeholder="sudah menikah ?">
-                                        @error('menikah')
-                                            <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="suku">Suku</label>
-                                        <input type="text" class="form-control @error('suku') is-invalid @enderror"
-                                            id="suku" name="suku" value="{{ $profile->suku }}" placeholder="suku">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
-                                    <p style="clear: both"></p>
-                                </form>
-                            </div>
-                            @if ($gambar_fisik !== null)
-                                <div class="cv__gambar__fisik">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <h4>Gambaran Fisik</h4>
-                                            <table class="table table-borderless table-sm">
-                                                <tbody>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Bentuk Fisik</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->bentuk_fisik }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Warna Kulit</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->warna_kulit }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Tinggi Badan</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->tinggi }} cm</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Berat Badan</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->berat }} kg</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Riwayat Penyakit</th>
-                                                        <td class="py-0">:
-                                                            {{ $gambar_fisik->riwayat_penyakit }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Gol.Darah</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->golongan_darah }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Cacat Fisik</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->cacat_fisik }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Tipe Rambut</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->tipe_rambut }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Warna Mata</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->warna_mata }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Ciri Khas / tanda lahir</th>
-                                                        <td class="py-0">: {{ $gambar_fisik->tanda_lahir }}
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                    <form action="{{ route('user-update-profile') }}" method="POST"
+                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5" enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
+                                        <h5>Profile</h5>
+                                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-xs-4 profile__image">
+                                            <img src="{{ Storage::url($profile->image) }}" width="150" height="150"
+                                                data-caman="stackBlur(8)" alt="user image">
                                         </div>
-                                    </div>
+                                        <input type="hidden" name="old_image" value="{{ $profile->image }}">
+                                        <input type="hidden" name="cv_id" value="{{ $cv->id }}">
+                                        <div class="form-group">
+                                            <label for="image">Image <small>(max 2mb)</small></label>
+                                            <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                                id="image" name="image" placeholder="image">
+                                            @error('image')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nama">Nama</label>
+                                            <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                                id="nama" name="nama" value="{{ $profile->nama }}" placeholder="nama">
+                                            @error('nama')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="alamat">Alamat</label>
+                                            <input type="text" class="form-control @error('alamat') is-invalid @enderror"
+                                                id="alamat" name="alamat" value="{{ $profile->alamat }}"
+                                                placeholder="alamat">
+                                            @error('alamat')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tinggi">Tanggal Lahir</label>
+                                            <input type="date" class="form-control @error('tgl_lahir') is-invalid @enderror"
+                                                id="tgl_lahir" name="tgl_lahir" value="{{ $profile->tgl_lahir }}"
+                                                placeholder="tanggal lahir">
+                                            @error('tgl_lahir')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="umur">Umur</label>
+                                            <input type="number" class="form-control @error('umur') is-invalid @enderror"
+                                                id="umur" name="umur" value="{{ $profile->umur }}" placeholder="umur">
+                                            @error('umur')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="agama">Agama</label>
+                                            <input type="text" class="form-control @error('agama') is-invalid @enderror"
+                                                id="agama" name="agama" value="{{ $profile->agama }}"
+                                                placeholder="agama">
+                                            @error('agama')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="manhaj">Manhaj</label>
+                                            <input type="text" class="form-control @error('manhaj') is-invalid @enderror"
+                                                id="manhaj" name="manhaj" value="{{ $profile->manhaj }}"
+                                                placeholder="manhaj">
+                                            @error('manhaj')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="status">Status</label>
+                                            <input type="text" class="form-control @error('status') is-invalid @enderror"
+                                                id="status" name="status" value="{{ $profile->status }}"
+                                                placeholder="status">
+                                            @error('status')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="menikah">Menikah ?</label>
+                                            <input type="text" class="form-control @error('menikah') is-invalid @enderror"
+                                                id="menikah" name="menikah" value="{{ $profile->menikah }}"
+                                                placeholder="sudah menikah ?">
+                                            @error('menikah')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="suku">Suku</label>
+                                            <input type="text" class="form-control @error('suku') is-invalid @enderror"
+                                                id="suku" name="suku" value="{{ $profile->suku }}" placeholder="suku">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                                        <p style="clear: both"></p>
+                                    </form>
                                 </div>
                             @else
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="cv__title mt-3">
+                                        <h2 class="text-center">Data Profile Masih Kosong</h2>
+                                    </div>
+                                </div>
+                            @endif
+                            @if ($gambar_fisik !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
                                     <form action="{{ route('user-store-gambar-fisik') }}" method="POST"
@@ -325,19 +276,15 @@
                                         <p style="clear: both"></p>
                                     </form>
                                 </div>
-                            @endif
-                            @if ($hobi !== null)
-                                <div class="cv__hobi">
-                                    <div class="row">
-                                        <div class="col-lg-10">
-                                            <h4>Hobi dan Kebiasaan</h4>
-                                            <ul style="list-style: none;">
-                                                <li>{{ $hobi->hobi }}</li>
-                                            </ul>
-                                        </div>
+                            @else
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="cv__title mt-3">
+                                        <h2 class="text-center">Data Gambar Fisik Masih Kosong</h2>
                                     </div>
                                 </div>
-                            @else
+
+                            @endif
+                            @if ($hobi !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
                                     <form action="{{ route('user-store-hobi') }}" method="POST"
@@ -359,22 +306,14 @@
                                         <p style="clear: both"></p>
                                     </form>
                                 </div>
-                            @endif
-                            @if ($pendidikan !== null)
-                                <div class="cv__pendidikan">
-                                    <div class="row">
-                                        <div class="col-lg-10">
-                                            <h4>Riwayat Pendidikan</h4>
-                                            <ul style="list-style: none;">
-                                                <li><strong>{{ $pendidikan->sma }}</strong></li>
-                                                <li class="text-muted">{{ $pendidikan->jurusan_sma }}</li>
-                                                <li><strong>{{ $pendidikan->univ }}</strong></li>
-                                                <li class="text-muted">{{ $pendidikan->jurusan_univ }}</li>
-                                            </ul>
-                                        </div>
+                            @else
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="cv__title mt-3">
+                                        <h2 class="text-center">Data Hobi Masih Kosong</h2>
                                     </div>
                                 </div>
-                            @else
+                            @endif
+                            @if ($pendidikan !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
                                     <form action="{{ route('user-store-pendidikan') }}" method="POST"
@@ -431,48 +370,14 @@
                                         <p style="clear: both"></p>
                                     </form>
                                 </div>
-                            @endif
-                            @if ($gambar_diri !== null)
-                                <div class="cv__gambaran__diri">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <h4>Gambaran Diri</h4>
-                                            <table class="table table-borderless table-sm">
-                                                <tbody>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Motto</th>
-                                                        <td class="py-0">: {{ $gambar_diri->moto }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Target Hidup</th>
-                                                        <td class="py-0">: {{ $gambar_diri->target_hidup }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Kegiatan Waktu Luang</th>
-                                                        <td class="py-0">: {{ $gambar_diri->kegiatan_wl }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Hal yang disukai</th>
-                                                        <td class="py-0">: {{ $gambar_diri->hal_disukai }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Sisi Negatif</th>
-                                                        <td class="py-0">: {{ $gambar_diri->sisi_negatif }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Merokok</th>
-                                                        <td class="py-0">: {{ $gambar_diri->merokok }}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                            @else
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="cv__title mt-3">
+                                        <h2 class="text-center">Data Pendidikan Masih Kosong</h2>
                                     </div>
                                 </div>
-                            @else
+                            @endif
+                            @if ($gambar_diri !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
                                     <form action="{{ route('user-store-gambar-diri') }}" method="POST"
@@ -553,40 +458,14 @@
                                         <p style="clear: both"></p>
                                     </form>
                                 </div>
-                            @endif
-                            @if ($kriteria !== null)
-                                <div class="cv__kriteria__pasangan">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <h4>Kriteria Pasangan</h4>
-                                            <table class="table table-borderless table-sm">
-                                                <tbody>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Tinggi Badan</th>
-                                                        <td class="py-0">: {{ $kriteria->tinggi }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Suku</th>
-                                                        <td class="py-0">: {{ $kriteria->suku }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Usia</th>
-                                                        <td class="py-0">: {{ $kriteria->usia }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Pekerjaan</th>
-                                                        <td class="py-0">: {{ $kriteria->pekerjaan }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="py-0" width="25%">Tambahan</th>
-                                                        <td class="py-0">: {{ $kriteria->tambahan }}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                            @else
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="cv__title mt-3">
+                                        <h2 class="text-center">Data Gambaran Diri Masih Kosong</h2>
                                     </div>
                                 </div>
-                            @else
+                            @endif
+                            @if ($kriteria !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
                                     <form action="{{ route('user-store-kriteria') }}" method="POST"
@@ -652,38 +531,14 @@
                                         <p style="clear: both"></p>
                                     </form>
                                 </div>
-                            @endif
-                            @if ($harapan !== null)
-                                <div class="cv__harapan__pernikahan">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <table class="table table-borderless table-sm">
-                                                <h5>Rencana Dalam Pernikahan</h5>
-                                                <tbody>
-                                                    <tr>
-                                                        <th>Visi</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="py-0 text-muted">{{ $harapan->visi }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Misi</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="py-0 text-muted">{{ $harapan->misi }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Karir Masa Depan</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="py-0 text-muted">{{ $harapan->karir }}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                            @else
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="cv__title mt-3">
+                                        <h2 class="text-center">Data Kriteria Masih Kosong</h2>
                                     </div>
                                 </div>
-                            @else
+                            @endif
+                            @if ($harapan !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
                                     <form action="{{ route('user-store-harapan') }}" method="POST"
@@ -727,6 +582,12 @@
                                         <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
                                         <p style="clear: both"></p>
                                     </form>
+                                </div>
+                            @else
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="cv__title mt-3">
+                                        <h2 class="text-center">Data Rencana Dalam Pernikahan Masih Kosong</h2>
+                                    </div>
                                 </div>
                             @endif
                         </div>
