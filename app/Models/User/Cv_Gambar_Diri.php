@@ -22,7 +22,7 @@ class Cv_Gambar_Diri extends Model
 
     protected $hidden = [];
 
-    protected $table = 'cv_profile';
+    protected $table = 'cv_gambar_diri';
 
     public function Cv()
     {
