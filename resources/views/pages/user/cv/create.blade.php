@@ -605,7 +605,37 @@
                                 </div>
                             @endif
                             @if ($kriteria !== null)
-                                ada
+                                <div class="cv__kriteria__pasangan">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <h4>Kriteria Pasangan</h4>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Tinggi Badan</th>
+                                                        <td class="py-0">: {{ $kriteria->tinggi }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Suku</th>
+                                                        <td class="py-0">: {{ $kriteria->suku }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Usia</th>
+                                                        <td class="py-0">: {{ $kriteria->usia }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Pekerjaan</th>
+                                                        <td class="py-0">: {{ $kriteria->pekerjaan }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Tambahan</th>
+                                                        <td class="py-0">: {{ $kriteria->tambahan }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
