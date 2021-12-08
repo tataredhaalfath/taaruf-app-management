@@ -35,4 +35,9 @@ class Cv extends Model
     {
         return $this->hasOne(Cv_Pendidikan::class, 'cv_id', 'id');
     }
+
+    public function Cv_Gambar_Diri()
+    {
+        return $this->hasOne(Cv_Gambar_Diri::class, 'cv_id', 'id');
+    }
 }
