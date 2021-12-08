@@ -604,6 +604,75 @@
                                     </form>
                                 </div>
                             @endif
+                            @if ($kriteria !== null)
+                                ada
+                            @else
+                                <hr>
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <form action="{{ route('user-store-gambar-diri') }}" method="POST"
+                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        @csrf
+                                        <h5>Kriteria Pasangan</h5>
+                                        <input type="hidden" name="cv_id" value="{{ $cv->id }}">
+                                        <div class="form-group">
+                                            <label for="tinggi">Tinggi</label>
+                                            <input type="text" class="form-control @error('tinggi') is-invalid @enderror"
+                                                id="tinggi" name="tinggi" value="{{ old('tinggi') }}"
+                                                placeholder="tinggi">
+                                            @error('tinggi')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="suku">Suku</label>
+                                            <input type="text" class="form-control @error('suku') is-invalid @enderror"
+                                                id="suku" name="suku" value="{{ old('suku') }}" placeholder="suku">
+                                            @error('suku')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="usia">Usia</label>
+                                            <input type="text" class="form-control @error('usia') is-invalid @enderror"
+                                                id="usia" name="usia" value="{{ old('usia') }}" placeholder="usia">
+                                            @error('usia')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pekerjaan">Pekerjaan</label>
+                                            <input type="text"
+                                                class="form-control @error('pekerjaan') is-invalid @enderror"
+                                                id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan') }}"
+                                                placeholder="pekerjaan">
+                                            @error('pekerjaan')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tambahan">Tambahan</label>
+                                            <input type="text" class="form-control @error('tambahan') is-invalid @enderror"
+                                                id="tambahan" name="tambahan" value="{{ old('tambahan') }}"
+                                                placeholder="kriteria lain">
+                                            @error('tambahan')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                                        <p style="clear: both"></p>
+                                    </form>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

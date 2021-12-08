@@ -7,6 +7,7 @@ use App\Models\User\Cv;
 use App\Models\User\Cv_Gambar_Diri;
 use App\Models\User\Cv_Gambar_Fisik;
 use App\Models\User\Cv_Hobi;
+use App\Models\User\Cv_Kriteria;
 use App\Models\User\Cv_Pendidikan;
 use App\Models\User\CvProfile;
 use Illuminate\Http\Request;
@@ -51,6 +52,7 @@ class CvController extends Controller
         $hobi = Cv_Hobi::where('cv_id', $cv->id)->first();
         $pendidikan = Cv_Pendidikan::where('cv_id', $cv->id)->first();
         $gambar_diri = Cv_Gambar_Diri::where('cv_id', $cv->id)->first();
+        $kriteria = Cv_Kriteria::where('cv_id', $cv->id)->first();
         return view('pages.user.cv.create', [
             'cv' => $cv,
             'profile' => $profile,
@@ -58,6 +60,7 @@ class CvController extends Controller
             'hobi' => $hobi,
             'pendidikan' => $pendidikan,
             'gambar_diri' => $gambar_diri,
+            'kriteria' => $kriteria,
         ]);
     }
 
