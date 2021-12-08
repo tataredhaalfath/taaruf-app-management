@@ -87,7 +87,7 @@ class CvController extends Controller
             'tinggi' => 'required|integer',
             'berat' => 'required|integer',
             'riwayat_penyakit' => 'required|max:255',
-            'gologan_darah' => 'required|max:255',
+            'golongan_darah' => 'required|max:255',
             'cacat_fisik' => 'required|max:255',
             'tipe_rambut' => 'required|max:255',
             'warna_mata' => 'required|max:255',

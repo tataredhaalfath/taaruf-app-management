@@ -53,6 +53,8 @@ Route::prefix('user')
         Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');
         Route::get('/cv/create', [CvController::class, 'create'])->name('user-create-cv');
         Route::POST('/cv/profile', [CvController::class, 'profile'])->name('user-store-profile');
+        Route::POST('/cv/gambar-fisik', [CvController::class, 'gambar_fisik'])->name('user-store-gambar-fisik');
+
 
         //menu incoming
         Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');

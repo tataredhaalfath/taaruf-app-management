@@ -188,11 +188,68 @@
                                 </div>
                             @endif
                             @if ($gambar_fisik !== null)
-                                ada
+                                <div class="cv__gambar__fisik">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <h4>Gambaran Fisik</h4>
+                                            <table class="table table-borderless table-sm">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Bentuk Fisik</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->bentuk_fisik }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Warna Kulit</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->warna_kulit }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Tinggi Badan</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->tinggi }} cm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Berat Badan</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->berat }} kg</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Riwayat Penyakit</th>
+                                                        <td class="py-0">:
+                                                            {{ $gambar_fisik->riwayat_penyakit }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Gol.Darah</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->golongan_darah }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Cacat Fisik</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->cacat_fisik }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Tipe Rambut</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->tipe_rambut }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Warna Mata</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->warna_mata }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="py-0" width="25%">Ciri Khas / tanda lahir</th>
+                                                        <td class="py-0">: {{ $gambar_fisik->tanda_lahir }}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-profile') }}" method="POST"
+                                    <form action="{{ route('user-store-gambar-fisik') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
                                         <h5>Gambaran Fisik</h5>
@@ -224,7 +281,7 @@
                                         <div class="form-group">
                                             <label for="tinggi">Tinggi <small>(cm)</small></label>
                                             <input type="number" class="form-control @error('tinggi') is-invalid @enderror"
-                                                id="tinggi" name="tinggi" required value="{{ old('tgl_lagir') }}"
+                                                id="tinggi" name="tinggi" required value="{{ old('tinggi') }}"
                                                 placeholder="tinggi (cm)">
                                             @error('tinggi')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -235,8 +292,7 @@
                                         <div class="form-group">
                                             <label for="berat">Berat <small>(kg)</small></label>
                                             <input type="number" class="form-control @error('berat') is-invalid @enderror"
-                                                id="berat" name="berat (kg)" value="{{ old('berat') }}"
-                                                placeholder="berat">
+                                                id="berat" name="berat" value="{{ old('berat') }}" placeholder="berat">
                                             @error('berat')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -304,7 +360,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="tanda_lahir">Tanda Lahir</label>
+                                            <label for="tanda_lahir">Ciri Khas / Tanda Lahir</label>
                                             <input type="text"
                                                 class="form-control @error('tanda_lahir') is-invalid @enderror"
                                                 id="tanda_lahir" name="tanda_lahir" value="{{ old('tanda_lahir') }}"
