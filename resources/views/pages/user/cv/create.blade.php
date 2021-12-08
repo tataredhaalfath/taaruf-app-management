@@ -410,6 +410,65 @@
                                     </form>
                                 </div>
                             @endif
+                            @if ($pendidikan !== null)
+                                ada
+                            @else
+                                <hr>
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <form action="{{ route('user-store-gambar-fisik') }}" method="POST"
+                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        @csrf
+                                        <h5>Riwayat Pendidikan</h5>
+                                        <div class="form-group">
+                                            <label for="sma">SMA / SMK</label>
+                                            <input type="text" class="form-control @error('sma') is-invalid @enderror"
+                                                id="sma" name="sma" value="{{ old('sma') }}" placeholder="sma / smk">
+                                            @error('sma')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jurusan_sma">Jurusan Sekolah</label>
+                                            <input type="text"
+                                                class="form-control @error('jurusan_sma') is-invalid @enderror"
+                                                id="jurusan_sma" name="jurusan_sma" value="{{ old('jurusan_sma') }}"
+                                                placeholder="jurusan sekolah">
+                                            @error('jurusan_sma')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="univ">Universitas</label>
+                                            <input type="text" class="form-control @error('univ') is-invalid @enderror"
+                                                id="univ" name="univ" value="{{ old('univ') }}"
+                                                placeholder="universitas">
+                                            @error('univ')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jurusan_univ">Jurusan Kuliah</label>
+                                            <input type="text"
+                                                class="form-control @error('jurusan_univ') is-invalid @enderror"
+                                                id="jurusan_univ" name="jurusan_univ" value="{{ old('jurusan_univ') }}"
+                                                placeholder="Jurusan Kuliah">
+                                            @error('jurusan_univ')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                                        <p style="clear: both"></p>
+                                    </form>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

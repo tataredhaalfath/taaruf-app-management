@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User\Cv;
 use App\Models\User\Cv_Gambar_Fisik;
 use App\Models\User\Cv_Hobi;
+use App\Models\User\Cv_Pendidikan;
 use App\Models\User\CvProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,11 +48,13 @@ class CvController extends Controller
         $profile = CvProfile::where('cv_id', $cv->id)->first();
         $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
         $hobi = Cv_Hobi::where('cv_id', $cv->id)->first();
+        $pendidikan = Cv_Pendidikan::where('cv_id', $cv->id)->first();
         return view('pages.user.cv.create', [
             'cv' => $cv,
             'profile' => $profile,
             'gambar_fisik' => $gambar_fisik,
             'hobi' => $hobi,
+            'pendidikan' => $pendidikan,
         ]);
     }
 
