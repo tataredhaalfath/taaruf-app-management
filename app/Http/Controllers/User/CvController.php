@@ -15,6 +15,9 @@ use App\Models\User\UserQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Mockery\Undefined;
+
+use function PHPUnit\Framework\isEmpty;
 
 class CvController extends Controller
 {
@@ -91,6 +94,7 @@ class CvController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //create cv
     public function create()
     {
         $cv = Cv::where('user_id', Auth::user()->id)->first();
@@ -267,11 +271,59 @@ class CvController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    //edit cv
+    public function edit()
     {
-        //
+        $cv = Cv::where('user_id', Auth::user()->id)->first();
+        $profile = CvProfile::where('cv_id', $cv->id)->first();
+        $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
+        $hobi = Cv_Hobi::where('cv_id', $cv->id)->first();
+        $pendidikan = Cv_Pendidikan::where('cv_id', $cv->id)->first();
+        $gambar_diri = Cv_Gambar_Diri::where('cv_id', $cv->id)->first();
+        $kriteria = Cv_Kriteria::where('cv_id', $cv->id)->first();
+        $harapan = Cv_Harapan::where('cv_id', $cv->id)->first();
+        return view('pages.user.cv.edit', [
+            'cv' => $cv,
+            'profile' => $profile,
+            'gambar_fisik' => $gambar_fisik,
+            'hobi' => $hobi,
+            'pendidikan' => $pendidikan,
+            'gambar_diri' => $gambar_diri,
+            'kriteria' => $kriteria,
+            'harapan' => $harapan,
+        ]);
     }
 
+    //update profile
+    public function profile_update(Request $request)
+    {
+
+        $data = $request->all();
+        if ($request->image) {
+            // hapus file image lama
+            unlink(public_path('storage/' . $data['old_image']));
+            //masukan image baru
+            $data['image'] = $request->file('image')->store('assets/cv/img', 'public');
+        }
+        //validasi
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'image' => 'image|max:2000',
+            'nama' => 'required|max:255',
+            'alamat' => 'required|max:254',
+            'tgl_lahir' => 'required|date',
+            'umur' => 'required|integer',
+            'agama' => 'required|max:255',
+            'manhaj' => 'required|max:255',
+            'status' => 'required|max:255',
+            'menikah' => 'required|max:255',
+            'suku' => 'required|max:255'
+        ]);
+        $cv = Cv::where('user_id', Auth::user()->id)->first();
+        $profile = CvProfile::where('cv_id', $cv->id)->first();
+        $profile->update($data);
+        return redirect(route('user-cv'))->with('message', 'Cv Profile Berhasil Di Update');
+    }
     /**
      * Update the specified resource in storage.
      *

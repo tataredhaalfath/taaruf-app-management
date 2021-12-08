@@ -41,7 +41,8 @@
                                                     <td>{{ $cv->slug }}</td>
                                                     <td>{{ Auth::user()->status }}</td>
                                                     <td>
-                                                        <a href="" class="btn btn-warning btn-sm"><i class="fa fa-pen">
+                                                        <a href="{{ route('user-cv-edit') }}"
+                                                            class="btn btn-warning btn-sm"><i class="fa fa-pen">
                                                                 Edit</i></a>
                                                         |
                                                         <a href="{{ route('user-create-cv') }}"
