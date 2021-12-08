@@ -114,7 +114,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="tg_lahir">Tanggal Lahir</label>
+                                            <label for="tinggi">Tanggal Lahir</label>
                                             <input type="date" class="form-control @error('tgl_lahir') is-invalid @enderror"
                                                 id="tgl_lahir" name="tgl_lahir" required value="{{ old('tgl_lagir') }}"
                                                 placeholder="tanggal lahir">
@@ -185,6 +185,145 @@
                                         <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
                                         <p style="clear: both"></p>
                                     </form>
+                                </div>
+                            @endif
+                            @if ($gambar_fisik !== null)
+                                ada
+                            @else
+                                <hr>
+                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <form action="{{ route('user-store-profile') }}" method="POST"
+                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        @csrf
+                                        <h5>Gambaran Fisik</h5>
+                                        <input type="hidden" name="cv_id" value="{{ $cv->id }}">
+                                        <div class="form-group">
+                                            <label for="bentuk_fisik">Bentuk Fisik</label>
+                                            <input type="text"
+                                                class="form-control @error('bentuk_fisik') is-invalid @enderror"
+                                                id="bentuk_fisik" name="bentuk_fisik" value="{{ old('bentuk_fisik') }}"
+                                                placeholder="bentuk fisik">
+                                            @error('bentuk_fisik')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="warna_kulit">Warna Kulit</label>
+                                            <input type="text"
+                                                class="form-control @error('warna_kulit') is-invalid @enderror"
+                                                id="warna_kulit" name="warna_kulit" value="{{ old('warna_kulit') }}"
+                                                placeholder="warna kulit">
+                                            @error('warna_kulit')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tinggi">Tinggi <small>(cm)</small></label>
+                                            <input type="number" class="form-control @error('tinggi') is-invalid @enderror"
+                                                id="tinggi" name="tinggi" required value="{{ old('tgl_lagir') }}"
+                                                placeholder="tinggi (cm)">
+                                            @error('tinggi')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="berat">Berat <small>(kg)</small></label>
+                                            <input type="number" class="form-control @error('berat') is-invalid @enderror"
+                                                id="berat" name="berat (kg)" value="{{ old('berat') }}"
+                                                placeholder="berat">
+                                            @error('berat')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="riwayat_penyakit">Riwayar Penyakit</label>
+                                            <input type="text"
+                                                class="form-control @error('riwayat_penyakit') is-invalid @enderror"
+                                                id="riwayat_penyakit" name="riwayat_penyakit"
+                                                value="{{ old('riwayat_penyakit') }}" placeholder="riwayat_penyakit">
+                                            @error('riwayat penyakit')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="golongan_darah">Golongan Darah</label>
+                                            <input type="text"
+                                                class="form-control @error('golongan_darah') is-invalid @enderror"
+                                                id="golongan_darah" name="golongan_darah"
+                                                value="{{ old('golongan_darah') }}" placeholder="golongan darah">
+                                            @error('golongan_darah')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cacat_fisik">Cacat Fisik</label>
+                                            <input type="text"
+                                                class="form-control @error('cacat_fisik') is-invalid @enderror"
+                                                id="cacat_fisik" name="cacat_fisik" value="{{ old('cacat_fisik') }}"
+                                                placeholder="cacat fisik">
+                                            @error('cacat_fisik')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tipe_rambut">Tipe Rambut</label>
+                                            <input type="text"
+                                                class="form-control @error('tipe_rambut') is-invalid @enderror"
+                                                id="tipe_rambut" name="tipe_rambut" value="{{ old('tipe_rambut') }}"
+                                                placeholder="tipe rambut">
+                                            @error('tipe_rambut')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="warna_mata">Warna Mata</label>
+                                            <input type="text"
+                                                class="form-control @error('warna_mata') is-invalid @enderror"
+                                                id="warna_mata" name="warna_mata" value="{{ old('warna_mata') }}"
+                                                placeholder="warna mata">
+                                            @error('warna_mata')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tanda_lahir">Tanda Lahir</label>
+                                            <input type="text"
+                                                class="form-control @error('tanda_lahir') is-invalid @enderror"
+                                                id="tanda_lahir" name="tanda_lahir" value="{{ old('tanda_lahir') }}"
+                                                placeholder="tanda lahir">
+                                            @error('tanda_lahir')
+                                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="suku">Suku</label>
+                                            <input type="text" class="form-control @error('suku') is-invalid @enderror"
+                                                id="suku" name="suku" value="{{ old('suku') }}" placeholder="suku">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                                        <p style="clear: both"></p>
+                                    </form>
+                                </div>
                             @endif
                         </div>
                     </div>

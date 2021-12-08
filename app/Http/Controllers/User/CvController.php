@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User\Cv;
+use App\Models\User\Cv_Gambar_Fisik;
 use App\Models\User\CvProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,9 +44,11 @@ class CvController extends Controller
     {
         $cv = Cv::where('user_id', Auth::user()->id)->first();
         $profile = CvProfile::where('cv_id', $cv->id)->first();
+        $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
         return view('pages.user.cv.create', [
             'cv' => $cv,
-            'profile' => $profile
+            'profile' => $profile,
+            'gambar_fisik' => $gambar_fisik,
         ]);
     }
 
@@ -72,6 +75,7 @@ class CvController extends Controller
         CvProfile::create($data);
         return redirect()->route('user-create-cv');
     }
+
     /**
      * Store a newly created resource in storage.
      *
