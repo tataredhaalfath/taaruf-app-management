@@ -158,6 +158,23 @@ class CvController extends Controller
         Cv_Gambar_Diri::create($data);
         return redirect()->route('user-create-cv');
     }
+
+    //store kriteria
+    public function kriteria(Request $request)
+    {
+        $data = $request->all();
+        //validasi
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'tinggi' => 'required|max:255',
+            'suku' => 'required|max:255',
+            'usia' => 'required|max:255',
+            'pekerjaan' => 'required|max:255',
+            'tambahan' => 'required|max:255',
+        ]);
+        Cv_Kriteria::create($data);
+        return redirect()->route('user-create-cv');
+    }
     /**
      * Store a newly created resource in storage.
      *
