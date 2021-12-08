@@ -703,6 +703,11 @@
                                     </form>
                                 </div>
                             @endif
+                            @if ($harapan !== null)
+                                ada
+                            @else
+                                kosong
+                            @endif
                         </div>
                     </div>
                 </div>

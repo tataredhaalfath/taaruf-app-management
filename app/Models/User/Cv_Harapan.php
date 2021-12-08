@@ -12,6 +12,9 @@ class Cv_Harapan extends Model
 
     protected $fillable = [
         'cv_id',
+        'visi',
+        'misi',
+        'karir',
 
     ];
 
