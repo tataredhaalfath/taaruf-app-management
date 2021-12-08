@@ -315,11 +315,6 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                        <div class="form-group">
-                                            <label for="suku">Suku</label>
-                                            <input type="text" class="form-control @error('suku') is-invalid @enderror"
-                                                id="suku" name="suku" value="{{ old('suku') }}" placeholder="suku">
-                                        </div>
                                         <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
                                         <p style="clear: both"></p>
                                     </form>

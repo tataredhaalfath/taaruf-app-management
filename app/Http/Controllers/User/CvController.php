@@ -76,6 +76,28 @@ class CvController extends Controller
         return redirect()->route('user-create-cv');
     }
 
+    //store gambar fisik
+    public function gambar_fisik(Request $request)
+    {
+        $data = $request->all();
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'bentuk_fisik' => 'required|max:255',
+            'warna_kulit' => 'required|max:254',
+            'tinggi' => 'required|integer',
+            'berat' => 'required|integer',
+            'riwayat_penyakit' => 'required|max:255',
+            'gologan_darah' => 'required|max:255',
+            'cacat_fisik' => 'required|max:255',
+            'tipe_rambut' => 'required|max:255',
+            'warna_mata' => 'required|max:255',
+            'tanda_lahir' => 'required|max:255',
+        ]);
+
+        Cv_Gambar_Fisik::create($data);
+        return redirect()->route('user-create-cv');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
