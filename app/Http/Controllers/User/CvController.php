@@ -52,8 +52,23 @@ class CvController extends Controller
     //store profile
     public function profile(Request $request)
     {
+
         $data = $request->all();
         $data['image'] = $request->file('image')->store('assets/cv/img', 'public');
+        //validasi
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'image' => 'required|image|max:2000',
+            'nama' => 'required|max:255',
+            'alamat' => 'required|max:254',
+            'tgl_lahir' => 'required|date',
+            'umur' => 'required|integer',
+            'agama' => 'required|max:255',
+            'manhaj' => 'required|max:255',
+            'status' => 'required|max:255',
+            'menikah' => 'required|max:255',
+            'suku' => 'required|max:255'
+        ]);
         CvProfile::create($data);
         return redirect()->route('user-create-cv');
     }
