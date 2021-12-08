@@ -26,7 +26,7 @@ class Cv_Gambar_Fisik extends Model
 
     protected $hidden = [];
 
-    protected $table = 'cv_profile';
+    protected $table = 'cv_gambar_fisik';
 
     public function cv_profile()
     {
