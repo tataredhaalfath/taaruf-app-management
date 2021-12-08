@@ -708,7 +708,7 @@
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-kriteria') }}" method="POST"
+                                    <form action="{{ route('user-store-harapan') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
                                         <h5>Rencana Dalam Pernikahan</h5>
@@ -716,7 +716,7 @@
                                         <div class="form-group">
                                             <label for="visi">Visi</label>
                                             <input type="text" class="form-control @error('visi') is-invalid @enderror"
-                                                id="visi" name="visi dalam pernikahan" value="{{ old('visi') }}"
+                                                id="visi" name="visi" value="{{ old('visi') }}"
                                                 placeholder="visi dalam pernikahan">
                                             @error('visi')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">

@@ -47,7 +47,9 @@ Route::prefix('user')
     ->namespace('User')
     ->middleware(['auth', 'user'])
     ->group(function () {
+        //dashboard user
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user-dashboard');
+
         //menu cv
         Route::get('/cv', [CvController::class, 'index'])->name('user-cv');
         Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');
@@ -58,10 +60,7 @@ Route::prefix('user')
         Route::POST('/cv/pendidikan', [CvController::class, 'pendidikan'])->name('user-store-pendidikan');
         Route::POST('/cv/gambar-diri', [CvController::class, 'gambar_diri'])->name('user-store-gambar-diri');
         Route::POST('/cv/kriteria', [CvController::class, 'kriteria'])->name('user-store-kriteria');
-
-
-
-
+        Route::POST('/cv/harapan', [CvController::class, 'harapan'])->name('user-store-harapan');
 
         //menu incoming
         Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');

@@ -178,6 +178,21 @@ class CvController extends Controller
         Cv_Kriteria::create($data);
         return redirect()->route('user-create-cv');
     }
+
+    //store harapan 
+    public function harapan(Request $request)
+    {
+        $data = $request->all();
+        //validasi
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'visi' => 'required|max:255',
+            'misi' => 'required|max:255',
+            'karir' => 'required|max:255',
+        ]);
+        Cv_Harapan::create($data);
+        return redirect()->route('user-create-cv');
+    }
     /**
      * Store a newly created resource in storage.
      *
