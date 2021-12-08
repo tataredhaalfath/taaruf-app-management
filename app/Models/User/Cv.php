@@ -25,4 +25,9 @@ class Cv extends Model
     {
         return $this->hasOne(Cv_Gambar_Fisik::class, 'cv_id', 'id');
     }
+
+    public function Cv_Hobi()
+    {
+        return $this->hasOne(Cv_Hobi::class, 'cv_id', 'id');
+    }
 }
