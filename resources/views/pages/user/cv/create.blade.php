@@ -381,7 +381,7 @@
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-gambar-fisik') }}" method="POST"
+                                    <form action="{{ route('user-store-hobi') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
                                         <h5>Hobi</h5>

@@ -54,6 +54,7 @@ Route::prefix('user')
         Route::get('/cv/create', [CvController::class, 'create'])->name('user-create-cv');
         Route::POST('/cv/profile', [CvController::class, 'profile'])->name('user-store-profile');
         Route::POST('/cv/gambar-fisik', [CvController::class, 'gambar_fisik'])->name('user-store-gambar-fisik');
+        Route::POST('/cv/hobi', [CvController::class, 'hobi'])->name('user-store-hobi');
 
 
         //menu incoming

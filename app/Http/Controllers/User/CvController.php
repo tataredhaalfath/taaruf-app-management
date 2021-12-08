@@ -83,6 +83,7 @@ class CvController extends Controller
     public function gambar_fisik(Request $request)
     {
         $data = $request->all();
+        //validasi
         $request->validate([
             'cv_id' => 'required|integer',
             'bentuk_fisik' => 'required|max:255',
@@ -102,7 +103,17 @@ class CvController extends Controller
     }
 
     //store hobi
-
+    public function hobi(Request $request)
+    {
+        $data = $request->all();
+        //validasi
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'hobi' => 'required|max:255'
+        ]);
+        Cv_Hobi::create($data);
+        return redirect()->route('user-create-cv');
+    }
     /**
      * Store a newly created resource in storage.
      *
