@@ -377,7 +377,16 @@
                                 </div>
                             @endif
                             @if ($hobi !== null)
-                                ada
+                                <div class="cv__hobi">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <h4>Hobi dan Kebiasaan</h4>
+                                            <ul style="list-style: none;">
+                                                <li>{{ $hobi->hobi }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             @else
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">

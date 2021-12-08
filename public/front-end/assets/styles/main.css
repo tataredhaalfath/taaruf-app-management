@@ -248,6 +248,7 @@ main .section__detail__content .detail__cv .cv__profile .profile__detail p {
 }
 
 main .section__detail__content .detail__cv .cv__gambar__fisik,
+main .section__detail__content .detail__cv .cv__hobi,
 main .section__detail__content .detail__cv .cv__pendidikan,
 main .section__detail__content .detail__cv .cv__gambaran__diri,
 main .section__detail__content .detail__cv .cv__kriteria__pasangan,
@@ -256,6 +257,7 @@ main .section__detail__content .detail__cv .cv__harapan__pernikahan {
 }
 
 main .section__detail__content .detail__cv .cv__gambar__fisik p,
+main .section__detail__content .detail__cv .cv__hobi p,
 main .section__detail__content .detail__cv .cv__pendidikan p,
 main .section__detail__content .detail__cv .cv__gambaran__diri p,
 main .section__detail__content .detail__cv .cv__kriteria__pasangan p,

@@ -126,7 +126,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="cv__gambar__fisik">
+                            <div class="cv__hobi">
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <h4>Hobi dan Kebiasaan</h4>
