@@ -64,6 +64,8 @@ Route::prefix('user')
         //menu cv - question
         Route::GET('/cv/question', [CvController::class, 'question_edit'])->name('user-question-edit');
         Route::POST('/cv/question', [CvController::class, 'question'])->name('user-question');
+        Route::POST('/cv/question/upate', [CvController::class, 'question_update'])->name('user-question-update');
+
 
         //menu incoming
         Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');

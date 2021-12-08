@@ -70,6 +70,22 @@ class CvController extends Controller
         ]);
     }
 
+    //update question
+    public function question_update(Request $request)
+    {
+        $data = $request->all();
+        //validasi
+        $request->validate([
+            'user_id' => 'required|integer',
+            'pertanyaan_1' => 'required|max:255',
+            'pertanyaan_2' => 'required|max:255',
+            'pertanyaan_3' => 'required|max:255',
+        ]);
+
+        $question = UserQuestion::findOrFail(Auth::user()->id);
+        $question->update($data);
+        return redirect(route('user-cv'))->with('message', 'Pertanyaan Berhasil Diedit');
+    }
     /**
      * Show the form for creating a new resource.
      *

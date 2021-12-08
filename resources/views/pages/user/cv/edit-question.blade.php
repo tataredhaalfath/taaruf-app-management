@@ -22,7 +22,7 @@
 
                             <div class="row my-3">
                                 <div class="col-lg-12 col-md-10" style="border: 1px solid #dedede;">
-                                    <form action="{{ route('user-question-store') }}" method="POST"
+                                    <form action="{{ route('user-question-update') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
                                         <h5>Buat 3 Pertanyaan Taaruf</h5>
