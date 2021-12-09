@@ -26,39 +26,25 @@
                                         <tbody>
                                             <tr class="text-center">
                                                 <th>No</th>
-                                                <th>Nama</th>
+                                                <th>Incoming ID</th>
                                                 <th>Tanggal</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
-                                            <tr class="text-center">
-                                                <td>1</td>
-                                                <td>Riska Soekanti</td>
-                                                <td>12/09/201</td>
-                                                <td>Mengajukan</td>
-                                                <td><a href="incoming-cv-detail.html" class="btn-cta">Detail</a></td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>2</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>3</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>4</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
+                                            @forelse  ($incoming as $in)
+                                                <tr class="text-center">
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $in->id }}</td>
+                                                    <td>{{ date('d-m-Y', strtotime($in->created_at)) }}</td>
+                                                    <td>Mengajukan</td>
+                                                    <td><a href="incoming-cv-detail.html" class="btn-cta">Detail</a>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                                <tr class="text-center">
+                                                    <td colspan="5">BELUM ADA PERMINTAAN TAARUF MASUK</td>
+                                                </tr>
+                                            @endforelse
                                         </tbody>
                                     </table>
                                 </div>

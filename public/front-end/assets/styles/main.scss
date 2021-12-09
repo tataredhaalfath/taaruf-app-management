@@ -206,7 +206,9 @@ main {
         &.user__page__content {
             background-color: #e4e6eb;
             &.incoming,
-            &.approve {
+            &.approve,
+            &.dashboard,
+            &cv {
                 min-height: 80vh;
             }
         }

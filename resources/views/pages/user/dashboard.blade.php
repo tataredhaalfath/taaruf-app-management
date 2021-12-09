@@ -7,7 +7,7 @@
         <section class="section__detail__header">
         </section>
 
-        <section class="section__detail__content user__page__content">
+        <section class="section__detail__content user__page__content dashboard">
             <div class="container">
                 <div class="row">
                     <div class="col-0">
@@ -25,14 +25,14 @@
                                 <!-- Page Heading -->
                                 <div class="d-sm-flex align-items-center justify-content-between my-4">
                                     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                                    <p>Selamat Datang {{ Auth::user()->name }}</p>
+                                    <p class="text-muted">Selamat Datang <span
+                                            class="text-uppercase">{{ Auth::user()->name }}</span></p>
                                 </div>
                                 <!-- Content Row -->
                                 <div class="row">
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-primary shadow h-100 py-2" style="                                                     
-                                                                @if ($user->status ==
-                                            'PENDING')
+                                         @if ($user->status == 'PENDING')
                                             background: orange;
                                         @elseif ($user->status == 'ACTIVE')
                                             background: green;
@@ -55,11 +55,11 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-success shadow h-100 py-2" style="
-                                                                @if ($taaruf_sent < 1)
-                                            background: orange;
-                                        @else
+                                                                      @if ($taaruf_sent>
+                                            0)
                                             background: blue;
-                                            @endif color:white">
+                                            color:white
+                                            @endif">
                                             <div class="card-body">
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
@@ -79,11 +79,11 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-info shadow h-100 py-2" style="
-                                                                @if ($incoming < 1)
-                                            background: orange;
-                                        @else
+                                                                           @if ($incoming>
+                                            0)
                                             background: blue;
-                                            @endif color:white">
+                                            color:white;
+                                            @endif">
                                             <div class="card-body">
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">

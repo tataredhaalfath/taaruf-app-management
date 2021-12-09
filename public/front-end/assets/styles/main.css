@@ -215,7 +215,7 @@ main .section__detail__content.user__page__content {
   background-color: #e4e6eb;
 }
 
-main .section__detail__content.user__page__content.incoming, main .section__detail__content.user__page__content.approve {
+main .section__detail__content.user__page__content.incoming, main .section__detail__content.user__page__content.approve, main .section__detail__content.user__page__content.dashboard, main .section__detail__content.user__page__contentcv {
   min-height: 80vh;
 }
 
