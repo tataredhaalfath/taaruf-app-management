@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\CvGambarDiriRequest;
 use App\Http\Requests\User\CvGambarFisikRequest;
 use App\Http\Requests\User\CvHobiRequest;
 use App\Http\Requests\User\CvPendidikanRequest;
@@ -146,19 +147,9 @@ class CvController extends Controller
     }
 
     //store gambaran diri
-    public function gambar_diri(Request $request)
+    public function gambar_diri(CvGambarDiriRequest $request)
     {
         $data = $request->all();
-        //validasi
-        $request->validate([
-            'cv_id' => 'required|integer',
-            'moto' => 'required|max:255',
-            'target_hidup' => 'required|max:255',
-            'kegiatan_wl' => 'required|max:255',
-            'hal_disukai' => 'required|max:255',
-            'sisi_negatif' => 'required|max:255',
-            'merokok' => 'required|max:255',
-        ]);
 
         Cv_Gambar_Diri::create($data);
         return redirect()->route('user-create-cv');
