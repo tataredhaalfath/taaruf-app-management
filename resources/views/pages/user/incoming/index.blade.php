@@ -37,7 +37,8 @@
                                                     <td>{{ $in->id }}</td>
                                                     <td>{{ date('d-m-Y', strtotime($in->created_at)) }}</td>
                                                     <td>Mengajukan</td>
-                                                    <td><a href="incoming-cv-detail.html" class="btn-cta">Detail</a>
+                                                    <td><a href="{{ route('user-incoming-detail', $in->id) }}"
+                                                            class="btn-cta">Detail</a>
                                                     </td>
                                                 </tr>
                                             @empty
