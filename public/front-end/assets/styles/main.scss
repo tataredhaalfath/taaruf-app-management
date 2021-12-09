@@ -218,6 +218,14 @@ main {
             background-color: transparent;
             line-height: 100px;
         }
+        .user__dashboard {
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            border-radius: 8px;
+            background-color: #ffffff;
+            margin-bottom: 30px;
+            padding: 20px 50px;
+        }
         .detail__cv {
             border: 2px solid rgba(0, 0, 0, 0.1);
             box-sizing: border-box;

@@ -28,7 +28,7 @@
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
                     <i class="fas fa-paper-plane mr-2"></i>
-                    <a href="cv-sent.html" class="text-dark">CV Sent</a>
+                    <a href="cv-sent.html" class="text-dark">Ta'aruf Sent</a>
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
                     @if (Route::current()->getName() == 'user-incoming')
@@ -50,7 +50,7 @@
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
                     <i class="fas fa-file-excel mr-2"></i>
-                    <a href="rejected.html" class="text-dark">Rejected CV</a>
+                    <a href="rejected.html" class="text-dark">Ta'aruf Rejected</a>
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
                     <form action="{{ url('logout') }}" method="POST">
