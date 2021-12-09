@@ -144,6 +144,11 @@ main {
         box-sizing: border-box;
         border-radius: 8px;
         margin-bottom: 40px;
+
+        .nav_menu:hover,
+        .nav_menu a:hover {
+            color: blue;
+        }
     }
 
     .content {

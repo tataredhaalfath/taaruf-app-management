@@ -53,8 +53,8 @@
                                                 <tr>
                                                     <td colspan="3">
                                                         Ajukan CV ke admin untuk di review <br> <small
-                                                            class="text-muted">Pastikan semua data di cv sudah
-                                                            lengkap</small>
+                                                            class="text-muted">Pastikan semua data di cv dan 3
+                                                            pertanyaan sudah lengkap</small>
                                                     </td>
                                                     @if ($pengajuan_cv !== null)
 

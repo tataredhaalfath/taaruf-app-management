@@ -153,6 +153,11 @@ main aside h5 {
   font-weight: 400;
 }
 
+main aside .nav_menu:hover,
+main aside .nav_menu a:hover {
+  color: blue;
+}
+
 main .content .card {
   height: 370px !important;
   width: 250px !important;
