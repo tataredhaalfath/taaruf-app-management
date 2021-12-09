@@ -552,15 +552,16 @@
                             @if ($harapan !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-harapan') }}" method="POST"
+                                    <form action="{{ route('user-update-harapan') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
+                                        @method('PUT')
                                         <h5>Rencana Dalam Pernikahan</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
                                         <div class="form-group">
                                             <label for="visi">Visi</label>
                                             <input type="text" class="form-control @error('visi') is-invalid @enderror"
-                                                id="visi" name="visi" value="{{ old('visi') }}"
+                                                id="visi" name="visi" value="{{ $harapan->visi }}"
                                                 placeholder="visi dalam pernikahan">
                                             @error('visi')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -571,7 +572,7 @@
                                         <div class="form-group">
                                             <label for="misi">Misi</label>
                                             <input type="text" class="form-control @error('misi') is-invalid @enderror"
-                                                id="misi" name="misi" value="{{ old('misi') }}"
+                                                id="misi" name="misi" value="{{ $harapan->misi }}"
                                                 placeholder="misi dalam pernikahan">
                                             @error('misi')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -582,7 +583,7 @@
                                         <div class="form-group">
                                             <label for="karir">Rencana Karir</label>
                                             <input type="text" class="form-control @error('karir') is-invalid @enderror"
-                                                id="karir" name="karir" value="{{ old('karir') }}"
+                                                id="karir" name="karir" value="{{ $harapan->karir }}"
                                                 placeholder="rencana karir setelah menikah">
                                             @error('karir')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
