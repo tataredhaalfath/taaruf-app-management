@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\CvGambarDiriRequest;
 use App\Http\Requests\User\CvGambarFisikRequest;
 use App\Http\Requests\User\CvHobiRequest;
+use App\Http\Requests\User\CvKriteriaRequest;
 use App\Http\Requests\User\CvPendidikanRequest;
 use App\Http\Requests\User\CvProfileRequest;
 use App\Http\Requests\User\CvRequest;
@@ -156,18 +157,10 @@ class CvController extends Controller
     }
 
     //store kriteria
-    public function kriteria(Request $request)
+    public function kriteria(CvKriteriaRequest $request)
     {
         $data = $request->all();
-        //validasi
-        $request->validate([
-            'cv_id' => 'required|integer',
-            'tinggi' => 'required|max:255',
-            'suku' => 'required|max:255',
-            'usia' => 'required|max:255',
-            'pekerjaan' => 'required|max:255',
-            'tambahan' => 'required|max:255',
-        ]);
+
         Cv_Kriteria::create($data);
         return redirect()->route('user-create-cv');
     }
