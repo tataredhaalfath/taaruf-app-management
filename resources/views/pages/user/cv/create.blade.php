@@ -85,7 +85,7 @@
                                         <div class="form-group">
                                             <label for="image">Image <small>(max 2mb)</small></label>
                                             <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                                id="image" name="image" placeholder="image">
+                                                id="image" name="image" placeholder="image" required>
                                             @error('image')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
