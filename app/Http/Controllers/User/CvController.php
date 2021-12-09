@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\CvRequest;
 use App\Models\User\Cv;
 use App\Models\User\Cv_Gambar_Diri;
 use App\Models\User\Cv_Gambar_Fisik;
@@ -37,15 +38,11 @@ class CvController extends Controller
     }
 
     //store cv
-    public function storecv(Request $request)
+    public function storecv(CvRequest $request)
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->slug);
-        //validasi
-        $request->validate([
-            'user_id' => 'required|integer',
-            'slug' => 'required',
-        ]);
+
         CV::create($data);
         return redirect(route('user-cv'))->with('message', 'CV Berhasil Dibuat');
     }
