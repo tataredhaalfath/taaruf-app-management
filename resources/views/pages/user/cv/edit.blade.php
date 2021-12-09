@@ -290,15 +290,16 @@
                             @if ($hobi !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-hobi') }}" method="POST"
+                                    <form action="{{ route('user-update-hobi') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
+                                        @method('PUT')
                                         <h5>Hobi</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
                                         <div class="form-group">
                                             <label for="hobi">Hobi</label>
                                             <input type="text" class="form-control @error('hobi') is-invalid @enderror"
-                                                id="hobi" name="hobi" value="{{ old('hobi') }}" placeholder="hobi">
+                                                id="hobi" name="hobi" value="{{ $hobi->hobi }}" placeholder="hobi">
                                             @error('hobi')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}

@@ -254,6 +254,17 @@ class CvController extends Controller
         return redirect(route('user-cv'))->with('message', 'Cv Gambar Fisik Berhasil Di Update');
     }
 
+    //update hobi
+    public function hobi_update(CvHobiRequest $request)
+    {
+        $data = $request->all();
+
+        $cv = Cv::where('user_id', Auth::user()->id)->first();
+        $hobi = Cv_Hobi::where('cv_id', $cv->id)->first();
+        $hobi->update($data);
+        return redirect(route('user-cv'))->with('message', 'Cv Hobi Berhasil Di Update');
+    }
+
     /**
      * Update the specified resource in storage.
      *
