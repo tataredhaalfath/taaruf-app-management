@@ -18,4 +18,9 @@ class UserQuestion extends Model
     ];
 
     protected $hidden = [];
+
+    public function Pengajuan_Cv()
+    {
+        return $this->hasOne(Pengajuan_Cv::class, 'question_id', 'id');
+    }
 }

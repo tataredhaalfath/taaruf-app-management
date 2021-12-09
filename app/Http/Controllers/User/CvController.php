@@ -11,6 +11,7 @@ use App\Http\Requests\User\CvKriteriaRequest;
 use App\Http\Requests\User\CvPendidikanRequest;
 use App\Http\Requests\User\CvProfileRequest;
 use App\Http\Requests\User\CvRequest;
+use App\Http\Requests\User\PengajuanRequest;
 use App\Http\Requests\User\UserQuestionRequest;
 use App\Models\User\Cv;
 use App\Models\User\Cv_Gambar_Diri;
@@ -20,6 +21,7 @@ use App\Models\User\Cv_Hobi;
 use App\Models\User\Cv_Kriteria;
 use App\Models\User\Cv_Pendidikan;
 use App\Models\User\CvProfile;
+use App\Models\User\Pengajuan_Cv;
 use App\Models\User\UserQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,9 +41,25 @@ class CvController extends Controller
     {
         $cv = Cv::where('user_id', Auth::user()->id)->first();
         $question = UserQuestion::where('user_id', Auth::user()->id)->first();
+        $profile = CvProfile::where('cv_id', $cv->id)->first();
+        $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
+        $hobi = Cv_Hobi::where('cv_id', $cv->id)->first();
+        $pendidikan = Cv_Pendidikan::where('cv_id', $cv->id)->first();
+        $gambar_diri = Cv_Gambar_Diri::where('cv_id', $cv->id)->first();
+        $kriteria = Cv_Kriteria::where('cv_id', $cv->id)->first();
+        $harapan = Cv_Harapan::where('cv_id', $cv->id)->first();
+        $pengajuan_cv = Pengajuan_Cv::where('cv_id', $cv->id)->first();
         return view('pages.user.cv.index', [
             'cv' => $cv,
             'question' => $question,
+            'profile' => $profile,
+            'gambar_fisik' => $gambar_fisik,
+            'hobi' => $hobi,
+            'pendidikan' => $pendidikan,
+            'gambar_diri' => $gambar_diri,
+            'kriteria' => $kriteria,
+            'harapan' => $harapan,
+            'pengajuan_cv' => $pengajuan_cv,
         ]);
     }
 
@@ -307,6 +325,15 @@ class CvController extends Controller
         $harapan = Cv_Harapan::where('cv_id', $cv->id)->first();
         $harapan->update($data);
         return redirect(route('user-cv'))->with('message', 'Cv Harapan Berhasil Di Update');
+    }
+
+
+    //mengajukan cv
+    public function pengajuan_cv(PengajuanRequest $request)
+    {
+        $data = $request->all();
+        Pengajuan_Cv::create($data);
+        return redirect(route('user-cv'))->with('message', 'Cv Berhasil Diajukan. Mohon mengunggu proses review dari admin');
     }
     /**
      * Update the specified resource in storage.

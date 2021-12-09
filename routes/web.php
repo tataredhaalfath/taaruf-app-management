@@ -70,11 +70,12 @@ Route::prefix('user')
         Route::PUT('/cv/gambar-diri', [CvController::class, 'gambar_diri_update'])->name('user-update-gambar-diri');
         Route::PUT('/cv/kriteria', [CvController::class, 'kriteria_update'])->name('user-update-kriteria');
         Route::PUT('/cv/harapan', [CvController::class, 'harapan_update'])->name('user-update-harapan');
-
         //menu cv - question
         Route::GET('/cv/question', [CvController::class, 'question_edit'])->name('user-question-edit');
         Route::POST('/cv/question', [CvController::class, 'question'])->name('user-question');
         Route::POST('/cv/question/upate', [CvController::class, 'question_update'])->name('user-question-update');
+        //pengajuan cv untuk di review
+        Route::POST('/cv/pengajuan', [CvController::class, 'pengajuan_cv'])->name('user-cv-pengajuan');
 
 
         //menu incoming
