@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\CvGambarFisikRequest;
+use App\Http\Requests\User\CvHobiRequest;
 use App\Http\Requests\User\CvProfileRequest;
 use App\Http\Requests\User\CvRequest;
 use App\Http\Requests\User\UserQuestionRequest;
@@ -126,14 +127,10 @@ class CvController extends Controller
     }
 
     //store hobi
-    public function hobi(Request $request)
+    public function hobi(CvHobiRequest $request)
     {
         $data = $request->all();
-        //validasi
-        $request->validate([
-            'cv_id' => 'required|integer',
-            'hobi' => 'required|max:255'
-        ]);
+
         Cv_Hobi::create($data);
         return redirect()->route('user-create-cv');
     }
