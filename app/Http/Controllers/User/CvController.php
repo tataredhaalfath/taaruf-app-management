@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\CvGambarDiriRequest;
 use App\Http\Requests\User\CvGambarFisikRequest;
+use App\Http\Requests\User\CvHarapanRequest;
 use App\Http\Requests\User\CvHobiRequest;
 use App\Http\Requests\User\CvKriteriaRequest;
 use App\Http\Requests\User\CvPendidikanRequest;
@@ -166,16 +167,10 @@ class CvController extends Controller
     }
 
     //store harapan 
-    public function harapan(Request $request)
+    public function harapan(CvHarapanRequest $request)
     {
         $data = $request->all();
-        //validasi
-        $request->validate([
-            'cv_id' => 'required|integer',
-            'visi' => 'required|max:255',
-            'misi' => 'required|max:255',
-            'karir' => 'required|max:255',
-        ]);
+
         Cv_Harapan::create($data);
         return redirect()->route('user-create-cv');
     }
