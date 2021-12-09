@@ -265,6 +265,17 @@ class CvController extends Controller
         return redirect(route('user-cv'))->with('message', 'Cv Hobi Berhasil Di Update');
     }
 
+    //update Riwayat Pendidikan
+    public function pendidikan_update(CvPendidikanRequest $request)
+    {
+        $data = $request->all();
+
+        $cv = Cv::where('user_id', Auth::user()->id)->first();
+        $pendidikan = Cv_Pendidikan::where('cv_id', $cv->id)->first();
+        $pendidikan->update($data);
+        return redirect(route('user-cv'))->with('message', 'Cv Pendidikan Berhasil Di Update');
+    }
+
     /**
      * Update the specified resource in storage.
      *

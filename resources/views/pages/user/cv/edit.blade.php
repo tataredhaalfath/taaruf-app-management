@@ -320,15 +320,17 @@
                             @if ($pendidikan !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-pendidikan') }}" method="POST"
+                                    <form action="{{ route('user-update-pendidikan') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
+                                        @method('PUT')
                                         <h5>Riwayat Pendidikan</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
                                         <div class="form-group">
                                             <label for="sma">SMA / SMK</label>
                                             <input type="text" class="form-control @error('sma') is-invalid @enderror"
-                                                id="sma" name="sma" value="{{ old('sma') }}" placeholder="sma / smk">
+                                                id="sma" name="sma" value="{{ $pendidikan->sma }}"
+                                                placeholder="sma / smk">
                                             @error('sma')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -339,8 +341,8 @@
                                             <label for="jurusan_sma">Jurusan Sekolah</label>
                                             <input type="text"
                                                 class="form-control @error('jurusan_sma') is-invalid @enderror"
-                                                id="jurusan_sma" name="jurusan_sma" value="{{ old('jurusan_sma') }}"
-                                                placeholder="jurusan sekolah">
+                                                id="jurusan_sma" name="jurusan_sma"
+                                                value="{{ $pendidikan->jurusan_sma }}" placeholder="jurusan sekolah">
                                             @error('jurusan_sma')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -350,7 +352,7 @@
                                         <div class="form-group">
                                             <label for="univ">Universitas</label>
                                             <input type="text" class="form-control @error('univ') is-invalid @enderror"
-                                                id="univ" name="univ" value="{{ old('univ') }}"
+                                                id="univ" name="univ" value="{{ $pendidikan->univ }}"
                                                 placeholder="universitas">
                                             @error('univ')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -362,8 +364,8 @@
                                             <label for="jurusan_univ">Jurusan Kuliah</label>
                                             <input type="text"
                                                 class="form-control @error('jurusan_univ') is-invalid @enderror"
-                                                id="jurusan_univ" name="jurusan_univ" value="{{ old('jurusan_univ') }}"
-                                                placeholder="Jurusan Kuliah">
+                                                id="jurusan_univ" name="jurusan_univ"
+                                                value="{{ $pendidikan->jurusan_univ }}" placeholder="Jurusan Kuliah">
                                             @error('jurusan_univ')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}

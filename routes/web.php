@@ -66,6 +66,7 @@ Route::prefix('user')
         Route::PUT('/cv/profile/', [CvController::class, 'profile_update'])->name('user-update-profile');
         Route::PUT('/cv/gambar-fisik', [CvController::class, 'gambar_fisik_update'])->name('user-update-gambar-fisik');
         Route::PUT('/cv/hobi', [CvController::class, 'hobi_update'])->name('user-update-hobi');
+        Route::PUT('/cv/pendidikan', [CvController::class, 'pendidikan_update'])->name('user-update-pendidikan');
 
         //menu cv - question
         Route::GET('/cv/question', [CvController::class, 'question_edit'])->name('user-question-edit');
