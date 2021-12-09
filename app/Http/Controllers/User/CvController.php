@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\CvRequest;
+use App\Http\Requests\User\UserQuestionRequest;
 use App\Models\User\Cv;
 use App\Models\User\Cv_Gambar_Diri;
 use App\Models\User\Cv_Gambar_Fisik;
@@ -47,16 +48,10 @@ class CvController extends Controller
         return redirect(route('user-cv'))->with('message', 'CV Berhasil Dibuat');
     }
     //store question
-    public function question(Request $request)
+    public function question(UserQuestionRequest $request)
     {
         $data = $request->all();
-        //validasi
-        $request->validate([
-            'user_id' => 'required|integer',
-            'pertanyaan_1' => 'required|max:255',
-            'pertanyaan_2' => 'required|max:255',
-            'pertanyaan_3' => 'required|max:255',
-        ]);
+
         UserQuestion::create($data);
         return redirect(route('user-cv'))->with('message', 'Pertanyaan Berhasil Dibuat');
     }
