@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\CvGambarFisikRequest;
 use App\Http\Requests\User\CvProfileRequest;
 use App\Http\Requests\User\CvRequest;
 use App\Http\Requests\User\UserQuestionRequest;
@@ -115,23 +116,10 @@ class CvController extends Controller
     }
 
     //store gambar fisik
-    public function gambar_fisik(Request $request)
+    public function gambar_fisik(CvGambarFisikRequest $request)
     {
         $data = $request->all();
-        //validasi
-        $request->validate([
-            'cv_id' => 'required|integer',
-            'bentuk_fisik' => 'required|max:255',
-            'warna_kulit' => 'required|max:254',
-            'tinggi' => 'required|integer',
-            'berat' => 'required|integer',
-            'riwayat_penyakit' => 'required|max:255',
-            'golongan_darah' => 'required|max:255',
-            'cacat_fisik' => 'required|max:255',
-            'tipe_rambut' => 'required|max:255',
-            'warna_mata' => 'required|max:255',
-            'tanda_lahir' => 'required|max:255',
-        ]);
+
 
         Cv_Gambar_Fisik::create($data);
         return redirect()->route('user-create-cv');
@@ -286,23 +274,9 @@ class CvController extends Controller
     }
 
     //update gambar fisik
-    public function gambar_fisik_update(Request $request)
+    public function gambar_fisik_update(CvGambarFisikRequest $request)
     {
         $data = $request->all();
-        //validasi
-        $request->validate([
-            'cv_id' => 'required|integer',
-            'bentuk_fisik' => 'required|max:255',
-            'warna_kulit' => 'required|max:254',
-            'tinggi' => 'required|integer',
-            'berat' => 'required|integer',
-            'riwayat_penyakit' => 'required|max:255',
-            'golongan_darah' => 'required|max:255',
-            'cacat_fisik' => 'required|max:255',
-            'tipe_rambut' => 'required|max:255',
-            'warna_mata' => 'required|max:255',
-            'tanda_lahir' => 'required|max:255',
-        ]);
 
         $cv = Cv::where('user_id', Auth::user()->id)->first();
         $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
