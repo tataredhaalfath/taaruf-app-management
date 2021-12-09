@@ -150,17 +150,18 @@
                             @if ($gambar_fisik !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-gambar-fisik') }}" method="POST"
+                                    <form action="{{ route('user-update-gambar-fisik') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
+                                        @method('PUT')
                                         <h5>Gambaran Fisik</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
                                         <div class="form-group">
                                             <label for="bentuk_fisik">Bentuk Fisik</label>
                                             <input type="text"
                                                 class="form-control @error('bentuk_fisik') is-invalid @enderror"
-                                                id="bentuk_fisik" name="bentuk_fisik" value="{{ old('bentuk_fisik') }}"
-                                                placeholder="bentuk fisik">
+                                                id="bentuk_fisik" name="bentuk_fisik"
+                                                value="{{ $gambar_fisik->bentuk_fisik }}" placeholder="bentuk fisik">
                                             @error('bentuk_fisik')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -171,8 +172,8 @@
                                             <label for="warna_kulit">Warna Kulit</label>
                                             <input type="text"
                                                 class="form-control @error('warna_kulit') is-invalid @enderror"
-                                                id="warna_kulit" name="warna_kulit" value="{{ old('warna_kulit') }}"
-                                                placeholder="warna kulit">
+                                                id="warna_kulit" name="warna_kulit"
+                                                value="{{ $gambar_fisik->warna_kulit }}" placeholder="warna kulit">
                                             @error('warna_kulit')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -182,7 +183,7 @@
                                         <div class="form-group">
                                             <label for="tinggi">Tinggi <small>(cm)</small></label>
                                             <input type="number" class="form-control @error('tinggi') is-invalid @enderror"
-                                                id="tinggi" name="tinggi" required value="{{ old('tinggi') }}"
+                                                id="tinggi" name="tinggi" required value="{{ $gambar_fisik->tinggi }}"
                                                 placeholder="tinggi (cm)">
                                             @error('tinggi')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -193,7 +194,8 @@
                                         <div class="form-group">
                                             <label for="berat">Berat <small>(kg)</small></label>
                                             <input type="number" class="form-control @error('berat') is-invalid @enderror"
-                                                id="berat" name="berat" value="{{ old('berat') }}" placeholder="berat">
+                                                id="berat" name="berat" value="{{ $gambar_fisik->berat }}"
+                                                placeholder="berat">
                                             @error('berat')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -205,7 +207,8 @@
                                             <input type="text"
                                                 class="form-control @error('riwayat_penyakit') is-invalid @enderror"
                                                 id="riwayat_penyakit" name="riwayat_penyakit"
-                                                value="{{ old('riwayat_penyakit') }}" placeholder="riwayat_penyakit">
+                                                value="{{ $gambar_fisik->riwayat_penyakit }}"
+                                                placeholder="riwayat_penyakit">
                                             @error('riwayat penyakit')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -217,7 +220,7 @@
                                             <input type="text"
                                                 class="form-control @error('golongan_darah') is-invalid @enderror"
                                                 id="golongan_darah" name="golongan_darah"
-                                                value="{{ old('golongan_darah') }}" placeholder="golongan darah">
+                                                value="{{ $gambar_fisik->golongan_darah }}" placeholder="golongan darah">
                                             @error('golongan_darah')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -228,8 +231,8 @@
                                             <label for="cacat_fisik">Cacat Fisik</label>
                                             <input type="text"
                                                 class="form-control @error('cacat_fisik') is-invalid @enderror"
-                                                id="cacat_fisik" name="cacat_fisik" value="{{ old('cacat_fisik') }}"
-                                                placeholder="cacat fisik">
+                                                id="cacat_fisik" name="cacat_fisik"
+                                                value="{{ $gambar_fisik->cacat_fisik }}" placeholder="cacat fisik">
                                             @error('cacat_fisik')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -240,8 +243,8 @@
                                             <label for="tipe_rambut">Tipe Rambut</label>
                                             <input type="text"
                                                 class="form-control @error('tipe_rambut') is-invalid @enderror"
-                                                id="tipe_rambut" name="tipe_rambut" value="{{ old('tipe_rambut') }}"
-                                                placeholder="tipe rambut">
+                                                id="tipe_rambut" name="tipe_rambut"
+                                                value="{{ $gambar_fisik->tipe_rambut }}" placeholder="tipe rambut">
                                             @error('tipe_rambut')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -252,7 +255,7 @@
                                             <label for="warna_mata">Warna Mata</label>
                                             <input type="text"
                                                 class="form-control @error('warna_mata') is-invalid @enderror"
-                                                id="warna_mata" name="warna_mata" value="{{ old('warna_mata') }}"
+                                                id="warna_mata" name="warna_mata" value="{{ $gambar_fisik->warna_mata }}"
                                                 placeholder="warna mata">
                                             @error('warna_mata')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -264,8 +267,8 @@
                                             <label for="tanda_lahir">Ciri Khas / Tanda Lahir</label>
                                             <input type="text"
                                                 class="form-control @error('tanda_lahir') is-invalid @enderror"
-                                                id="tanda_lahir" name="tanda_lahir" value="{{ old('tanda_lahir') }}"
-                                                placeholder="tanda lahir">
+                                                id="tanda_lahir" name="tanda_lahir"
+                                                value="{{ $gambar_fisik->tanda_lahir }}" placeholder="tanda lahir">
                                             @error('tanda_lahir')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}

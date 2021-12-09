@@ -324,6 +324,32 @@ class CvController extends Controller
         $profile->update($data);
         return redirect(route('user-cv'))->with('message', 'Cv Profile Berhasil Di Update');
     }
+
+    //update gambar fisik
+    public function gambar_fisik_update(Request $request)
+    {
+        $data = $request->all();
+        //validasi
+        $request->validate([
+            'cv_id' => 'required|integer',
+            'bentuk_fisik' => 'required|max:255',
+            'warna_kulit' => 'required|max:254',
+            'tinggi' => 'required|integer',
+            'berat' => 'required|integer',
+            'riwayat_penyakit' => 'required|max:255',
+            'golongan_darah' => 'required|max:255',
+            'cacat_fisik' => 'required|max:255',
+            'tipe_rambut' => 'required|max:255',
+            'warna_mata' => 'required|max:255',
+            'tanda_lahir' => 'required|max:255',
+        ]);
+
+        $cv = Cv::where('user_id', Auth::user()->id)->first();
+        $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
+        $gambar_fisik->update($data);
+        return redirect(route('user-cv'))->with('message', 'Cv Gambar Fisik Berhasil Di Update');
+    }
+
     /**
      * Update the specified resource in storage.
      *
