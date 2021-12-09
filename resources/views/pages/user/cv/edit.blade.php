@@ -386,15 +386,17 @@
                             @if ($gambar_diri !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-gambar-diri') }}" method="POST"
+                                    <form action="{{ route('user-update-gambar-diri') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
+                                        @method('PUT')
                                         <h5>Gambaran Diri</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
                                         <div class="form-group">
                                             <label for="moto">Motto</label>
                                             <input type="text" class="form-control @error('moto') is-invalid @enderror"
-                                                id="moto" name="moto" value="{{ old('moto') }}" placeholder="motto diri">
+                                                id="moto" name="moto" value="{{ $gambar_diri->moto }}"
+                                                placeholder="motto diri">
                                             @error('moto')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -405,8 +407,8 @@
                                             <label for="target_hidup">Target Hidup</label>
                                             <input type="text"
                                                 class="form-control @error('target_hidup') is-invalid @enderror"
-                                                id="target_hidup" name="target_hidup" value="{{ old('target_hidup') }}"
-                                                placeholder="Target Hidup">
+                                                id="target_hidup" name="target_hidup"
+                                                value="{{ $gambar_diri->target_hidup }}" placeholder="Target Hidup">
                                             @error('target_hidup')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -417,7 +419,8 @@
                                             <label for="kegiatan_wl">Kegiatan Waktu Luang</label>
                                             <input type="text"
                                                 class="form-control @error('kegiatan_wl') is-invalid @enderror"
-                                                id="kegiatan_wl" name="kegiatan_wl" value="{{ old('kegiatan_wl') }}"
+                                                id="kegiatan_wl" name="kegiatan_wl"
+                                                value="{{ $gambar_diri->kegiatan_wl }}"
                                                 placeholder="keguatan waktu luang">
                                             @error('kegiatan_wl')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -429,8 +432,8 @@
                                             <label for="hal_disukai">Hal Yang Disukai</label>
                                             <input type="text"
                                                 class="form-control @error('hal_disukai') is-invalid @enderror"
-                                                id="hal_disukai" name="hal_disukai" value="{{ old('hal_disukai') }}"
-                                                placeholder="hal yang disukai">
+                                                id="hal_disukai" name="hal_disukai"
+                                                value="{{ $gambar_diri->hal_disukai }}" placeholder="hal yang disukai">
                                             @error('hal_disukai')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -441,7 +444,8 @@
                                             <label for="sisi_negatif">Sisi Negatif</label>
                                             <input type="text"
                                                 class="form-control @error('sisi_negatif') is-invalid @enderror"
-                                                id="sisi_negatif" name="sisi_negatif" value="{{ old('sisi_negatif') }}"
+                                                id="sisi_negatif" name="sisi_negatif"
+                                                value="{{ $gambar_diri->sisi_negatif }}"
                                                 placeholder="sisi negatif diri sendiri">
                                             @error('sisi_negatif')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -452,7 +456,7 @@
                                         <div class="form-group">
                                             <label for="merokok">Merokok ?</label>
                                             <input type="text" class="form-control @error('merokok') is-invalid @enderror"
-                                                id="merokok" name="merokok" value="{{ old('merokok') }}"
+                                                id="merokok" name="merokok" value="{{ $gambar_diri->merokok }}"
                                                 placeholder="apakah anda suka merokok ?">
                                             @error('merokok')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
