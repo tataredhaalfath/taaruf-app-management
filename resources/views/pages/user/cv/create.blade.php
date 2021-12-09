@@ -689,9 +689,9 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="tambahan">Tambahan</label>
-                                            <input type="text" class="form-control @error('tambahan') is-invalid @enderror"
-                                                id="tambahan" name="tambahan" value="{{ old('tambahan') }}"
-                                                placeholder="kriteria lain">
+                                            <textarea class="form-control @error('tambahan') is-invalid @enderror"
+                                                id="tambahan" name="tambahan" placeholder="kriteria lain"
+                                                rows="3">{{ old('tambahan') }}</textarea>
                                             @error('tambahan')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}

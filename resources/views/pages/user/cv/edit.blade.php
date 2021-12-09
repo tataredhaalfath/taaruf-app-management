@@ -478,15 +478,16 @@
                             @if ($kriteria !== null)
                                 <hr>
                                 <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                                    <form action="{{ route('user-store-kriteria') }}" method="POST"
+                                    <form action="{{ route('user-update-kriteria') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
+                                        @method('PUT')
                                         <h5>Kriteria Pasangan</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
                                         <div class="form-group">
                                             <label for="tinggi">Tinggi</label>
                                             <input type="text" class="form-control @error('tinggi') is-invalid @enderror"
-                                                id="tinggi" name="tinggi" value="{{ old('tinggi') }}"
+                                                id="tinggi" name="tinggi" value="{{ $kriteria->tinggi }}"
                                                 placeholder="tinggi">
                                             @error('tinggi')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -497,7 +498,7 @@
                                         <div class="form-group">
                                             <label for="suku">Suku</label>
                                             <input type="text" class="form-control @error('suku') is-invalid @enderror"
-                                                id="suku" name="suku" value="{{ old('suku') }}" placeholder="suku">
+                                                id="suku" name="suku" value="{{ $kriteria->suku }}" placeholder="suku">
                                             @error('suku')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -507,7 +508,7 @@
                                         <div class="form-group">
                                             <label for="usia">Usia</label>
                                             <input type="text" class="form-control @error('usia') is-invalid @enderror"
-                                                id="usia" name="usia" value="{{ old('usia') }}" placeholder="usia">
+                                                id="usia" name="usia" value="{{ $kriteria->usia }}" placeholder="usia">
                                             @error('usia')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
@@ -518,7 +519,7 @@
                                             <label for="pekerjaan">Pekerjaan</label>
                                             <input type="text"
                                                 class="form-control @error('pekerjaan') is-invalid @enderror"
-                                                id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan') }}"
+                                                id="pekerjaan" name="pekerjaan" value="{{ $kriteria->pekerjaan }}"
                                                 placeholder="pekerjaan">
                                             @error('pekerjaan')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -528,9 +529,9 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="tambahan">Tambahan</label>
-                                            <input type="text" class="form-control @error('tambahan') is-invalid @enderror"
-                                                id="tambahan" name="tambahan" value="{{ old('tambahan') }}"
-                                                placeholder="kriteria lain">
+                                            <textarea class="form-control @error('tambahan') is-invalid @enderror"
+                                                id="tambahan" name="tambahan" placeholder="kriteria lain"
+                                                rows="3">{{ $kriteria->tambahan }}</textarea>
                                             @error('tambahan')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}

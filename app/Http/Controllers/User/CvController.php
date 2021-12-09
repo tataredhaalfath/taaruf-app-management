@@ -287,6 +287,16 @@ class CvController extends Controller
         return redirect(route('user-cv'))->with('message', 'Cv Gambar Diri Berhasil Di Update');
     }
 
+    //update gambar diri
+    public function kriteria_update(CvKriteriaRequest $request)
+    {
+        $data = $request->all();
+
+        $cv = Cv::where('user_id', Auth::user()->id)->first();
+        $kriteria = Cv_Kriteria::where('cv_id', $cv->id)->first();
+        $kriteria->update($data);
+        return redirect(route('user-cv'))->with('message', 'Cv Kriteria Berhasil Di Update');
+    }
     /**
      * Update the specified resource in storage.
      *
