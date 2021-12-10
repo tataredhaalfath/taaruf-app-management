@@ -33,7 +33,7 @@ Route::middleware('auth')
         Route::get('/taaruf', [TaarufController::class, 'index'])->name('taaruf');
 
         //user sudah verify email
-        Route::middleware(['verified'])
+        Route::middleware(['verified', 'user'])
             ->group(function () {
                 Route::get('/taaruf/detail', [DetailController::class, 'index'])->name('detail');
                 Route::get('/taaruf/check', [CheckController::class, 'index'])->name('check');

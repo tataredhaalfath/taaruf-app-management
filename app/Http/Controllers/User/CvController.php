@@ -41,14 +41,25 @@ class CvController extends Controller
     {
         $cv = Cv::where('user_id', Auth::user()->id)->first();
         $question = UserQuestion::where('user_id', Auth::user()->id)->first();
-        $profile = CvProfile::where('cv_id', $cv->id)->first();
-        $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
-        $hobi = Cv_Hobi::where('cv_id', $cv->id)->first();
-        $pendidikan = Cv_Pendidikan::where('cv_id', $cv->id)->first();
-        $gambar_diri = Cv_Gambar_Diri::where('cv_id', $cv->id)->first();
-        $kriteria = Cv_Kriteria::where('cv_id', $cv->id)->first();
-        $harapan = Cv_Harapan::where('cv_id', $cv->id)->first();
-        $pengajuan_cv = Pengajuan_Cv::where('cv_id', $cv->id)->first();
+        $profile = null;
+        $gambar_fisik = null;
+        $hobi = null;
+        $pendidikan = null;
+        $gambar_diri = null;
+        $kriteria = null;
+        $harapan = null;
+        $pengajuan_cv = null;
+        if ($cv) {
+            $profile = CvProfile::where('cv_id', $cv->id)->first();
+            $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
+            $hobi = Cv_Hobi::where('cv_id', $cv->id)->first();
+            $pendidikan = Cv_Pendidikan::where('cv_id', $cv->id)->first();
+            $gambar_diri = Cv_Gambar_Diri::where('cv_id', $cv->id)->first();
+            $kriteria = Cv_Kriteria::where('cv_id', $cv->id)->first();
+            $harapan = Cv_Harapan::where('cv_id', $cv->id)->first();
+            $pengajuan_cv = Pengajuan_Cv::where('cv_id', $cv->id)->first();
+        }
+
         return view('pages.user.cv.index', [
             'cv' => $cv,
             'question' => $question,
