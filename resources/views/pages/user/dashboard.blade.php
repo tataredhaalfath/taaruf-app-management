@@ -31,8 +31,8 @@
                                 <!-- Content Row -->
                                 <div class="row">
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
-                                        <div class="card border-left-primary shadow h-100 py-2" style="                                                     
-                                         @if ($user->status == 'PENDING')
+                                        <div class="card border-left-primary shadow h-100 py-2" style="
+                                            @if ($user->status == 'PENDING')
                                             background: orange;
                                         @elseif ($user->status == 'ACTIVE')
                                             background: green;
@@ -42,7 +42,7 @@
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-uppercase mb-1">
                                                             Status User</div>
-                                                        <div class="h6 mb-0 font-weight-bold text-muted">
+                                                        <div class="h6 mb-0 font-weight-bold text-info">
                                                             {{ $user->status }}</div>
                                                     </div>
                                                     <div class="col-auto">
@@ -55,9 +55,8 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-success shadow h-100 py-2" style="
-                                                                      @if ($taaruf_sent>
-                                            0)
-                                            background: blue;
+                                            @if ($taaruf_sent> 0)
+                                            background: green;
                                             color:white
                                             @endif">
                                             <div class="card-body">
@@ -65,7 +64,7 @@
                                                     <div class="col mr-2">
                                                         <div class="text-xs font-weight-bold text-uppercase mb-1">
                                                             Sent</div>
-                                                        <div class="h5 mb-0 font-weight-bold text-primary">
+                                                        <div class="h5 mb-0 font-weight-bold text-info">
                                                             {{ $taaruf_sent }}
                                                         </div>
                                                     </div>
@@ -79,8 +78,7 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-info shadow h-100 py-2" style="
-                                                                           @if ($incoming>
-                                            0)
+                                            @if ($incoming> 0)
                                             background: blue;
                                             color:white;
                                             @endif">
@@ -107,15 +105,19 @@
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
-                                        <div class="card border-left-warning shadow h-100 py-2">
+                                        <div class="card border-left-warning shadow h-100 py-2" style=" 
+                                            @if ($approve> 0)
+                                            background: green;
+                                            color:white;
+                                            @endif">
                                             <div class="card-body">
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                        <div class="text-xs font-weight-bold text-uppercase mb-1">
                                                             Approve
                                                         </div>
-                                                        <div class="h5 mb-0 font-weight-bold text-success">18</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-info">
+                                                            {{ $approve }}</div>
                                                     </div>
                                                     <div class="col-auto">
                                                         <i class="fas fa-clipboard-check fa-2x text-gray-300"></i>
@@ -126,15 +128,19 @@
                                     </div>
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
-                                        <div class="card border-left-warning shadow h-100 py-2">
+                                        <div class="card border-left-warning shadow h-100 py-2" style=" 
+                                            @if ($reject> 0)
+                                            background: red;
+                                            color:white
+                                            @endif">
                                             <div class="card-body">
                                                 <div class="row no-gutters align-items-center">
                                                     <div class="col mr-2">
-                                                        <div
-                                                            class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                                        <div class="text-xs font-weight-bold text-uppercase mb-1">
                                                             Rejected
                                                         </div>
-                                                        <div class="h5 mb-0 font-weight-bold text-danger">18</div>
+                                                        <div class="h5 mb-0 font-weight-bold text-info">
+                                                            {{ $reject }}</div>
                                                     </div>
                                                     <div class="col-auto">
                                                         <i class="fas fa-file-excel fa-2x text-gray-300"></i>
