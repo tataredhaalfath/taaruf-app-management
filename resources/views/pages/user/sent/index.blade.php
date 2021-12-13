@@ -47,10 +47,9 @@ use App\Models\User\UserQuestion;
                                                 </tr>
                                             @empty
                                                 <tr class="text-center">
-                                                    <td colspan="6">BELUM PERMINTAAN TAARUF TERKIRIM</td>
+                                                    <td colspan="6">BELUM ADA PERMINTAAN TAARUF TERKIRIM</td>
                                                 </tr>
                                             @endforelse
-
                                         </tbody>
                                     </table>
                                 </div>
