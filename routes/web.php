@@ -84,6 +84,9 @@ Route::prefix('user')
         //menu incoming
         Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
         Route::get('/incoming/{id}/detail', [IncomingController::class, 'detail'])->name('user-incoming-detail');
+        Route::POST('/incoming/approve', [IncomingController::class, 'approve'])->name('user-incoming-approve');
+        Route::POST('/incoming/reject', [IncomingController::class, 'reject'])->name('user-incoming-reject');
+
         //menu approve
         Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');
 

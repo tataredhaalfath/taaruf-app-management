@@ -258,30 +258,61 @@
                                 <div class="col-xl-8 col-lg-8 col-md-10 mx-auto">
                                     <div class="card p-5" width="100%">
                                         <h4 class="text-center"><strong>3 Jawaban Ta'aruf</strong></h4>
-                                        <form action="approved.html" width="100%">
-                                            <div class="form-group">
-                                                <label for="pertanyaan1">1. {{ $question->pertanyaan_1 }}</label>
-                                                <textarea class="form-control" id="pertanyaan1" name="pertanyaan1"
-                                                    readonly>{{ $answer->jawaban_1 }}</textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="pertanyaan2">2. {{ $question->pertanyaan_2 }}</label>
-                                                <textarea class="form-control" id="pertanyaan2" name="pertanyaan2"
-                                                    readonly>{{ $answer->jawaban_2 }}</textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="pertanyaan3">3. {{ $question->pertanyaan_3 }}</label>
-                                                <textarea class="form-control" id="pertanyaan3" name="pertanyaan3"
-                                                    readonly>{{ $answer->jawaban_3 }}</textarea>
-                                            </div>
-                                            <div class="form-group form-check text-center mb-3 mx-auto">
-                                                <button type="submit" class="btn btn-success center-block my-3">Terima
-                                                    Ta'aruf</button>
+                                        <div class="form-group">
+                                            <label for="pertanyaan1">1. {{ $question->pertanyaan_1 }}</label>
+                                            <textarea class="form-control" id="pertanyaan1" name="pertanyaan1"
+                                                readonly>{{ $answer->jawaban_1 }}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pertanyaan2">2. {{ $question->pertanyaan_2 }}</label>
+                                            <textarea class="form-control" id="pertanyaan2" name="pertanyaan2"
+                                                readonly>{{ $answer->jawaban_2 }}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pertanyaan3">3. {{ $question->pertanyaan_3 }}</label>
+                                            <textarea class="form-control" id="pertanyaan3" name="pertanyaan3"
+                                                readonly>{{ $answer->jawaban_3 }}</textarea>
+                                        </div>
+                                        <div class="form-group form-check text-center mb-3 mx-auto">
+                                            @if ($approve > 0)
+                                                <form action="{{ Route('user-incoming-reject') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="ans_id" value="{{ $answer->id }}">
+                                                    <input type="hidden" name="user_id_1" value="{{ Auth::user()->id }}">
+                                                    <input type="hidden" name="user_id_2" value="{{ $answer->user_id }}">
+                                                    <input type="hidden" name="status" value="REJECTED">
+                                                    <button class="btn center-block btn-primary" type="submit">Batal
+                                                        Ta'aruf</button>
+                                                    <br>
+                                                    <small class="text-muted">anda tidak bisa menerima ajakan taaruf
+                                                        baru selama anda sedang
+                                                        menajalani taaruf dengan orang lain</small>
+                                                </form>
+                                            @else
+                                                <form action="{{ Route('user-incoming-approve') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="ans_id" value="{{ $answer->id }}">
+                                                    <input type="hidden" name="user_id_1" value="{{ Auth::user()->id }}">
+                                                    <input type="hidden" name="user_id_2" value="{{ $answer->user_id }}">
+                                                    <input type="hidden" name="status" value="APPROVED">
+                                                    <button type="submit" class="btn btn-success center-block my-3">Terima
+                                                        Ta'aruf</button>
+                                                    <br>
 
-                                                <a href="incoming.html" class="d-block">Batal Ta'aruf</a>
+                                                </form>
+                                                <form action="{{ Route('user-incoming-reject') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="ans_id" value="{{ $answer->id }}">
+                                                    <input type="hidden" name="user_id_1" value="{{ Auth::user()->id }}">
+                                                    <input type="hidden" name="user_id_2" value="{{ $answer->user_id }}">
+                                                    <input type="hidden" name="status" value="REJECTED">
+                                                    <button class="btn center-block btn-primary" type="submit">Batal
+                                                        Ta'aruf</button>
+                                                    <br>
 
-                                            </div>
-                                        </form>
+                                                </form>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
