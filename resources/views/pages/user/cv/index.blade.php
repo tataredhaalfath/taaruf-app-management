@@ -56,34 +56,48 @@
                                                             class="text-muted">Pastikan semua data di cv dan 3
                                                             pertanyaan sudah lengkap</small>
                                                     </td>
-                                                    @if ($pengajuan_cv !== null)
-
+                                                    @if (Auth::user()->status == 'PENDING')
+                                                        @if ($pengajuan_cv !== null)
+                                                            <td class="text-center" width="50%"
+                                                                style="background: green; color: white">
+                                                                <small>CV Berhasil Diajukan. Silahkan menunggu <br> hingga
+                                                                    status berubah dari PENDING menjadi ACTIVE agar anda
+                                                                    bisa
+                                                                    memulai taaruf</small>
+                                                            </td>
+                                                        @elseif ($cv && $question && $profile && $gambar_fisik && $hobi
+                                                            && $pendidikan && $gambar_diri && $kriteria && $harapan)
+                                                            <td class="text-center" width="50%">
+                                                                <form action="{{ route('user-cv-pengajuan') }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    <input type="hidden" name="user_id" id="user_id"
+                                                                        value="{{ Auth::user()->id }}">
+                                                                    <input type="hidden" name="cv_id" id="cv_id"
+                                                                        value="{{ $cv->id }}">
+                                                                    <input type="hidden" name="question_id" id="question_id"
+                                                                        value="{{ $question->id }}">
+                                                                    <button class="btn btn-primary btn-sm"><i
+                                                                            class="fas fa-paper-plane"></i> Kirim
+                                                                        CV</button>
+                                                                </form>
+                                                            </td>
+                                                        @else
+                                                            <td class="text-center" width="50%">
+                                                                <a href="{{ route('user-create-cv') }}"
+                                                                    class="btn btn-success btn-sm"><i
+                                                                        class="fas fa-file-signature"></i> Lengkapi CV</a>
+                                                            </td>
+                                                        @endif
+                                                    @elseif (Auth::user()->status =='ACTIVE')
                                                         <td class="text-center" width="50%"
-                                                            style="background: green; color: white">
-                                                            <small>CV Berhasil Diajukan. Silahkan menunggu <br> hingga
-                                                                status berubah dari PENDING menjadi ACTIVE agar anda bisa
-                                                                memulai taaruf</small>
-                                                        </td>
-                                                    @elseif ($cv && $question && $profile && $gambar_fisik && $hobi
-                                                        && $pendidikan && $gambar_diri && $kriteria && $harapan)
-                                                        <td class="text-center" width="50%">
-                                                            <form action="{{ route('user-cv-pengajuan') }}" method="POST">
-                                                                @csrf
-                                                                <input type="hidden" name="user_id" id="user_id"
-                                                                    value="{{ Auth::user()->id }}">
-                                                                <input type="hidden" name="cv_id" id="cv_id"
-                                                                    value="{{ $cv->id }}">
-                                                                <input type="hidden" name="question_id" id="question_id"
-                                                                    value="{{ $question->id }}">
-                                                                <button class="btn btn-primary btn-sm"><i
-                                                                        class="fas fa-paper-plane"></i> Kirim CV</button>
-                                                            </form>
-                                                        </td>
-                                                    @else
-                                                        <td class="text-center" width="50%">
-                                                            <a href="{{ route('user-create-cv') }}"
-                                                                class="btn btn-success btn-sm"><i
-                                                                    class="fas fa-file-signature"></i> Lengkapi CV</a>
+                                                            style="background: blue; color: white">
+                                                            <small>Selamat status anda telah ACTIVE. anda sudah bisa memulai
+                                                                Ta'aruf</small>
+                                                            <br>
+                                                            <br>
+                                                            <a href="{{ Route('taaruf') }}" class="text-white">Klik
+                                                                disini untuk mulai!</a>
                                                         </td>
                                                     @endif
                                                 </tr>
