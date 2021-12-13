@@ -25,6 +25,7 @@
                                     <form action="{{ route('user-question-update') }}" method="POST"
                                         class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
                                         @csrf
+                                        @method('PUT')
                                         <h5>Buat 3 Pertanyaan Taaruf</h5>
                                         <small class="text-muted">pertanyaan akan dijawab oleh pengguna yang ingin
                                             pengajukan taaruf kepada anda</small>
