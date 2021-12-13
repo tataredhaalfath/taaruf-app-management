@@ -49,8 +49,13 @@
                     @endif
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
-                    <i class="fas fa-file-excel mr-2"></i>
-                    <a href="rejected.html" class="text-dark">Ta'aruf Rejected</a>
+                    @if (Route::current()->getName() == 'user-reject')
+                        <i class="fas fa-file-excel mr-2" style="color: blue"></i>
+                        <a href="{{ route('user-reject') }}" class="active">Ta'aruf Rejected</a>
+                    @else
+                        <i class="fas fa-file-excel mr-2"></i>
+                        <a href="{{ route('user-reject') }}" class="text-dark">Ta'aruf Rejected</a>
+                    @endif
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
                     <form action="{{ url('logout') }}" method="POST">

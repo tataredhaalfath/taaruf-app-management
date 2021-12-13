@@ -12,8 +12,12 @@ class ApproveController extends Controller
 {
     public function index(Request $request)
     {
-        $approve1 = Taaruf::where('user_id_1', Auth::user()->id)->first();
-        $approve2 = Taaruf::where('user_id_2', Auth::user()->id)->first();
+        //MENERIMA
+        $approve1 = Taaruf::where('user_id_1', Auth::user()->id)
+            ->where('status', 'APPROVED')->first();
+        //DITERIMA
+        $approve2 = Taaruf::where('user_id_2', Auth::user()->id)
+            ->where('status', 'APPROVED')->first();
 
         if ($approve1) {
             $approve2 = null;

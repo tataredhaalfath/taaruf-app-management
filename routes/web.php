@@ -9,6 +9,7 @@ use App\Http\Controllers\TaarufController;
 use App\Http\Controllers\User\ApproveController;
 use App\Http\Controllers\User\CvController;
 use App\Http\Controllers\User\IncomingController;
+use App\Http\Controllers\User\RejectController;
 use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -83,6 +84,9 @@ Route::prefix('user')
         Route::get('/incoming/{id}/detail', [IncomingController::class, 'detail'])->name('user-incoming-detail');
         //menu approve
         Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');
+
+        //menu reject
+        Route::get('/reject', [RejectController::class, 'index'])->name('user-reject');
     });
 
 
