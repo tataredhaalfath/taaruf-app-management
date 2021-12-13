@@ -288,6 +288,19 @@
                                                         baru selama anda sedang
                                                         menajalani taaruf dengan orang lain</small>
                                                 </form>
+                                            @elseif ($approve2 >0)
+                                                <form action="{{ Route('user-incoming-reject') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="ans_id" value="{{ $answer->id }}">
+                                                    <input type="hidden" name="user_id_1" value="{{ Auth::user()->id }}">
+                                                    <input type="hidden" name="user_id_2" value="{{ $answer->user_id }}">
+                                                    <input type="hidden" name="status" value="REJECTED">
+                                                    <button class="btn center-block btn-primary" type="submit">Batal
+                                                        Ta'aruf</button>
+                                                    <br>
+                                                    <small class="text-muted">Pengguna yang bersangkutan sedang
+                                                        menjalani proses taaruf dengan orang lain</small>
+                                                </form>
                                             @else
                                                 <form action="{{ Route('user-incoming-approve') }}" method="POST">
                                                     @csrf

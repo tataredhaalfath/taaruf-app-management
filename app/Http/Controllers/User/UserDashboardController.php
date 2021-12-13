@@ -37,6 +37,7 @@ class UserDashboardController extends Controller
         if ($question) {
             $incoming = UserAnswer::where('uq_id', $question->id)->count();
         }
+
         return view('pages.user.dashboard', [
             'user' => $user,
             'taaruf_sent' => $taaruf_sent,

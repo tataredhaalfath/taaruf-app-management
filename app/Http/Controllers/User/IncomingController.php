@@ -55,6 +55,15 @@ class IncomingController extends Controller
                     ->where('status', 'APPROVED');
             })
             ->count();
+        //approve2 untuk mengecek apakah user yang mengirimkan taarus sedang melakukan proses taaruf
+        //dengan orang lain atau tidak
+        $approve2 = Taaruf::where('user_id_1', $answer->user_id)
+            ->Where('status', 'APPROVED')
+            ->orWhere(function ($query) use ($answer) {
+                $query->where('user_id_2', $answer->user_id)
+                    ->where('status', 'APPROVED');
+            })
+            ->count();
         //cek apakah permintaan yang masuk valid atau tidak
         if ($answer->uq_id == $question->id) {
             return view('pages.user.incoming.detail', [
@@ -69,6 +78,7 @@ class IncomingController extends Controller
                 'kriteria' => $kriteria,
                 'harapan' => $harapan,
                 'approve' => $approve,
+                'approve2' => $approve2,
             ]);
         }
 
