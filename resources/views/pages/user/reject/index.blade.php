@@ -30,8 +30,8 @@ use App\Models\User;
                                         <tbody>
                                             <tr class="text-center">
                                                 <th>No</th>
-                                                <th>USER 1</th>
-                                                <th>USER 2</th>
+                                                <th>User 1</th>
+                                                <th>User 2</th>
                                                 <th>Tanggal</th>
                                                 <th>Status</th>
                                             </tr>
@@ -62,8 +62,8 @@ use App\Models\User;
                                         <tbody>
                                             <tr class="text-center">
                                                 <th>No</th>
-                                                <th>USER 1</th>
-                                                <th>USER 2</th>
+                                                <th>User 1</th>
+                                                <th>User 2</th>
                                                 <th>Tanggal</th>
                                                 <th>Status</th>
                                             </tr>

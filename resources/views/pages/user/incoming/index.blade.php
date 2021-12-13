@@ -1,3 +1,6 @@
+@php
+use App\Models\User;
+@endphp
 @extends('layouts.app')
 @section('title', "Ta'aruf App Management")
 
@@ -26,17 +29,20 @@
                                         <tbody>
                                             <tr class="text-center">
                                                 <th>No</th>
-                                                <th>Incoming ID</th>
+                                                <th>Pengirim</th>
                                                 <th>Tanggal</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                             @forelse  ($incoming as $in)
+                                                @php
+                                                    $user = User::findOrFail($in->user_id);
+                                                @endphp
                                                 <tr class="text-center">
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $in->id }}</td>
+                                                    <td>{{ $user->name }}</td>
                                                     <td>{{ date('d-m-Y', strtotime($in->created_at)) }}</td>
-                                                    <td>Mengajukan</td>
+                                                    <td>MENGAJUKAN</td>
                                                     <td><a href="{{ route('user-incoming-detail', $in->id) }}"
                                                             class="btn-cta">Detail</a>
                                                     </td>
