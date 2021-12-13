@@ -27,8 +27,13 @@
                     @endif
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
-                    <i class="fas fa-paper-plane mr-2"></i>
-                    <a href="cv-sent.html" class="text-dark">Ta'aruf Sent</a>
+                    @if (Route::current()->getName() == 'user-sent')
+                        <i class="fas fa-paper-plane mr-2" style="color: blue"></i>
+                        <a href="{{ route('user-sent') }}" class="active">Ta'aruf Sent</a>
+                    @else
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        <a href="{{ route('user-sent') }}" class="text-dark">Ta'aruf Sent</a>
+                    @endif
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
                     @if (Route::current()->getName() == 'user-incoming')

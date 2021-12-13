@@ -10,6 +10,7 @@ use App\Http\Controllers\User\ApproveController;
 use App\Http\Controllers\User\CvController;
 use App\Http\Controllers\User\IncomingController;
 use App\Http\Controllers\User\RejectController;
+use App\Http\Controllers\User\SentController;
 use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -78,7 +79,8 @@ Route::prefix('user')
         //pengajuan cv untuk di review
         Route::POST('/cv/pengajuan', [CvController::class, 'pengajuan_cv'])->name('user-cv-pengajuan');
 
-
+        //menu sent
+        Route::get('/sent', [SentController::class, 'index'])->name('user-sent');
         //menu incoming
         Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
         Route::get('/incoming/{id}/detail', [IncomingController::class, 'detail'])->name('user-incoming-detail');
