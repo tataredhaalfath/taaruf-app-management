@@ -90,6 +90,8 @@ Route::prefix('user')
         //menu approve
         Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');
         Route::get('/approve/{id}/detail', [ApproveController::class, 'detail'])->name('user-approve-detail');
+        Route::POST('/approve', [ApproveController::class, 'transaction'])->name('user-approve-transaction');
+
 
         //menu reject
         Route::get('/reject', [RejectController::class, 'index'])->name('user-reject');

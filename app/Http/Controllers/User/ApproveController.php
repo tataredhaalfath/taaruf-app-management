@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\TaarufTransactionRequest;
 use App\Models\User;
 use App\Models\User\Taaruf;
+use App\Models\User\TaarufTransaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,10 +29,29 @@ class ApproveController extends Controller
     public function detail(Request $request, $id)
     {
         $taaruf = Taaruf::findOrFail($id);
+        $myTransaction = TaarufTransaction::where('user_id', Auth::user()->id)->first();
+        //mencari data transaction antar 2 pihak
+        $transaction1 = TaarufTransaction::where('taaruf_id', $taaruf->id)
+            ->where('user_id', $taaruf->user_id_1)->first();
+        $transaction2 = TaarufTransaction::where('taaruf_id', $taaruf->id)
+            ->where('user_id', $taaruf->user_id_2)->first();
+
         if ($taaruf->user_id_1 == Auth::user()->id || $taaruf->user_id_2 == Auth::user()->id) {
-            return view('pages.user.approve.detail');
+            return view('pages.user.approve.detail', [
+                'taaruf' => $taaruf,
+                'transaction1' => $transaction1,
+                'transaction2' => $transaction2,
+                'myTransaction' => $myTransaction,
+            ]);
         }
 
         return redirect(404);
+    }
+
+    public function transaction(TaarufTransactionRequest $request)
+    {
+        $data = $request->all();
+        TaarufTransaction::create($data);
+        return redirect()->route('user-approve-detail', $data['taaruf_id']);
     }
 }
