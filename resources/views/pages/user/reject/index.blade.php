@@ -9,7 +9,7 @@ use App\Models\User;
     <main>
         <section class="section__detail__header">
         </section>
-        <section class="section__detail__content user__page__content cv">
+        <section class="section__detail__content user__page__content reject">
             <div class="container">
                 <div class="row">
                     <div class="col-0">

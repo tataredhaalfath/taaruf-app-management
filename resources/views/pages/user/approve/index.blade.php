@@ -9,7 +9,7 @@ use App\Models\User;
     <main>
         <section class="section__detail__header">
         </section>
-        <section class="section__detail__content user__page__content cv">
+        <section class="section__detail__content user__page__content approve">
             <div class="container">
                 <div class="row">
                     <div class="col-0">
@@ -45,7 +45,8 @@ use App\Models\User;
                                                 <td>{{ $user2->name }}</td>
                                                 <td>{{ date('d-m-Y', strtotime($app->created_at)) }}</td>
                                                 <td>{{ $app->status }}</td>
-                                                <td><a href="approved-confirm.html" class="btn-cta">Lanjut</a>
+                                                <td><a href="{{ route('user-approve-detail', $app->id) }}"
+                                                        class="btn-cta">Lanjut</a>
                                                 </td>
                                             </tr>
                                         @empty

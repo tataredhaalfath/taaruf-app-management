@@ -23,4 +23,14 @@ class ApproveController extends Controller
             'approve' => $approve
         ]);
     }
+
+    public function detail(Request $request, $id)
+    {
+        $taaruf = Taaruf::findOrFail($id);
+        if ($taaruf->user_id_1 == Auth::user()->id || $taaruf->user_id_2 == Auth::user()->id) {
+            return view('pages.user.approve.detail');
+        }
+
+        return redirect(404);
+    }
 }

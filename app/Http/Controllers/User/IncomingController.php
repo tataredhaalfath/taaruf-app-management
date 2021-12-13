@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\TaarufRequest;
 use App\Models\User;
 use App\Models\User\Cv;
 use App\Models\User\Cv_Gambar_Diri;
@@ -85,7 +86,7 @@ class IncomingController extends Controller
         return redirect(404);
     }
 
-    public function approve(Request $request)
+    public function approve(TaarufRequest $request)
     {
         //masukan data ke tabel taruf
         $data = $request->all();
@@ -96,7 +97,7 @@ class IncomingController extends Controller
         return redirect(route('user-approve'));
     }
 
-    public function reject(Request $request)
+    public function reject(TaarufRequest $request)
     {
         //masukan data ke tabel taruf
         $data = $request->all();

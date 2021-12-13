@@ -208,7 +208,8 @@ main {
             &.incoming,
             &.approve,
             &.dashboard,
-            &cv {
+            &.reject,
+            &.cv {
                 min-height: 80vh;
             }
         }
