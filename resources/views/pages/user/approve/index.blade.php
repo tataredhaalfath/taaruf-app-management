@@ -26,39 +26,38 @@
                                         <tbody>
                                             <tr class="text-center">
                                                 <th>No</th>
-                                                <th>Nama</th>
+                                                <th>User 1</th>
+                                                <th>User 2</th>
                                                 <th>Tanggal</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
-                                            <tr class="text-center">
-                                                <td>1</td>
-                                                <td>Riska Soekanti</td>
-                                                <td>12/09/201</td>
-                                                <td>Approved</td>
-                                                <td><a href="approved-confirm.html" class="btn-cta">Lanjut</a></td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>2</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>3</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td>4</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
+                                            @if ($approve1)
+                                                <tr class="text-center">
+                                                    <td>1</td>
+                                                    <td>{{ $user1->name }}</td>
+                                                    <td>{{ $user2->name }}</td>
+                                                    <td>{{ date('d-m-Y', strtotime($approve1->created_at)) }}</td>
+                                                    <td>{{ $approve1->status }}</td>
+                                                    <td><a href="approved-confirm.html" class="btn-cta">Lanjut</a>
+                                                    </td>
+                                                </tr>
+                                            @elseif ($approve2)
+                                                <tr class="text-center">
+                                                    <td>1</td>
+                                                    <td>{{ $user1->name }}</td>
+                                                    <td>{{ $user2->name }}</td>
+                                                    <td>{{ date('d-m-Y', strtotime($approve2->created_at)) }}</td>
+                                                    <td>{{ $approve2->status }}</td>
+                                                    <td><a href="approved-confirm.html" class="btn-cta">Lanjut</a>
+                                                    </td>
+                                                </tr>
+                                            @else
+                                                <tr class="text-center">
+                                                    <td colspan="6">BELUM ADA PERMINTAAN TAARUF DITERIMA</td>
+                                                </tr>
+                                            @endif
+
                                         </tbody>
                                     </table>
                                 </div>
