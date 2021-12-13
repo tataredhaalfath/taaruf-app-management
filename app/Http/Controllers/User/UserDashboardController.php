@@ -30,7 +30,7 @@ class UserDashboardController extends Controller
             ->Where('status', 'REJECTED')
             ->orWhere(function ($query) {
                 $query->where('user_id_2', Auth::user()->id)
-                    ->where('status', 'APPROVED');
+                    ->where('status', 'REJECTED');
             })
             ->count();
         $incoming = 0;
