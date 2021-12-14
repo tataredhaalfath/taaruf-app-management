@@ -6,6 +6,7 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoriesController;
 use App\Http\Controllers\TaarufController;
+use App\Http\Controllers\User\AccountController;
 use App\Http\Controllers\User\ApproveController;
 use App\Http\Controllers\User\CvController;
 use App\Http\Controllers\User\IncomingController;
@@ -52,6 +53,8 @@ Route::prefix('user')
         //dashboard user
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user-dashboard');
 
+        //menu my account
+        Route::GET('/account', [AccountController::class, 'index'])->name('user-account');
         //menu cv
         Route::get('/cv', [CvController::class, 'index'])->name('user-cv');
         Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');

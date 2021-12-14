@@ -14,8 +14,13 @@
 
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
-                    <i class="fas fa-user mr-2"></i>
-                    <a href="my-account.html" class="text-dark">My Account</a>
+                    @if (Route::current()->getName() == 'user-account')
+                        <i class="fas fa-user mr-2" style="color: blue"></i>
+                        <a href="{{ route('user-account') }}" class="active">My Account</a>
+                    @else
+                        <i class="fas fa-user mr-2"></i>
+                        <a href="{{ route('user-account') }}" class="text-dark">My Account</a>
+                    @endif
                 </div>
                 <div class="item d-flex align-items-center my-3 nav_menu">
                     @if (Route::current()->getName() == 'user-cv')
