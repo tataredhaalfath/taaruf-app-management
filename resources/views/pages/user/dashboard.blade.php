@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'App Management')
+@section('title', 'Taaruf App Management')
 
 @section('content')
     <!-- main -->
@@ -32,7 +32,7 @@
                                 <div class="row">
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-primary shadow h-100 py-2" style="
-                                            @if ($user->status == 'PENDING')
+                                                 @if ($user->status == 'PENDING')
                                             background: orange;
                                         @elseif ($user->status == 'ACTIVE')
                                             background: green;
@@ -55,7 +55,7 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-success shadow h-100 py-2" style="
-                                            @if ($taaruf_sent> 0)
+                                                 @if ($taaruf_sent> 0)
                                             background: green;
                                             color:white
                                             @endif">
@@ -78,7 +78,7 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-info shadow h-100 py-2" style="
-                                            @if ($incoming> 0)
+                                                 @if ($incoming> 0)
                                             background: blue;
                                             color:white;
                                             @endif">
@@ -106,7 +106,7 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-warning shadow h-100 py-2" style=" 
-                                            @if ($approve> 0)
+                                                 @if ($approve> 0)
                                             background: green;
                                             color:white;
                                             @endif">
@@ -129,7 +129,7 @@
 
                                     <div class="col-xl-4 col-md-6 col-sm-6 mb-4">
                                         <div class="card border-left-warning shadow h-100 py-2" style=" 
-                                            @if ($reject> 0)
+                                                 @if ($reject> 0)
                                             background: red;
                                             color:white
                                             @endif">

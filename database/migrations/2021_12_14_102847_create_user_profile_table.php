@@ -25,6 +25,7 @@ class CreateUserProfileTable extends Migration
             $table->string('alamat');
             $table->integer('umur');
             $table->string('pendidikan_ahir');
+            $table->string('tagline');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -16,7 +16,7 @@
 
     @include('includes.footer')
     @include('includes.script')
-
+    @stack('api-daerah')
 </body>
 
 </html>

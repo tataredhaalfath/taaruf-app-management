@@ -209,7 +209,8 @@ main {
             &.approve,
             &.dashboard,
             &.reject,
-            &.cv {
+            &.cv,
+            &.profile {
                 min-height: 80vh;
             }
         }

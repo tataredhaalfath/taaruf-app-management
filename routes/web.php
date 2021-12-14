@@ -55,6 +55,8 @@ Route::prefix('user')
 
         //menu my account
         Route::GET('/account', [AccountController::class, 'index'])->name('user-account');
+        Route::GET('/account/profile', [AccountController::class, 'profile'])->name('user-account-profile');
+
         //menu cv
         Route::get('/cv', [CvController::class, 'index'])->name('user-cv');
         Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');
