@@ -56,7 +56,8 @@ use App\Models\User\UserProfile;
                             @if ($profile)
                                 <a class="nav-link far" href="/user/dashboard">
                                     <img src="{{ Storage::url($profile->image) }}" alt="user profile"
-                                        class="img img-thumbnail rounded-circle">
+                                        class="img img-thumbnail rounded-circle"
+                                        style="object-fit: cover; width:55px !important; height:55px !important">
                                     {{-- <i class="fas fa-user"></i> --}}
                                 </a>
                             @else
