@@ -51,6 +51,6 @@ class AccountController extends Controller
         }
         $profile = UserProfile::where('user_id', Auth::user()->id)->first();
         $profile->update($data);
-        return redirect(route('user-account'))->with('message', 'Profile Berhasil Di Update');
+        return redirect(route('user-account'));
     }
 }
