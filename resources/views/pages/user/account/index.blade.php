@@ -31,15 +31,105 @@
                                     <div class="col-xl-6 col-lg-8 col-md-8 col-10">
                                         <div class="card mx-auto my-3" style="width: 18rem;">
                                             @if ($profile)
-                                                <img src="{{ $profile->image }}" class="card-img-top" alt="...">
+                                                <img src="{{ Storage::url($profile->image) }}" class="card-img-top"
+                                                    alt="...">
+                                                <div class="card-body">
+                                                    <div class="text-center">
+                                                        <h5 class="card-title">User Profile</h5>
+                                                    </div>
+                                                    <table class="my-3">
+                                                        <tr>
+                                                            <th>
+                                                                <p class="card-text">No Telpon </p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="card-text"> : {{ $profile->telpon }}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <p class="card-text">Gender </p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="card-text"> : @if ($profile->gender == 'L')
+                                                                        Laki Laki
+                                                                    @elseif ($profile->gender == 'P')
+                                                                        Perempuan
+                                                                    @endif
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <p class="card-text">Kota </p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="card-text"> : {{ $profile->kota }} </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <p class="card-text">Kecamatan </p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="card-text"> :
+                                                                    <small>{{ $profile->kecamatan }}</small>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <p class="card-text">Kelurahan </p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="card-text"> :
+                                                                    <small>{{ $profile->kelurahan }}</small>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <p class="card-text">Umur </p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="card-text"> :
+                                                                    {{ $profile->umur }}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <p class="card-text">Pendidikan </p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="card-text"> :
+                                                                    {{ $profile->pendidikan_ahir }} </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                <p class="card-text">Tagline </p>
+                                                            </th>
+                                                            <td>
+                                                                <p class="card-text"> :
+                                                                    <small>{{ $profile->tagline }}</small>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <div class="text-center">
+                                                        <a href="{{ route('user-account-edit-profile') }}"
+                                                            class="btn btn-primary"><i class="fas fa-user-cog">
+                                                                Edit</i></a>
+                                                    </div>
+                                                </div>
                                             @else
                                                 <div class="text-center mt-5">
                                                     <i class="fas fa-user fa-5x" class="mx-auto"></i>
                                                 </div>
                                                 <div class="card-body text-center">
                                                     <h5 class="card-title">User Profile</h5>
-                                                    <p class="card-text text-muted">Silahkan lengkapi data diri anda.
-                                                    </p>
                                                     <a href="{{ route('user-account-profile') }}"
                                                         class="btn btn-primary"><i class="fas fa-user-cog">
                                                             Setting</i></a>
@@ -49,7 +139,8 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-8 col-md-8 col-10">
                                         <div class="card mx-auto my-3" style="width: 18rem;">
-                                            <div class="card-body" style="       @if (Auth::user()->status == 'PENDING')
+                                            <div class="card-body" style="              
+                                                                                   @if (Auth::user()->status == 'PENDING')
                                                 background-color:orange;
                                                 color:white !important;
                                             @elseif (Auth::user()->status == 'ACTIVE')

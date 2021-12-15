@@ -25,7 +25,7 @@ class UserProfileRequest extends FormRequest
     {
         return [
             'user_id' => 'integer|required',
-            'image' => 'required|max:255',
+            'image' => 'image|max:2000',
             'telpon' => 'required|max:255',
             'gender' => 'required|max:255',
             'kota' => 'required|max:255',
