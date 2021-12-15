@@ -1,3 +1,6 @@
+@php
+use App\Models\User\UserProfile;
+@endphp
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
@@ -30,15 +33,39 @@
 
                     @auth
                         @if (Auth::user()->roles == 'ADMIN')
-                            <a class="nav-link far" href="/admin">
-                                <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile">
-                                {{-- <i class="fas fa-user"></i> --}}
-                            </a>
+                            @php
+                                $profile = UserProfile::where('user_id', Auth::user()->id)->first();
+                            @endphp
+                            @if ($profile)
+                                <a class="nav-link far" href="/admin">
+                                    <img src="{{ Storage::url($profile->image) }}" alt="user profile">
+                                    {{-- <i class="fas fa-user"></i> --}}
+                                </a>
+                            @else
+                                <a class="nav-link far" href="/admin">
+                                    <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}"
+                                        alt="user profile">
+                                    {{-- <i class="fas fa-user"></i> --}}
+                                </a>
+                            @endif
+
                         @else
-                            <a class="nav-link far" href="/user/dashboard">
-                                <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile">
-                                {{-- <i class="fas fa-user"></i> --}}
-                            </a>
+                            @php
+                                $profile = UserProfile::where('user_id', Auth::user()->id)->first();
+                            @endphp
+                            @if ($profile)
+                                <a class="nav-link far" href="/user/dashboard">
+                                    <img src="{{ Storage::url($profile->image) }}" alt="user profile"
+                                        class="img img-thumbnail rounded-circle">
+                                    {{-- <i class="fas fa-user"></i> --}}
+                                </a>
+                            @else
+                                <a class="nav-link far" href="/user/dashboard">
+                                    <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile"
+                                        class="img img-thumbnail rounded-circle">
+                                    {{-- <i class="fas fa-user"></i> --}}
+                                </a>
+                            @endif
                         @endif
 
                     @endauth
