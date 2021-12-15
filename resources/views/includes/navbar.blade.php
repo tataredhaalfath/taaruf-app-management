@@ -38,13 +38,14 @@ use App\Models\User\UserProfile;
                             @endphp
                             @if ($profile)
                                 <a class="nav-link far" href="/admin">
-                                    <img src="{{ Storage::url($profile->image) }}" alt="user profile">
+                                    <img src="{{ Storage::url($profile->image) }}" alt="user profile"
+                                        style="object-fit: cover; width:55px !important; height:55px !important">
                                     {{-- <i class="fas fa-user"></i> --}}
                                 </a>
                             @else
                                 <a class="nav-link far" href="/admin">
-                                    <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}"
-                                        alt="user profile">
+                                    <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile"
+                                        style="object-fit: cover; width:55px !important; height:55px !important">
                                     {{-- <i class="fas fa-user"></i> --}}
                                 </a>
                             @endif
@@ -63,7 +64,8 @@ use App\Models\User\UserProfile;
                             @else
                                 <a class="nav-link far" href="/user/dashboard">
                                     <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile"
-                                        class="img img-thumbnail rounded-circle">
+                                        class="img img-thumbnail rounded-circle"
+                                        style="object-fit: cover; width:55px !important; height:55px !important">
                                     {{-- <i class="fas fa-user"></i> --}}
                                 </a>
                             @endif
