@@ -66,7 +66,8 @@
                                                                     memulai taaruf</small>
                                                             </td>
                                                         @elseif ($cv && $question && $profile && $gambar_fisik && $hobi
-                                                            && $pendidikan && $gambar_diri && $kriteria && $harapan)
+                                                            && $pendidikan && $gambar_diri && $kriteria && $harapan &&
+                                                            $user_profile)
                                                             <td class="text-center" width="50%">
                                                                 <form action="{{ route('user-cv-pengajuan') }}"
                                                                     method="POST">
@@ -82,11 +83,16 @@
                                                                         CV</button>
                                                                 </form>
                                                             </td>
+
                                                         @else
                                                             <td class="text-center" width="50%">
                                                                 <a href="{{ route('user-create-cv') }}"
                                                                     class="btn btn-success btn-sm"><i
                                                                         class="fas fa-file-signature"></i> Lengkapi CV</a>
+                                                                <a href="{{ route('user-account-profile') }}"
+                                                                    class="btn btn-primary btn-sm"><i
+                                                                        class="fas fa-file-signature"></i> Lengkapi
+                                                                    Profile</a>
                                                             </td>
                                                         @endif
                                                     @elseif (Auth::user()->status =='ACTIVE')

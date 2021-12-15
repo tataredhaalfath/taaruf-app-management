@@ -22,6 +22,7 @@ use App\Models\User\Cv_Kriteria;
 use App\Models\User\Cv_Pendidikan;
 use App\Models\User\CvProfile;
 use App\Models\User\Pengajuan_Cv;
+use App\Models\User\UserProfile;
 use App\Models\User\UserQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,6 +50,7 @@ class CvController extends Controller
         $kriteria = null;
         $harapan = null;
         $pengajuan_cv = null;
+        $user_profile = UserProfile::where('user_id', Auth::user()->id)->first();
         if ($cv) {
             $profile = CvProfile::where('cv_id', $cv->id)->first();
             $gambar_fisik = Cv_Gambar_Fisik::where('cv_id', $cv->id)->first();
@@ -71,6 +73,7 @@ class CvController extends Controller
             'kriteria' => $kriteria,
             'harapan' => $harapan,
             'pengajuan_cv' => $pengajuan_cv,
+            'user_profile' => $user_profile,
         ]);
     }
 
