@@ -39,7 +39,8 @@ use App\Models\User\Cv;
                                     <td>{{ $data_cv->slug }}</td>
                                     <td>{{ $cv->created_at }}</td>
                                     <td>
-                                        <a href="" class="btn btn-info"><i class="fa fa-eye"> Detail</i></a>
+                                        <a href="{{ route('admin-cv-detail', $cv->user_id) }}" class="btn btn-info"><i
+                                                class="fa fa-eye"> Detail</i></a>
                                         <form action="" method="post" class="d-inline">
                                             @csrf
                                             @method('delete')

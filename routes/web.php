@@ -117,6 +117,7 @@ Route::prefix('admin')
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/cv', [CvConfirmController::class, 'index'])->name('admin-cv');
+        Route::get('/cv/{id}/detail', [CvConfirmController::class, 'detail'])->name('admin-cv-detail');
     });
 
 Auth::routes(['verify' => true]);
