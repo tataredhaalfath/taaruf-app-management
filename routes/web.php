@@ -118,6 +118,8 @@ Route::prefix('admin')
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/cv', [CvConfirmController::class, 'index'])->name('admin-cv');
         Route::get('/cv/{id}/detail', [CvConfirmController::class, 'detail'])->name('admin-cv-detail');
+        Route::POST('/cv/confirm', [CvConfirmController::class, 'confirm'])->name('admin-cv-confirm');
+        Route::DELETE('/cv/reject', [CvConfirmController::class, 'reject'])->name('admin-cv-reject');
     });
 
 Auth::routes(['verify' => true]);

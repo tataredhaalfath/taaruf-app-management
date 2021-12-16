@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\User\Cv;
 use App\Models\User\Cv_Gambar_Diri;
 use App\Models\User\Cv_Gambar_Fisik;
@@ -30,7 +31,9 @@ class CvConfirmController extends Controller
     public function detail(Request $request, $id)
     {
 
+        $user = User::findOrFail($id);
         $cv = Cv::where('user_id', $id)->first();
+        $pengajuan_cv = Pengajuan_Cv::where('user_id', $id)->first();
         $question = UserQuestion::where('user_id', $id)->first();
         if ($cv) {
             $profile = CvProfile::where('cv_id', $cv->id)->first();
@@ -43,7 +46,9 @@ class CvConfirmController extends Controller
             if ($question && $profile && $gambar_fisik && $hobi && $pendidikan && $gambar_diri && $kriteria && $harapan) {
 
                 return view('pages.admin.cv.detail', [
+                    'user' => $user,
                     'cv' => $cv,
+                    'pengajuan_cv' => $pengajuan_cv,
                     'question' => $question,
                     'profile' => $profile,
                     'gambar_fisik' => $gambar_fisik,
@@ -59,5 +64,24 @@ class CvConfirmController extends Controller
 
 
         return redirect(404);
+    }
+
+    public function confirm(Request $request)
+    {
+        $data = $request->all();
+        $user = User::findOrFail($data['user_id']);
+        $user['status'] = 'ACTIVE';
+        $user->update();
+        $pengajuan = Pengajuan_Cv::findOrFail($data['pengajuan_id']);
+        $pengajuan->delete();
+        return redirect()->route('admin-cv');
+    }
+
+    public function reject(Request $request)
+    {
+        $data = $request->all();
+        $pengajuan = Pengajuan_Cv::findOrFail($data['pengajuan_id']);
+        $pengajuan->delete();
+        return redirect()->route('admin-cv');
     }
 }

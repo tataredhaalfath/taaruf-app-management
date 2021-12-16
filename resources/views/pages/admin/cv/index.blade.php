@@ -41,10 +41,21 @@ use App\Models\User\Cv;
                                     <td>
                                         <a href="{{ route('admin-cv-detail', $cv->user_id) }}" class="btn btn-info"><i
                                                 class="fa fa-eye"> Detail</i></a>
-                                        <form action="" method="post" class="d-inline">
+                                        <form action="{{ route('admin-cv-reject') }}" method="post" class="d-inline">
                                             @csrf
                                             @method('delete')
-                                            <button class="btn btn-success" onclick="return confirm('Hapus Data?')"><i
+                                            <input type="hidden" name="pengajuan_id" id="pengajuan_id"
+                                                value="{{ $cv->id }}">
+                                            <button class="btn btn-danger" onclick="return confirm('Tolak CV?')"><i
+                                                    class="fa fa-trash"></i> Reject</button>
+                                        </form>
+                                        <form action="{{ route('admin-cv-confirm') }}" method="post"
+                                            class="d-inline">
+                                            @csrf
+                                            <input type="hidden" name="user_id" id="user_id" value="{{ $cv->id }}">
+                                            <input type="hidden" name="pengajuan_id" id="pengajuan_id"
+                                                value="{{ $cv->id }}">
+                                            <button class="btn btn-success" onclick="return confirm('Setujui CV?')"><i
                                                     class="fa fa-check"></i> Confirm</button>
                                         </form>
                                     </td>

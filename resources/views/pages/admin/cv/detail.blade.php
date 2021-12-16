@@ -270,6 +270,29 @@ use App\Models\User\Cv;
                             </div>
                         </div>
                     </div>
+                    <div class="row my-5">
+                        <div class="col">
+                            <div class="float-right">
+                                <form action="{{ route('admin-cv-reject') }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="pengajuan_id" id="pengajuan_id"
+                                        value="{{ $pengajuan_cv->id }}">
+                                    <button class="btn btn-sm btn-danger" onclick="return confirm('Tolak CV?')"><i
+                                            class="fa fa-trash"></i> Reject</button>
+                                </form>
+                                <form action="{{ route('admin-cv-confirm') }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+                                    <input type="hidden" name="pengajuan_id" id="pengajuan_id"
+                                        value="{{ $pengajuan_cv->id }}">
+                                    <button class="btn btn-sm btn-success" onclick="return confirm('Setujui CV?')"><i
+                                            class="fa fa-check"></i>
+                                        Confirm</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
