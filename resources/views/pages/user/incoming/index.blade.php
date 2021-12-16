@@ -34,24 +34,31 @@ use App\Models\User;
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
-                                            @forelse  ($incoming as $in)
-                                                @php
-                                                    $user = User::findOrFail($in->user_id);
-                                                @endphp
-                                                <tr class="text-center">
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $user->name }}</td>
-                                                    <td>{{ date('d-m-Y', strtotime($in->created_at)) }}</td>
-                                                    <td>MENGAJUKAN</td>
-                                                    <td><a href="{{ route('user-incoming-detail', $in->id) }}"
-                                                            class="btn-cta">Detail</a>
-                                                    </td>
-                                                </tr>
-                                            @empty
+                                            @if ($incoming !== null)
+                                                @forelse  ($incoming as $in)
+                                                    @php
+                                                        $user = User::findOrFail($in->user_id);
+                                                    @endphp
+                                                    <tr class="text-center">
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $user->name }}</td>
+                                                        <td>{{ date('d-m-Y', strtotime($in->created_at)) }}</td>
+                                                        <td>MENGAJUKAN</td>
+                                                        <td><a href="{{ route('user-incoming-detail', $in->id) }}"
+                                                                class="btn-cta">Detail</a>
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                    <tr class="text-center">
+                                                        <td colspan="5">BELUM ADA PERMINTAAN TAARUF MASUK</td>
+                                                    </tr>
+                                                @endforelse
+                                            @else
                                                 <tr class="text-center">
                                                     <td colspan="5">BELUM ADA PERMINTAAN TAARUF MASUK</td>
                                                 </tr>
-                                            @endforelse
+                                            @endif
+
                                         </tbody>
                                     </table>
                                 </div>

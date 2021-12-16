@@ -60,50 +60,52 @@ Route::prefix('user')
         Route::PUT('/account/profile', [AccountController::class, 'update_profile'])->name('user-account-update-profile');
         Route::GET('/account/profile/edit', [AccountController::class, 'edit_profile'])->name('user-account-edit-profile');
 
+        Route::middleware('verified')
+            ->group(function () {
+                //menu cv
+                Route::get('/cv', [CvController::class, 'index'])->name('user-cv');
+                Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');
+                Route::get('/cv/create', [CvController::class, 'create'])->name('user-create-cv');
+                Route::POST('/cv/profile', [CvController::class, 'profile'])->name('user-store-profile');
+                Route::POST('/cv/gambar-fisik', [CvController::class, 'gambar_fisik'])->name('user-store-gambar-fisik');
+                Route::POST('/cv/hobi', [CvController::class, 'hobi'])->name('user-store-hobi');
+                Route::POST('/cv/pendidikan', [CvController::class, 'pendidikan'])->name('user-store-pendidikan');
+                Route::POST('/cv/gambar-diri', [CvController::class, 'gambar_diri'])->name('user-store-gambar-diri');
+                Route::POST('/cv/kriteria', [CvController::class, 'kriteria'])->name('user-store-kriteria');
+                Route::POST('/cv/harapan', [CvController::class, 'harapan'])->name('user-store-harapan');
+                //menu cv edit
+                Route::get('/cv/edit', [CvController::class, 'edit'])->name('user-cv-edit');
+                Route::PUT('/cv/profile/', [CvController::class, 'profile_update'])->name('user-update-profile');
+                Route::PUT('/cv/gambar-fisik', [CvController::class, 'gambar_fisik_update'])->name('user-update-gambar-fisik');
+                Route::PUT('/cv/hobi', [CvController::class, 'hobi_update'])->name('user-update-hobi');
+                Route::PUT('/cv/pendidikan', [CvController::class, 'pendidikan_update'])->name('user-update-pendidikan');
+                Route::PUT('/cv/gambar-diri', [CvController::class, 'gambar_diri_update'])->name('user-update-gambar-diri');
+                Route::PUT('/cv/kriteria', [CvController::class, 'kriteria_update'])->name('user-update-kriteria');
+                Route::PUT('/cv/harapan', [CvController::class, 'harapan_update'])->name('user-update-harapan');
+                //menu cv - question
+                Route::GET('/cv/question', [CvController::class, 'question_edit'])->name('user-question-edit');
+                Route::PUT('/cv/question', [CvController::class, 'question_update'])->name('user-question-update');
+                Route::POST('/cv/question', [CvController::class, 'question'])->name('user-question');
+                //pengajuan cv untuk di review
+                Route::POST('/cv/pengajuan', [CvController::class, 'pengajuan_cv'])->name('user-cv-pengajuan');
 
-        //menu cv
-        Route::get('/cv', [CvController::class, 'index'])->name('user-cv');
-        Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');
-        Route::get('/cv/create', [CvController::class, 'create'])->name('user-create-cv');
-        Route::POST('/cv/profile', [CvController::class, 'profile'])->name('user-store-profile');
-        Route::POST('/cv/gambar-fisik', [CvController::class, 'gambar_fisik'])->name('user-store-gambar-fisik');
-        Route::POST('/cv/hobi', [CvController::class, 'hobi'])->name('user-store-hobi');
-        Route::POST('/cv/pendidikan', [CvController::class, 'pendidikan'])->name('user-store-pendidikan');
-        Route::POST('/cv/gambar-diri', [CvController::class, 'gambar_diri'])->name('user-store-gambar-diri');
-        Route::POST('/cv/kriteria', [CvController::class, 'kriteria'])->name('user-store-kriteria');
-        Route::POST('/cv/harapan', [CvController::class, 'harapan'])->name('user-store-harapan');
-        //menu cv edit
-        Route::get('/cv/edit', [CvController::class, 'edit'])->name('user-cv-edit');
-        Route::PUT('/cv/profile/', [CvController::class, 'profile_update'])->name('user-update-profile');
-        Route::PUT('/cv/gambar-fisik', [CvController::class, 'gambar_fisik_update'])->name('user-update-gambar-fisik');
-        Route::PUT('/cv/hobi', [CvController::class, 'hobi_update'])->name('user-update-hobi');
-        Route::PUT('/cv/pendidikan', [CvController::class, 'pendidikan_update'])->name('user-update-pendidikan');
-        Route::PUT('/cv/gambar-diri', [CvController::class, 'gambar_diri_update'])->name('user-update-gambar-diri');
-        Route::PUT('/cv/kriteria', [CvController::class, 'kriteria_update'])->name('user-update-kriteria');
-        Route::PUT('/cv/harapan', [CvController::class, 'harapan_update'])->name('user-update-harapan');
-        //menu cv - question
-        Route::GET('/cv/question', [CvController::class, 'question_edit'])->name('user-question-edit');
-        Route::PUT('/cv/question', [CvController::class, 'question_update'])->name('user-question-update');
-        Route::POST('/cv/question', [CvController::class, 'question'])->name('user-question');
-        //pengajuan cv untuk di review
-        Route::POST('/cv/pengajuan', [CvController::class, 'pengajuan_cv'])->name('user-cv-pengajuan');
+                //menu sent
+                Route::get('/sent', [SentController::class, 'index'])->name('user-sent');
+                //menu incoming
+                Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
+                Route::get('/incoming/{id}/detail', [IncomingController::class, 'detail'])->name('user-incoming-detail');
+                Route::POST('/incoming/approve', [IncomingController::class, 'approve'])->name('user-incoming-approve');
+                Route::POST('/incoming/reject', [IncomingController::class, 'reject'])->name('user-incoming-reject');
 
-        //menu sent
-        Route::get('/sent', [SentController::class, 'index'])->name('user-sent');
-        //menu incoming
-        Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
-        Route::get('/incoming/{id}/detail', [IncomingController::class, 'detail'])->name('user-incoming-detail');
-        Route::POST('/incoming/approve', [IncomingController::class, 'approve'])->name('user-incoming-approve');
-        Route::POST('/incoming/reject', [IncomingController::class, 'reject'])->name('user-incoming-reject');
-
-        //menu approve
-        Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');
-        Route::get('/approve/{id}/detail', [ApproveController::class, 'detail'])->name('user-approve-detail');
-        Route::POST('/approve', [ApproveController::class, 'transaction'])->name('user-approve-transaction');
+                //menu approve
+                Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');
+                Route::get('/approve/{id}/detail', [ApproveController::class, 'detail'])->name('user-approve-detail');
+                Route::POST('/approve', [ApproveController::class, 'transaction'])->name('user-approve-transaction');
 
 
-        //menu reject
-        Route::get('/reject', [RejectController::class, 'index'])->name('user-reject');
+                //menu reject
+                Route::get('/reject', [RejectController::class, 'index'])->name('user-reject');
+            });
     });
 
 
