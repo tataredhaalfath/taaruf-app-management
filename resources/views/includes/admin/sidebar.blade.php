@@ -13,13 +13,39 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
+    @if (Route::current()->getName() == 'dashboard')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('dashboard') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('dashboard') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+    @endif
+
     <hr class="sidebar-divider">
 
+    <!-- Nav Item - CV-->
+    @if (Route::current()->getName() == 'admin-cv')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('admin-cv') }}">
+                <i class="fas fa-file-alt"></i>
+                <span>Cv Confirm</span></a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin-cv') }}">
+                <i class="fas fa-file-alt"></i>
+                <span>Cv Confirm</span></a>
+        </li>
+    @endif
+    <hr class="sidebar-divider">
     <!-- Nav Item - Ta'aruf -->
     <li class="nav-item">
         <a class="nav-link" href="index.html">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CvConfirmController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\DetailController;
@@ -115,6 +116,7 @@ Route::prefix('admin')
     ->middleware(['auth', 'admin'])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/cv', [CvConfirmController::class, 'index'])->name('admin-cv');
     });
 
 Auth::routes(['verify' => true]);

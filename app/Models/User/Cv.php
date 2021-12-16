@@ -50,4 +50,9 @@ class Cv extends Model
     {
         return $this->hasOne(Cv_Harapan::class, 'cv_id', 'id');
     }
+
+    public function Pengajuan_cv()
+    {
+        return $this->hasMany(Pengajuan_Cv::class, 'cv_id', 'id');
+    }
 }

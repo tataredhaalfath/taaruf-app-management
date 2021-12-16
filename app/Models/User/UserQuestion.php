@@ -21,6 +21,6 @@ class UserQuestion extends Model
 
     public function Pengajuan_Cv()
     {
-        return $this->hasOne(Pengajuan_Cv::class, 'question_id', 'id');
+        return $this->hasMany(Pengajuan_Cv::class, 'question_id', 'id');
     }
 }

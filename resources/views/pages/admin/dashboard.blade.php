@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Admin Dashboard')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -121,9 +122,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
     <!-- /.container-fluid -->
 @endsection
