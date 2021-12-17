@@ -106,7 +106,7 @@
                                 </tr>
                             </table>
                             <div class="text-center">
-                                <a href="{{ route('user-account-edit-profile') }}" class="btn btn-primary"><i
+                                <a href="{{ route('admin-edit-configure') }}" class="btn btn-primary"><i
                                         class="fas fa-user-cog">
                                         Edit</i></a>
                             </div>
@@ -126,7 +126,7 @@
             </div>
             <div class="col-xl-6 col-lg-8 col-md-8 col-10">
                 <div class="card mx-auto my-3" style="width: 18rem;">
-                    <div class="card-body" style="   @if (Auth::user()->status ==
+                    <div class="card-body" style="    @if (Auth::user()->status ==
                         'PENDING')
                         background-color:orange;
                         color:white !important;

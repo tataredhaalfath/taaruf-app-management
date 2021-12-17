@@ -31,4 +31,12 @@ class ConfigureController extends Controller
         UserProfile::create($data);
         return redirect()->route('admin-configure');
     }
+
+    public function edit()
+    {
+        $profile = UserProfile::where('user_id', Auth::user()->id)->first();
+        return view('pages.admin.configure.edit', [
+            'profile' => $profile,
+        ]);
+    }
 }
