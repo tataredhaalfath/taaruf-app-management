@@ -29,7 +29,7 @@ class DashboardController extends Controller
         $reject = Taaruf::where('status', 'REJECTED')->count();
         $sucess = TaarufTransaction::where('status', 'melanjutkan')->count();
         $fail = TaarufTransaction::where('status', 'membatalkan')->count();
-
+        $counselor = User::where('roles', 'COUNSELOR')->count();
         return  view('pages.admin.dashboard', [
             'user' => $user,
             'cv' => $cv,
@@ -40,6 +40,7 @@ class DashboardController extends Controller
             'reject' => $reject,
             'success' => $sucess,
             'fail' => $fail,
+            'counselor' => $counselor,
         ]);
     }
 }
