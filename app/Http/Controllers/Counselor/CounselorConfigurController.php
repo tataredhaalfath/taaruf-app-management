@@ -39,4 +39,18 @@ class CounselorConfigurController extends Controller
             'profile' => $profile,
         ]);
     }
+
+    public function update(UserProfileRequest $request)
+    {
+        $data = $request->all();
+        if ($request->image) {
+            // hapus file image lama
+            unlink(public_path('storage/' . $data['old_image']));
+            //masukan image baru
+            $data['image'] = $request->file('image')->store('assets/counselor/profile', 'public');
+        }
+        $profile = UserProfile::where('user_id', Auth::user()->id)->first();
+        $profile->update($data);
+        return redirect(route('counselor-configure'));
+    }
 }

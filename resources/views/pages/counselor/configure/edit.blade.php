@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-xl-7 col-lg-7 col-md-12 profile__detail">
                         <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                            <form action="{{ route('admin-update-configure') }}" method="POST"
+                            <form action="{{ route('counselor-update-configure') }}" method="POST"
                                 class="px-sm-5 px-2 py-sm-4 py-2 mb-5" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
