@@ -133,6 +133,7 @@ Route::prefix('admin')
         //counselor
         Route::get('/counselor', [CounselorController::class, 'index'])->name('admin-counselor');
         Route::POST('/counselor', [CounselorController::class, 'store'])->name('admin-store-counselor');
+        Route::DELETE('/counselor', [CounselorController::class, 'drop'])->name('admin-drop-counselor');
         Route::get('/counselor/create', [CounselorController::class, 'create'])->name('admin-create-counselor');
         //configure
         Route::get('/configure', [ConfigureController::class, 'index'])->name('admin-configure');

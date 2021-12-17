@@ -28,7 +28,7 @@
                                 <th>Nama</th>
                                 <th>Email</th>
                                 <th>Roles</th>
-                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,7 +39,16 @@
                                         <td>{{ $counselor->name }}</td>
                                         <td>{{ $counselor->email }}</td>
                                         <td>{{ $counselor->roles }}</td>
-                                        <td>{{ $counselor->status }}</td>
+                                        <td>
+                                            <form action="{{ route('admin-drop-counselor') }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <input type="hidden" name="id" id="id" value="{{ $counselor->id }}">
+                                                <button class="btn badge badge-sm badge-danger"><i
+                                                        class="fas fa-trash"></i>
+                                                    Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\User\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Hash;
@@ -42,5 +43,18 @@ class CounselorController extends Controller
         ]);
 
         return redirect()->route('admin-counselor')->with('status', 'Counsoler Berhasil Ditambah');
+    }
+
+    public function drop(Request $request)
+    {
+        $user = User::findOrFail($request['id']);
+        $profile = UserProfile::where('user_id', $request['id'])->first();
+        if ($profile) {
+            // hapus file image lama
+            unlink(public_path('storage/' . $profile['image']));
+            $profile->delete();
+        }
+        $user->delete();
+        return redirect()->route('admin-counselor')->with('status', 'Data Berhasil Dihapus');
     }
 }
