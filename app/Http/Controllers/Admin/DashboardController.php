@@ -28,6 +28,8 @@ class DashboardController extends Controller
         $approve = Taaruf::where('status', 'APPROVED')->count();
         $reject = Taaruf::where('status', 'REJECTED')->count();
         $sucess = TaarufTransaction::where('status', 'melanjutkan')->count();
+        $fail = TaarufTransaction::where('status', 'membatalkan')->count();
+
         return  view('pages.admin.dashboard', [
             'user' => $user,
             'cv' => $cv,
@@ -37,6 +39,7 @@ class DashboardController extends Controller
             'approve' => $approve,
             'reject' => $reject,
             'success' => $sucess,
+            'fail' => $fail,
         ]);
     }
 }
