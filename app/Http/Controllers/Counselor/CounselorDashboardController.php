@@ -17,7 +17,7 @@ class CounselorDashboardController extends Controller
         $reject = Taaruf::where('status', 'REJECTED')->count();
         $sucess = TaarufTransaction::where('status', 'melanjutkan')->count();
         $fail = TaarufTransaction::where('status', 'membatalkan')->count();
-        return  view('pages.cpunselor.dashboard', [
+        return  view('pages.counselor.dashboard', [
             'sent' => $sent,
             'approve' => $approve,
             'reject' => $reject,

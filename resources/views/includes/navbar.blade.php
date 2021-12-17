@@ -51,7 +51,25 @@ use App\Models\User\UserProfile;
                                     {{-- <i class="fas fa-user"></i> --}}
                                 </a>
                             @endif
-
+                        @elseif (Auth::user()->roles == 'COUNSELOR')
+                            @php
+                                $profile = UserProfile::where('user_id', Auth::user()->id)->first();
+                            @endphp
+                            @if ($profile)
+                                <a class="nav-link far" href="/counselor">
+                                    <img src="{{ Storage::url($profile->image) }}" alt="user profile"
+                                        class="img img-thumbnail rounded-circle"
+                                        style="object-fit: cover; width:55px !important; height:55px !important">
+                                    {{-- <i class="fas fa-user"></i> --}}
+                                </a>
+                            @else
+                                <a class="nav-link far" href="/counselor">
+                                    <img src="{{ asset('front-end/assets/images/icon/avatar_1.png') }}" alt="user profile"
+                                        class="img img-thumbnail rounded-circle"
+                                        style="object-fit: cover; width:55px !important; height:55px !important">
+                                    {{-- <i class="fas fa-user"></i> --}}
+                                </a>
+                            @endif
                         @else
                             @php
                                 $profile = UserProfile::where('user_id', Auth::user()->id)->first();

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\TaarufHandleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserListController;
 use App\Http\Controllers\CheckController;
+use App\Http\Controllers\Counselor\CounselorDashboardController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoriesController;
@@ -143,4 +144,11 @@ Route::prefix('admin')
         Route::get('/configure/edit', [ConfigureController::class, 'edit'])->name('admin-edit-configure');
     });
 
+//counselor 
+Route::prefix('counselor')
+    ->namespace('Counselor')
+    ->middleware(['auth', 'counselor'])
+    ->group(function () {
+        Route::GET('/', [CounselorDashboardController::class, 'index'])->name('counselor-dashboard');
+    });
 Auth::routes(['verify' => true]);
