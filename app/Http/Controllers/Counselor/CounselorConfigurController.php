@@ -16,4 +16,9 @@ class CounselorConfigurController extends Controller
             'profile' => $profile
         ]);
     }
+
+    public function create()
+    {
+        return view('pages.counselor.configure.create');
+    }
 }

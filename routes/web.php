@@ -152,5 +152,6 @@ Route::prefix('counselor')
     ->group(function () {
         Route::GET('/', [CounselorDashboardController::class, 'index'])->name('counselor-dashboard');
         Route::get('/configure', [CounselorConfigurController::class, 'index'])->name('counselor-configure');
+        Route::get('/configure/create', [CounselorConfigurController::class, 'create'])->name('counselor-create-configure');
     });
 Auth::routes(['verify' => true]);

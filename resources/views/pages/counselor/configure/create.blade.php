@@ -1,5 +1,5 @@
-@extends('layouts.admin')
-@section('title', 'Edit Configure')
+@extends('layouts.counselor')
+@section('title', 'Configure')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -14,23 +14,21 @@
                 {{ session('status') }}
             </div>
         @endif
+        <!-- Content Row -->
         <div class="col-xl-9 col-lg-9 col-md-12">
             <div class="user__dashboard">
                 <div class="row">
                     <div class="col-xl-7 col-lg-7 col-md-12 profile__detail">
                         <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
-                            <form action="{{ route('admin-update-configure') }}" method="POST"
+                            <form action="{{ route('admin-store-configure') }}" method="POST"
                                 class="px-sm-5 px-2 py-sm-4 py-2 mb-5" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
                                 <h5>Profile</h5>
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                <input type="hidden" name="old_image" value="{{ $profile->image }}">
-                                <img src="{{ Storage::url($profile->image) }}" width="150" height="150" alt="user image">
                                 <div class="form-group">
                                     <label for="image">Image <small>(max 2mb)</small></label>
                                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
-                                        name="image" placeholder="image">
+                                        name="image" placeholder="image" required>
                                     @error('image')
                                         <div id="invalidCheck3Feedback" class="invalid-feedback">
                                             {{ $message }}
@@ -40,8 +38,7 @@
                                 <div class="form-group">
                                     <label for="telpon">Nomor Telpon</label>
                                     <input type="text" class="form-control @error('telpon') is-invalid @enderror"
-                                        id="telpon" name="telpon" value="{{ $profile->telpon }}"
-                                        placeholder="nomor telpon">
+                                        id="telpon" name="telpon" value="{{ old('telpon') }}" placeholder="nomor telpon">
                                     @error('telpon')
                                         <div id="invalidCheck3Feedback" class="invalid-feedback">
                                             {{ $message }}
@@ -64,7 +61,7 @@
                                         <select name="kota" id="kota" class="p-1 @error('kota') is-invalid @enderror"
                                             required>
                                             <option value="">Pilih Kota</option>
-                                            <option value="{{ $profile->kota }}" selected>Semarang</option>
+                                            <option value="semarang">Semarang</option>
                                         </select>
                                     </div>
                                 </div>
@@ -91,7 +88,7 @@
                                     <label for="alamat">Alamat</label>
                                     <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat"
                                         name="alamat" placeholder="alamat lengkap beserta rt/rw"
-                                        rows="3">{{ $profile->alamat }}</textarea>
+                                        rows="3">{{ old('alamat') }}</textarea>
                                     @error('alamat')
                                         <div id="invalidCheck3Feedback" class="invalid-feedback">
                                             {{ $message }}
@@ -101,7 +98,7 @@
                                 <div class="form-group">
                                     <label for="umur">Umur</label>
                                     <input type="number" class="form-control @error('umur') is-invalid @enderror" id="umur"
-                                        name="umur" value="{{ $profile->umur }}" placeholder="umur (tahun)">
+                                        name="umur" value="{{ old('umur') }}" placeholder="umur (tahun)">
                                     @error('umur')
                                         <div id="invalidCheck3Feedback" class="invalid-feedback">
                                             {{ $message }}
@@ -127,8 +124,7 @@
                                 <div class="form-group">
                                     <label for="tagline">Tagline</label>
                                     <textarea class="form-control @error('tagline') is-invalid @enderror" id="tagline"
-                                        name="tagline" placeholder="tagline dalam mencari pasangan"
-                                        rows="3">{{ $profile->tagline }}</textarea>
+                                        name="tagline" placeholder="tagline" rows="3">{{ old('tagline') }}</textarea>
                                     @error('tagline')
                                         <div id="invalidCheck3Feedback" class="invalid-feedback">
                                             {{ $message }}
