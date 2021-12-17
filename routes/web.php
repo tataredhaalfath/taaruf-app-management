@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\TaarufHandleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserListController;
 use App\Http\Controllers\CheckController;
+use App\Http\Controllers\Counselor\CounselorConfigurController;
 use App\Http\Controllers\Counselor\CounselorDashboardController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
@@ -150,5 +151,6 @@ Route::prefix('counselor')
     ->middleware(['auth', 'counselor'])
     ->group(function () {
         Route::GET('/', [CounselorDashboardController::class, 'index'])->name('counselor-dashboard');
+        Route::get('/configure', [CounselorConfigurController::class, 'index'])->name('counselor-configure');
     });
 Auth::routes(['verify' => true]);

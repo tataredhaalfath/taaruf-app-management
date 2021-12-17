@@ -50,13 +50,13 @@
     <!-- Nav Item - configure -->
     @if (Route::current()->getName() == 'counselor-configure')
         <li class="nav-item active">
-            <a class="nav-link" href="{{ route('admin-configure') }}">
+            <a class="nav-link" href="{{ route('counselor-configure') }}">
                 <i class="fas fa-cog"></i>
                 <span>Configure</span></a>
         </li>
     @else
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin-configure') }}">
+            <a class="nav-link" href="{{ route('counselor-configure') }}">
                 <i class="fas fa-cog"></i>
                 <span>Configure</span></a>
         </li>
