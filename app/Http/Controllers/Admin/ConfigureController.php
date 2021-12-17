@@ -26,7 +26,7 @@ class ConfigureController extends Controller
     public function store(UserProfileRequest $request)
     {
         $data = $request->all();
-        $data['image'] = $request->file('image')->store('assets/user/profile', 'public');
+        $data['image'] = $request->file('image')->store('assets/admin/profile', 'public');
 
         UserProfile::create($data);
         return redirect()->route('admin-configure');
@@ -38,5 +38,19 @@ class ConfigureController extends Controller
         return view('pages.admin.configure.edit', [
             'profile' => $profile,
         ]);
+    }
+
+    public function update(UserProfileRequest $request)
+    {
+        $data = $request->all();
+        if ($request->image) {
+            // hapus file image lama
+            unlink(public_path('storage/' . $data['old_image']));
+            //masukan image baru
+            $data['image'] = $request->file('image')->store('assets/admin/profile', 'public');
+        }
+        $profile = UserProfile::where('user_id', Auth::user()->id)->first();
+        $profile->update($data);
+        return redirect(route('admin-configure'));
     }
 }

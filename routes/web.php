@@ -137,6 +137,7 @@ Route::prefix('admin')
         //configure
         Route::get('/configure', [ConfigureController::class, 'index'])->name('admin-configure');
         Route::POST('/configure', [ConfigureController::class, 'store'])->name('admin-store-configure');
+        Route::PUT('/configure', [ConfigureController::class, 'update'])->name('admin-update-configure');
         Route::get('/configure/create', [ConfigureController::class, 'create'])->name('admin-create-configure');
         Route::get('/configure/edit', [ConfigureController::class, 'edit'])->name('admin-edit-configure');
     });
