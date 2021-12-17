@@ -127,6 +127,7 @@ Route::prefix('admin')
         Route::get('/taaruf', [TaarufHandleController::class, 'index'])->name('admin-taaruf');
         Route::get('/userlist', [UserListController::class, 'index'])->name('admin-userlist');
         Route::get('/counselor', [CounselorController::class, 'index'])->name('admin-counselor');
+        Route::POST('/counselor', [CounselorController::class, 'store'])->name('admin-store-counselor');
         Route::get('/counselor/create', [CounselorController::class, 'create'])->name('admin-create-counselor');
     });
 

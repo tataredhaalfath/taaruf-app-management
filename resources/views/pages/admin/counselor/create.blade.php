@@ -11,9 +11,11 @@
         <div class="col-8">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('register') }}" method="POST">
+                    <form action="{{ route('admin-store-counselor') }}" method="POST">
                         @csrf
                         <div class="form-group ">
+                            <input type="hidden" name="roles" value="COUNSELOR">
+                            <input type="hidden" name="status" value="ACTIVE">
                             <label for="name">Name</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                                 value="{{ old('name') }}" required autocomplete="name" autofocus>

@@ -32,19 +32,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ( $counselors as $counselor)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $counselor->name }}</td>
-                                    <td>{{ $counselor->email }}</td>
-                                    <td>{{ $counselor->roles }}</td>
-                                    <td>{{ $counselor->status }}</td>
-                                </tr>
-                            @empty
+                            @if ($counselors)
+                                @forelse ( $counselors as $counselor)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $counselor->name }}</td>
+                                        <td>{{ $counselor->email }}</td>
+                                        <td>{{ $counselor->roles }}</td>
+                                        <td>{{ $counselor->status }}</td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="6" class="text-center">Data Kosong</td>
+                                    </tr>
+                                @endforelse
+                            @else
                                 <tr>
                                     <td colspan="6" class="text-center">Data Kosong</td>
                                 </tr>
-                            @endforelse
+                            @endif
+
 
                         </tbody>
                     </table>
