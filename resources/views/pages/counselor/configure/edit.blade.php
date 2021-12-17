@@ -1,5 +1,5 @@
-@extends('layouts.admin')
-@section('title', 'Data User')
+@extends('layouts.counselor')
+@section('title', 'Edit Configure')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">

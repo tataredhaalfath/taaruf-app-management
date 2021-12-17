@@ -153,5 +153,6 @@ Route::prefix('counselor')
         Route::get('/configure', [CounselorConfigurController::class, 'index'])->name('counselor-configure');
         Route::POST('/configure', [CounselorConfigurController::class, 'store'])->name('counselor-store-configure');
         Route::get('/configure/create', [CounselorConfigurController::class, 'create'])->name('counselor-create-configure');
+        Route::get('/configure/edit', [CounselorConfigurController::class, 'edit'])->name('counselor-edit-configure');
     });
 Auth::routes(['verify' => true]);

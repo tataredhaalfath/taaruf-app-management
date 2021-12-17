@@ -31,4 +31,12 @@ class CounselorConfigurController extends Controller
         UserProfile::create($data);
         return redirect()->route('counselor-configure');
     }
+
+    public function edit()
+    {
+        $profile = UserProfile::where('user_id', Auth::user()->id)->first();
+        return view('pages.counselor.configure.edit', [
+            'profile' => $profile,
+        ]);
+    }
 }
