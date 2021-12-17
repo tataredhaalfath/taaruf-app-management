@@ -47,11 +47,19 @@
     @endif
     <hr class="sidebar-divider">
     <!-- Nav Item - Ta'aruf -->
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-sticky-note"></i>
-            <span>Ta'aruf</span></a>
-    </li>
+    @if (Route::current()->getName() == 'admin-taaruf')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('admin-taaruf') }}">
+                <i class="fas fa-sticky-note"></i>
+                <span>Ta'aruf</span></a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin-taaruf') }}">
+                <i class="fas fa-sticky-note"></i>
+                <span>Ta'aruf</span></a>
+        </li>
+    @endif
     <hr class="sidebar-divider">
 
 
