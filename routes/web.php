@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CounselorController;
 use App\Http\Controllers\Admin\CvConfirmController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TaarufHandleController;
@@ -125,6 +126,8 @@ Route::prefix('admin')
         Route::DELETE('/cv/reject', [CvConfirmController::class, 'reject'])->name('admin-cv-reject');
         Route::get('/taaruf', [TaarufHandleController::class, 'index'])->name('admin-taaruf');
         Route::get('/userlist', [UserListController::class, 'index'])->name('admin-userlist');
+        Route::get('/counselor', [CounselorController::class, 'index'])->name('admin-counselor');
+        Route::get('/counselor/create', [CounselorController::class, 'create'])->name('admin-create-counselor');
     });
 
 Auth::routes(['verify' => true]);

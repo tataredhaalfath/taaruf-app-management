@@ -79,7 +79,23 @@
     @endif
     <hr class="sidebar-divider">
 
-    <!-- Nav Item - Users -->
+    <!-- Nav Item - counselor -->
+    @if (Route::current()->getName() == 'admin-counselor')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('admin-counselor') }}">
+                <i class="fas fa-user-shield"></i>
+                <span>Counselor</span></a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin-counselor') }}">
+                <i class="fas fa-user-shield"></i>
+                <span>Counselor</span></a>
+        </li>
+    @endif
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - configure -->
     <li class="nav-item">
         <a class="nav-link" href="index.html">
             <i class="fas fa-cog"></i>
