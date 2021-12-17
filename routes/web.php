@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\CvConfirmController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TaarufHandleController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\UserListController;
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
@@ -122,6 +124,7 @@ Route::prefix('admin')
         Route::POST('/cv/confirm', [CvConfirmController::class, 'confirm'])->name('admin-cv-confirm');
         Route::DELETE('/cv/reject', [CvConfirmController::class, 'reject'])->name('admin-cv-reject');
         Route::get('/taaruf', [TaarufHandleController::class, 'index'])->name('admin-taaruf');
+        Route::get('/userlist', [UserListController::class, 'index'])->name('admin-userlist');
     });
 
 Auth::routes(['verify' => true]);

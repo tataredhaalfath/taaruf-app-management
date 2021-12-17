@@ -26,13 +26,11 @@ use App\Models\User;
                                 <th>Nama</th>
                                 <th>Status</th>
                                 <th>Alasan</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ( $taaruf_success as $success)
                                 <tr>
-
                                     @php
                                         $user = User::findOrFail($success->user_id);
                                     @endphp
@@ -41,7 +39,6 @@ use App\Models\User;
                                     <td>{{ $user->name }}</td>
                                     <td class="text-success">{{ $success->status }}</td>
                                     <td>{{ $success->alasan }}</td>
-                                    <td>detail</td>
                                 </tr>
                             @empty
                                 <tr>
@@ -65,13 +62,11 @@ use App\Models\User;
                                 <th>Nama</th>
                                 <th>Status</th>
                                 <th>Alasan</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ( $taaruf_fail as $fail)
                                 <tr>
-
                                     @php
                                         $user = User::findOrFail($fail->user_id);
                                     @endphp
@@ -80,7 +75,6 @@ use App\Models\User;
                                     <td>{{ $user->name }}</td>
                                     <td class="text-danger">{{ $fail->status }}</td>
                                     <td>{{ $fail->alasan }}</td>
-                                    <td>detail</td>
                                 </tr>
                             @empty
                                 <tr>

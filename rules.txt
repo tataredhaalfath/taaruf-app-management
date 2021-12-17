@@ -1,10 +1,7 @@
 USER
-- status user (PENDING, ACTIVE, SEND, TAARUF, SUCCESS, INACTIVE)
+- status user (PENDING, ACTIVE, INACTIVE)
 pending = Belum acc cv oleh admin
 active = sudah aktive dan bisa mengajukan taaruf
-send = mengajukan taaruf ke user lain
-taaruf = sedang masa taaruf
-success = taaruf success
 inactive = sudah selesai masa taaruf dan melanjutkan ke jenjang pernikahan
 
 

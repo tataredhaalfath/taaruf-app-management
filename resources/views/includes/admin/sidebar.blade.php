@@ -64,11 +64,19 @@
 
 
     <!-- Nav Item - Users -->
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-users"></i>
-            <span>Users</span></a>
-    </li>
+    @if (Route::current()->getName() == 'admin-userlist')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('admin-userlist') }}">
+                <i class="fas fa-users"></i>
+                <span>Users</span></a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin-userlist') }}">
+                <i class="fas fa-users"></i>
+                <span>Users</span></a>
+        </li>
+    @endif
     <hr class="sidebar-divider">
 
     <!-- Nav Item - Users -->
