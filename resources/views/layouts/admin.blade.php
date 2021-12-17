@@ -73,6 +73,7 @@
 
     @include('includes.admin.script')
     @stack('caman')
+    @stack('api-daerah')
 
 </body>
 

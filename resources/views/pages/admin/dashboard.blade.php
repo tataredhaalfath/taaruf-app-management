@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
-                                        <div class="mb-0 text-success"><small>{{ $counselor }} Success</small>
+                                        <div class="mb-0 text-success"><small>{{ $counselor }} Counselor</small>
                                         </div>
 
                                     </div>

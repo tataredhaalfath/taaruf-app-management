@@ -96,11 +96,19 @@
     <hr class="sidebar-divider">
 
     <!-- Nav Item - configure -->
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-cog"></i>
-            <span>Configure</span></a>
-    </li>
+    @if (Route::current()->getName() == 'admin-configure')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('admin-configure') }}">
+                <i class="fas fa-cog"></i>
+                <span>Configure</span></a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin-configure') }}">
+                <i class="fas fa-cog"></i>
+                <span>Configure</span></a>
+        </li>
+    @endif
     <hr class="sidebar-divider">
 
     <!-- Sidebar Toggler (Sidebar) -->

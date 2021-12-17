@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ConfigureController;
 use App\Http\Controllers\Admin\CounselorController;
 use App\Http\Controllers\Admin\CvConfirmController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -120,15 +121,23 @@ Route::prefix('admin')
     ->middleware(['auth', 'admin'])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        //confirm cv
         Route::get('/cv', [CvConfirmController::class, 'index'])->name('admin-cv');
         Route::get('/cv/{id}/detail', [CvConfirmController::class, 'detail'])->name('admin-cv-detail');
         Route::POST('/cv/confirm', [CvConfirmController::class, 'confirm'])->name('admin-cv-confirm');
         Route::DELETE('/cv/reject', [CvConfirmController::class, 'reject'])->name('admin-cv-reject');
+        //taaruf list
         Route::get('/taaruf', [TaarufHandleController::class, 'index'])->name('admin-taaruf');
+        //user list
         Route::get('/userlist', [UserListController::class, 'index'])->name('admin-userlist');
+        //counselor
         Route::get('/counselor', [CounselorController::class, 'index'])->name('admin-counselor');
         Route::POST('/counselor', [CounselorController::class, 'store'])->name('admin-store-counselor');
         Route::get('/counselor/create', [CounselorController::class, 'create'])->name('admin-create-counselor');
+        //configure
+        Route::get('/configure', [ConfigureController::class, 'index'])->name('admin-configure');
+        Route::POST('/configure', [ConfigureController::class, 'store'])->name('admin-store-configure');
+        Route::get('/configure/create', [ConfigureController::class, 'create'])->name('admin-create-configure');
     });
 
 Auth::routes(['verify' => true]);
