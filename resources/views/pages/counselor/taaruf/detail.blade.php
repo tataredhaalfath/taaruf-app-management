@@ -205,7 +205,9 @@
                 </div>
                 <div class="row">
                     <div class="col-12 my-3 justify-content-center text-center">
-                        <form action="">
+                        <form action="{{ route('counselor-store-pendampingan') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="counselor" value="{{ Auth::user()->id }}">
                             <input type="hidden" name="taaruf_id" value="{{ $id }}">
                             <input type="hidden" name="user1" value="{{ $user1->id }}">
                             <input type="hidden" name="user2" value="{{ $user2->id }}">

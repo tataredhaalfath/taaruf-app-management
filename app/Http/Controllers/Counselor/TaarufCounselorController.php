@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Counselor;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Counselor\PendampinganRequest;
+use App\Models\Counselor\Pendampingan;
 use App\Models\User;
 use App\Models\User\Taaruf;
 use App\Models\User\UserProfile;
@@ -38,5 +40,12 @@ class TaarufCounselorController extends Controller
                 'profile2' => $profile2,
             ]
         );
+    }
+
+    public function store(PendampinganRequest $request)
+    {
+        $data = $request->all();
+        Pendampingan::create($data);
+        return redirect()->route('counselor-taaruf')->with('message', 'pendampian baru telah dibuat');
     }
 }

@@ -47,6 +47,22 @@
     @endif
     <hr class="sidebar-divider">
 
+    <!-- Nav Item - Pendampingan -->
+    @if (Route::current()->getName() == 'counselor-pendampingan')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('counselor-pendampingan') }}">
+                <i class="fas fa-sticky-note"></i>
+                <span>Pendampingan</span></a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('counselor-pendampingan') }}">
+                <i class="fas fa-user-friends"></i>
+                <span>Pendampingan</span></a>
+        </li>
+    @endif
+    <hr class="sidebar-divider">
+
     <!-- Nav Item - configure -->
     @if (Route::current()->getName() == 'counselor-configure')
         <li class="nav-item active">
