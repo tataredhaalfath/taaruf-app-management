@@ -1,66 +1,126 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Instalation
+- composer install
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### migrate database
+- php artisan migrate
+### run project
+- php artisan serve
 
-## About Laravel
+### database
+- mysql
+### library
+- JQuery
+- Bootstrap
+- CAMANJS
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### template
+- SBAdmin2
+---------------------------------------------------------------------------------
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# ROLES
+### USER
+- status user (PENDING, ACTIVE)
+pending = Belum acc cv oleh admin
+active = sudah aktive dan bisa mengajukan taaruf
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. user belum login / regist . 
+-> hanya bisa akses halaman home, stories, login/regist page
 
-## Learning Laravel
+2. user sudah login / regist tapi helum verify email
+-> bisa akses ke home, stories, taaruf page, user page (dashboard, profile)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. user sudah login / regist tapi belum isi cv dan profile dan user question
+-> status user masih pending
+-> system check email_verified_at !== NULL
+-> hanya bisa akses ke home, stories, taaruf page
+-> harus mengisi profile dan cv
+-> belum bisa mengajukan taaruf sebelum mengisi profile dan cv secara lengkap dan harus nunggu di konfimasi oleh admin cv nya
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+alur pengisian profile
+masuk ke profile
+- menu my account
+- mengisikan form yang telah tersedia
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+alur pengisian cv
+- masuk ke profile
+- pilih menu cv 
+- tampil form untuk membuat lampiran cv (id, user_id, slug)
+- isi nama untuk mulai membuat lampiran cv (nama akan dikonversi menjadi slug)
+- masuk ke tampilan form cv yang lengkap
+- isi form
+- submit
 
-### Premium Partners
+lengkapi cv
+- masuk ke profile
+- lengkapi cv
+- isi data cv
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+pengisian user question
+-masuk ke profile
+- buat 3 pertanyaan taaruf
+- submit
 
-## Contributing
+setelah profile, cv, dan user question lengkap. pilih menu cv -> kirim cv
+-cv akan di tinjau oleh admin
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. user login . cv approve oleh admin
+-> status user ACTICE
+-> bisa akses semua menu di halaman user
+-> bisa mulai taaruf
+-> profile/cv nya sudah bisa dilihat oleh orang lain
 
-## Code of Conduct
+dashboard user menampilkan
+- status user (PENDING, ACTIVE)
+- taaruf sent
+- data incoming
+- data approve
+- data reject
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---------------------------------------------------------------------------------
 
-## Security Vulnerabilities
+### ADMIN
+1. akses halaman web. /home, /taaruf, /stories
+2. akses dashboard admin
+  - data user
+  - status user
+  - permintaan pengecekan cv
+  - data taaruf sent
+  - data taaruf in process
+  - data taaruf reject
+  - taaruf status
+  - data counselor
+3. cv confirm
+  - admin bisa menerima dan menolak pengajuan cv dari user
+4. taaruf
+  - admin bisa melihat list taaruf success dan failed
+5. users 
+  - admin bisa melihat list user yang active dan pending
+6. counselor
+  - admin bisa melihat list counselor 
+  - admin bisa menambahkan counselor
+  - admin bisa melihat list pendampingan
+7. content
+  - admin bisa nemabahkan, mengedit dan menghapus content kajian
+  - admin bisa nemabahkan, mengedit dan menghapus content quotes
+8. configure
+  - admin bisa mengisi dan mengedit data diri
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---------------------------------------------------------------------------------
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### COUNSELOR
+1. akses halaman web. /home, /taaruf, /stories
+2. akses dashboard consoler
+  - data taaruf sent
+  - data taaruf in process
+  - data taaruf reject
+  - data status taaruf
+3. Taaruf
+  - counselor bisa melihat list pengguna in taaruf
+  - counselor bisa memilih untuk melakukan pendampingan
+  - counselor akan menghubungi user untuk membuat janji bertemu keluarga akhwat
+4. pendampingan
+  - counselor dapat melihat list pendampinga yang dilakukan
+  - counselor dapat melihat detail pengguna yang di didampingi
+5. configure
+  - counselor bisa mengisi dan mengedit data diri
