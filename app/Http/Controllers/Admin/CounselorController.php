@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Counselor\Pendampingan;
 use App\Models\User;
 use App\Models\User\UserProfile;
 use Illuminate\Http\Request;
@@ -14,8 +15,10 @@ class CounselorController extends Controller
     public function index()
     {
         $counselors = User::where('roles', 'COUNSELOR')->paginate(15);
+        $pendampingan = Pendampingan::paginate(15);
         return view('pages.admin.counselor.index', [
             'counselors' => $counselors,
+            'pendampingan' => $pendampingan,
         ]);
     }
 

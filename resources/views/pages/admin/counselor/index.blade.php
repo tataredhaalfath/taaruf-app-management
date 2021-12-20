@@ -1,3 +1,6 @@
+@php
+use App\Models\User;
+@endphp
 @extends('layouts.admin')
 @section('title', 'Data User')
 @section('content')
@@ -66,6 +69,47 @@
                     </table>
                 </div>
                 {{ $counselors->links() }}
+            </div>
+        </div>
+        <!-- Content Row -->
+        <div class="row">
+            <div class="card-body">
+                <h5>List Pendampingan</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Taaruf ID</th>
+                                <th>User1</th>
+                                <th>User2</th>
+                                <th>Pendamping</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ( $pendampingan as $pendamping)
+                                <tr>
+                                    @php
+                                        $user1 = User::findOrFail($pendamping->user1);
+                                        $user2 = User::findOrFail($pendamping->user2);
+                                        $counselor = User::findOrFail($pendamping->counselor);
+                                    @endphp
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $pendamping->taaruf_id }}</td>
+                                    <td>{{ $user1->name }}</td>
+                                    <td>{{ $user2->name }}</td>
+                                    <td>{{ $counselor->name }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="6" class="text-center">Data Kosong</td>
+                                </tr>
+                            @endforelse
+
+                        </tbody>
+                    </table>
+                </div>
+                {{ $pendampingan->links() }}
             </div>
         </div>
     </div>
