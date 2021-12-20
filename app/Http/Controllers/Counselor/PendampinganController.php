@@ -8,12 +8,13 @@ use App\Models\User;
 use App\Models\User\Taaruf;
 use App\Models\User\UserProfile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PendampinganController extends Controller
 {
     public function index()
     {
-        $pendampingan = Pendampingan::paginate(15);
+        $pendampingan = Pendampingan::where('counselor', Auth::user()->id)->paginate(15);
         return view('pages.counselor.pendampingan.index', [
             'pendampingan' => $pendampingan,
         ]);
