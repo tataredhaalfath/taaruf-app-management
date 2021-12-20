@@ -51,7 +51,7 @@ Route::middleware('auth')
             ->group(function () {
                 //taaruf
                 Route::GET('/taaruf/detail/{slug}', [DetailController::class, 'index'])->name('detail');
-                Route::POST('/taaruf/check', [CheckController::class, 'store'])->name('check');
+                Route::POST('/taaruf/check', [CheckController::class, 'store'])->name('check-store');
                 Route::GET('/taaruf/check/{slug}', [CheckController::class, 'index'])->name('check');
                 Route::GET('/taaruf/success', [CheckController::class, 'success'])->name('success');
                 //stories
