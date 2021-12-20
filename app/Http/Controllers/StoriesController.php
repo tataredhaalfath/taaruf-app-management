@@ -11,7 +11,7 @@ class StoriesController extends Controller
 {
     public function index(Request $request)
     {
-        $stories = Storie::paginate(20);
+        $stories = Storie::orderByRaw('created_at DESC')->paginate(20);
         $total = Storie::count();
         return view('pages.stories', [
             'stories' => $stories,

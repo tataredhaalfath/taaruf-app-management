@@ -113,7 +113,7 @@ main .stories .card__testimonial .testimonial__content img {
 }
 
 main .stories .card__testimonial .testimonial__content .testimonial {
-  min-height: 200px;
+  min-height: 100px;
   font-size: 26px;
   color: #6e6e6e;
 }

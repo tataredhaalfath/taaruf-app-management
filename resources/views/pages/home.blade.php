@@ -1,3 +1,7 @@
+@php
+use App\Models\User;
+use App\Models\User\UserProfile;
+@endphp
 @extends('layouts.app')
 @section('title', "Ta'aruf App Management")
 
@@ -70,21 +74,36 @@
                         <p class="text-muted">Apa kesan mereka setelah menemukan <br> pasangan yang mereka impikan</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-4">
-                        <div class="card card__testimonial text-center">
-                            <div class="testimonial__content">
-                                <img src="/front-end/assets/images/users/user_img.png" data-caman="stackBlur(8)" width="100"
-                                    height="100" alt="user" class="mb-4 rounded-circle" />
-                                <h3 class="mx-4">Jainab Marfuah</h3>
-                                <p class="testimonial">
-                                    "Alhamdulillah dengan adanya platform ini saya dapat bertemu dengan cemimiw saya.
-                                    terimakasih kepada konselator yang telah membantu selama proses ta’aruf"
-                                </p>
+                <div class="row justify-content-center">
+                    @forelse ( $stories as $storie )
+                        @php
+                            $user = User::findOrFail($storie->user_id);
+                            $profile = UserProfile::where('user_id', $storie->user_id)->first();
+                        @endphp
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card card__testimonial text-center">
+                                <div class="testimonial__content">
+                                    <img src="{{ Storage::url($profile->image) }}" data-caman="stackBlur(8)" width="100"
+                                        height="100" alt="user" class="mb-4 rounded-circle" />
+                                    <h3 class="my-4">{{ $user->name }}</h3>
+                                    <p class="testimonial">
+                                        "{{ $storie->stories }}"
+                                    </p>
+                                    <p>
+                                        @php
+                                            for ($i = 0; $i < $storie->rating; $i++) {
+                                                echo '⭐️';
+                                            }
+                                        @endphp
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4">
+                    @empty
+
+                    @endforelse
+
+                    {{-- <div class="col-sm-6 col-md-6 col-lg-4">
                         <div class="card card__testimonial text-center">
                             <div class="testimonial__content">
                                 <img src="/front-end/assets/images/users/user_img_2.png" data-caman="stackBlur(8)"
@@ -109,7 +128,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="row stories__btn">
                     <div class="col-12 text-center">
