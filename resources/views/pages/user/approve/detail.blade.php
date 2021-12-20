@@ -112,7 +112,8 @@ use App\Models\User;
                                         <div class="text-center">
                                             @if ($transaction1 && $transaction2)
                                                 @if ($transaction1->status == $transaction2->status)
-                                                    <a href="" class="btn btn-primary">Bagikan Kisah Taaruf Anda</a>
+                                                    <a href="{{ route('stories-create') }}"
+                                                        class="btn btn-primary">Bagikan Kisah Taaruf Anda</a>
                                                 @else
                                                     <a href="" class="btn btn-warning">Mulai Taaruf Lagi</a>
                                                 @endif

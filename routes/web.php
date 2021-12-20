@@ -49,10 +49,14 @@ Route::middleware('auth')
         //user sudah verify email
         Route::middleware(['verified', 'user'])
             ->group(function () {
+                //taaruf
                 Route::GET('/taaruf/detail/{slug}', [DetailController::class, 'index'])->name('detail');
-                Route::POST('/taaruf/check', [CheckController::class, 'store'])->name('check-store');
+                Route::POST('/taaruf/check', [CheckController::class, 'store'])->name('check');
                 Route::GET('/taaruf/check/{slug}', [CheckController::class, 'index'])->name('check');
                 Route::GET('/taaruf/success', [CheckController::class, 'success'])->name('success');
+                //stories
+                Route::POST('/stories', [StoriesController::class, 'store'])->name('stories-store');
+                Route::GET('/stories/create', [StoriesController::class, 'create'])->name('stories-create');
             });
     });
 

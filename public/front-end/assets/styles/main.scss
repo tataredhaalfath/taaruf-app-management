@@ -214,6 +214,17 @@ main {
             &.profile {
                 min-height: 80vh;
             }
+
+            &.approve {
+                .star-rating {
+                    line-height: 32px;
+                    font-size: 1.25em;
+                }
+
+                .star-rating .fa-star {
+                    color: yellow;
+                }
+            }
         }
 
         .breadcrumb {

@@ -220,6 +220,15 @@ main .section__detail__content.user__page__content.incoming, main .section__deta
   min-height: 80vh;
 }
 
+main .section__detail__content.user__page__content.approve .star-rating {
+  line-height: 32px;
+  font-size: 1.25em;
+}
+
+main .section__detail__content.user__page__content.approve .star-rating .fa-star {
+  color: yellow;
+}
+
 main .section__detail__content .breadcrumb {
   height: 100px;
   margin: 0;

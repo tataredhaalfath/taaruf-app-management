@@ -17,6 +17,7 @@
     @include('includes.footer')
     @include('includes.script')
     @stack('api-daerah')
+    @stack('rating')
 </body>
 
 </html>
