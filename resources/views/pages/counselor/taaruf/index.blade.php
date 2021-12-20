@@ -39,7 +39,8 @@ use App\Models\User;
                                     <td>{{ $user1->name }}</td>
                                     <td>{{ $user2->name }}</td>
                                     <td class="text-success">{{ $taaruf->status }}</td>
-                                    <td><a href="" class="badge badge-success">Dampingi</a></td>
+                                    <td><a href="{{ route('counselor-taaruf-detail', $taaruf->id) }}"
+                                            class="badge badge-success">Dampingi</a></td>
                                 </tr>
                             @empty
                                 <tr>

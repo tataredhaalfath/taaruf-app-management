@@ -159,5 +159,6 @@ Route::prefix('counselor')
 
         //taaruf
         Route::GET('/taaruf', [TaarufCounselorController::class, 'index'])->name('counselor-taaruf');
+        Route::GET('/taaruf/{id}/detail', [TaarufCounselorController::class, 'detail'])->name('counselor-taaruf-detail');
     });
 Auth::routes(['verify' => true]);
