@@ -65,6 +65,11 @@
         <div class="row">
             <div class="card-body">
                 <h3>Quotes</h3>
+                @if (session('quotes'))
+                    <div class="alert alert-success">
+                        {{ session('quotes') }}
+                    </div>
+                @endif
                 <a href="{{ route('admin-content-createquotes') }}" class="btn btn-sm btn-primary shadow-sm my-3">
                     <i class="fas fa-plus fa-sm text-white-50"></i>Tambah Quotes <i class="ri-travesti-line"></i></a>
                 <div class="table-responsive">
@@ -83,7 +88,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $qt->judul }}</td>
-                                    <td><img src="{{ Storege::url($qt->image) }}" alt="quotes image" style="width: 150px"
+                                    <td><img src="{{ Storage::url($qt->image) }}" alt="quotes image" style="width: 150px"
                                             class="img-thumbnail"></td>
                                     <td>
                                         <a href="" class="btn btn-info"><i class="fa fa-pencil"> Edit</i></a>
@@ -95,15 +100,7 @@
                                             <button class="btn btn-danger" onclick="return confirm('Hapus ?')"><i
                                                     class="fa fa-trash"></i> Hapus</button>
                                         </form>
-                                        <form action="{{ route('admin-cv-confirm') }}" method="post"
-                                            class="d-inline">
-                                            @csrf
-                                            <input type="hidden" name="user_id" id="user_id" value="{{ $cv->id }}">
-                                            <input type="hidden" name="pengajuan_id" id="pengajuan_id"
-                                                value="{{ $cv->id }}">
-                                            <button class="btn btn-success" onclick="return confirm('Setujui CV?')"><i
-                                                    class="fa fa-check"></i> Confirm</button>
-                                        </form>
+
                                     </td>
                                 </tr>
                             @empty

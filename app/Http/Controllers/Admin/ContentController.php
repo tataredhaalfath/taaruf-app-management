@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\KajianRequest;
+use App\Http\Requests\QuotesRequest;
 use App\Models\Kajian;
 use App\Models\Quotes;
 use Illuminate\Http\Request;
@@ -62,5 +63,14 @@ class ContentController extends Controller
     public function createQuotes()
     {
         return view('pages.admin.content.createquotes');
+    }
+
+    public function storeQuotes(QuotesRequest $request)
+    {
+        $quotes = $request->all();
+        //upload image quotes
+        $quotes['image'] = $request->file('image')->store('assets/admin/content', 'public');
+        Quotes::create($quotes);
+        return redirect()->route('admin-content')->with('quotes', 'Data Quotes Berhasil Ditambahkan');
     }
 }

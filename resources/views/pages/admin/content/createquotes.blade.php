@@ -11,7 +11,7 @@
         <div class="col-8">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin-content-storekajian') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin-content-storequotes') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">
                             <label for="judul">Judul</label>
@@ -24,7 +24,7 @@
                             @enderror
                         </div>
                         <div class="form-group ">
-                            <label for="image">Image</label>
+                            <label for="image">Image <small>max 2mb</small></label>
                             <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                                 name="image" value="{{ old('image') }}" required autocomplete="image">
                             @error('image')
