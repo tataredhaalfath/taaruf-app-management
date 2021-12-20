@@ -29,10 +29,12 @@
                     <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 mx-auto my-5 text-center ">
                         <h3>Kajian Pranikah</h3>
                         <p class="mb-5 text-muted">Pertanyaan yang sering terlintas <br> sebelum memulai taaruf</p>
-                        <iframe class="video__pranikah" src="https://www.youtube.com/embed/N-VM3Ts_gdU"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        @if ($kajian)
+                            <iframe class="video__pranikah" src="{{ $kajian->url }}" title="{{ $kajian->judul }}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        @endif
                     </div>
                 </div>
             </section>
@@ -47,21 +49,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="/front-end/assets/images/quote.jpg" alt="qoutes" srcset="">
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="/front-end/assets/images/quote.jpg" alt="qoutes" srcset="">
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="/front-end/assets/images/quote.jpg" alt="qoutes" srcset="">
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="/front-end/assets/images/quote.jpg" alt="qoutes" srcset="">
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                        <img src="/front-end/assets/images/quote.jpg" alt="qoutes" srcset="">
-                    </div>
+                    @forelse ($quotes as $quote)
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                            <img src="{{ Storage::url($quote->image) }}" alt="{{ $quote->judul }}">
+                        </div>
+                    @empty
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                        </div>
+                    @endforelse
+
+
                 </div>
             </section>
 
