@@ -6,8 +6,9 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Pendampingan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Pendampingan Detail</h1>
         </div>
+
         <!-- Content Row -->
         <div class="row">
             <div class="col-12" style="background-color: white">
@@ -195,23 +196,6 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 my-3 justify-content-center text-center">
-                        @if ($pendampingan)
-                            <h3 class="text-muted text-center">DALAM PENDAMPINGAN</h3>
-                        @else
-                            <form action="{{ route('counselor-store-pendampingan') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="counselor" value="{{ Auth::user()->id }}">
-                                <input type="hidden" name="taaruf_id" value="{{ $id }}">
-                                <input type="hidden" name="user1" value="{{ $user1->id }}">
-                                <input type="hidden" name="user2" value="{{ $user2->id }}">
-                                <button type="submit" class="btn btn-primary">Mulai Pendampingan</button>
-                            </form>
-                        @endif
-
                     </div>
                 </div>
             </div>

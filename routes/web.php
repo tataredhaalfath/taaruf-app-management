@@ -160,6 +160,7 @@ Route::prefix('counselor')
 
         //pendampingan
         Route::GET('/pendampingan', [PendampinganController::class, 'index'])->name('counselor-pendampingan');
+        Route::GET('/pendampingan/{id}/detail', [PendampinganController::class, 'detail'])->name('counselor-pendampingan-detail');
 
         //configure
         Route::get('/configure', [CounselorConfigurController::class, 'index'])->name('counselor-configure');

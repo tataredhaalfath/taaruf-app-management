@@ -31,6 +31,7 @@ use App\Models\User;
                                 <th>User1</th>
                                 <th>User2</th>
                                 <th>Pendamping</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,6 +46,8 @@ use App\Models\User;
                                     <td>{{ $user1->name }}</td>
                                     <td>{{ $user2->name }}</td>
                                     <td>{{ Auth::user()->name }}</td>
+                                    <td><a href="{{ route('counselor-pendampingan-detail', $pendamping->id) }}"
+                                            class="badge badge-success">Detail</a></td>
                                 </tr>
                             @empty
                                 <tr>
