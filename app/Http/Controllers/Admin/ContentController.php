@@ -98,4 +98,12 @@ class ContentController extends Controller
         $quotes->update($data);
         return redirect()->route('admin-content')->with('quotes', 'Data Quotes Berhasil Di Edit');
     }
+
+    public function destroyQuotes(Request $request)
+    {
+        $quotes = Quotes::findOrFail($request['id']);
+        unlink(public_path('storage/' . $quotes['image']));
+        $quotes->delete();
+        return redirect()->route('admin-content')->with('quotes', 'Data Quotes Berhasil Di Hapus');
+    }
 }

@@ -93,11 +93,11 @@
                                     <td>
                                         <a href="{{ route('admin-content-editquotes', $qt->id) }}"
                                             class="btn btn-info"><i class="fa fa-pencil"> Edit</i></a>
-                                        <form action="" method="post" class="d-inline">
+                                        <form action="{{ route('admin-content-destroyquotes') }}" method="post"
+                                            class="d-inline">
                                             @csrf
                                             @method('delete')
-                                            <input type="hidden" name="quotes_id" id="quotes_id"
-                                                value="{{ $qt->id }}">
+                                            <input type="hidden" name="id" id="id" value="{{ $qt->id }}">
                                             <button class="btn btn-danger" onclick="return confirm('Hapus ?')"><i
                                                     class="fa fa-trash"></i> Hapus</button>
                                         </form>
