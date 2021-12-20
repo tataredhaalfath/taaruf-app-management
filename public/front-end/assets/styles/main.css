@@ -167,7 +167,7 @@ main .content .card {
 
 main .content .card img {
   width: 100%;
-  height: 200px;
+  height: 200px !important;
   -webkit-filter: blur(8px);
           filter: blur(8px);
   margin-bottom: 5px;
@@ -198,7 +198,7 @@ main .content .card .card-body p.card-text {
 
 main .content .card .card-body a {
   margin-top: 10px;
-  margin-left: 65%;
+  bottom: 0;
 }
 
 main .section__detail__header {
@@ -476,7 +476,6 @@ footer .footer__item {
   }
   main .content .card img {
     width: 100%;
-    height: auto !important;
   }
   main.signin .form-signin {
     padding: 20px;

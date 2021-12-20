@@ -280,6 +280,7 @@
                                 <div class="btn__ajak__taaruf">
                                     <a class="btn btn-primary">sedang taaruf</a>
                                 </div>
+                            @elseif ($myGender == $user_profile->gender)
                             @elseif ($user->id != Auth::user()->id)
                                 <div class="btn__ajak__taaruf">
                                     <a href="{{ route('check') }}" class="btn btn-success">Ajak Ta'aruf</a>

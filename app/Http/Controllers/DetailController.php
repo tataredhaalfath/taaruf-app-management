@@ -22,6 +22,9 @@ class DetailController extends Controller
 {
     public function index(Request $request, $slug)
     {
+        $myProfile = UserProfile::where('user_id', Auth::user()->id)->first();
+        $myGender = $myProfile->gender;
+        //
         $cv = Cv::where('slug', $slug)->first();
         $approve = Taaruf::where('user_id_1', Auth::user()->id)
             ->Where('status', 'APPROVED')
@@ -64,6 +67,7 @@ class DetailController extends Controller
                     'gambar_diri' => $gambar_diri,
                     'kriteria' => $kriteria,
                     'harapan' => $harapan,
+                    'myGender' => $myGender,
                 ]);
             }
             return view('pages.detail');
