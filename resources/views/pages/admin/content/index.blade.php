@@ -91,7 +91,8 @@
                                     <td><img src="{{ Storage::url($qt->image) }}" alt="quotes image" style="width: 150px"
                                             class="img-thumbnail"></td>
                                     <td>
-                                        <a href="" class="btn btn-info"><i class="fa fa-pencil"> Edit</i></a>
+                                        <a href="{{ route('admin-content-editquotes', $qt->id) }}"
+                                            class="btn btn-info"><i class="fa fa-pencil"> Edit</i></a>
                                         <form action="" method="post" class="d-inline">
                                             @csrf
                                             @method('delete')

@@ -73,4 +73,15 @@ class ContentController extends Controller
         Quotes::create($quotes);
         return redirect()->route('admin-content')->with('quotes', 'Data Quotes Berhasil Ditambahkan');
     }
+
+    public function editQuotes(Request $request, $id)
+    {
+        $quotes = Quotes::findOrFail($id);
+        return view(
+            'pages.admin.content.editquotes',
+            [
+                'quotes' => $quotes,
+            ]
+        );
+    }
 }
