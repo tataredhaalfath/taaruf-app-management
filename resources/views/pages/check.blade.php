@@ -39,32 +39,28 @@
                             <div class="pertanyaan__taaruf justify-content-center">
                                 <div class="col-xl-10 col-lg-10 mx-auto mt-5">
                                     <h4 class="text-center"><strong>3 Pertanyaan Ta'aruf</strong></h4>
-                                    <form action="{{ route('success') }}" method="POST">
+                                    <form action="{{ route('check-store') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="uq_id" value="{{ $question->id }}">
+                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                         <div class="form-group">
-                                            <label for="pertanyaan1">1. Apa sikap anda sebagai suami apabila saya
-                                                sebagai istri melakukan
-                                                kesalahan yang serius</label>
-                                            <textarea class="form-control" id="pertanyaan1" name="pertanyaan1"
+                                            <label for="pertanyaan1">1. {{ $question->pertanyaan_1 }}</label>
+                                            <textarea class="form-control" id="jawaban_1" name="jawaban_1"
                                                 required></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label for="pertanyaan2">2. Seperti apa pandangan anda mengenai hidup
-                                                berumah tangga</label>
-                                            <textarea class="form-control" id="pertanyaan2" name="pertanyaan2"
+                                            <label for="pertanyaan2">2. {{ $question->pertanyaan_2 }}</label>
+                                            <textarea class="form-control" id="jawaban_2" name="jawaban_2"
                                                 required></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label for="pertanyaan3">3. Apakah anda berkeinginan untuk poligami ketika
-                                                seandainya saya sudah
-                                                menjadi istri anda ?</label>
-                                            <textarea class="form-control" id="pertanyaan3" name="pertanyaan3"
+                                            <label for="pertanyaan3">3. {{ $question->pertanyaan_3 }}</label>
+                                            <textarea class="form-control" id="jawaban_3" name="jawaban_3"
                                                 required></textarea>
                                         </div>
                                         <div class="form-group form-check text-center mb-5">
-                                            <a href="{{ route('success') }}" type="submit"
-                                                class="btn btn-success d-block">Mulai Ta'aruf</a>
-                                            <a href="{{ route('detail') }}">Batal Ta'aruf</a>
-
+                                            <button type="submit" class="btn btn-success d-block">Mulai Ta'aruf</button>
+                                            <a href="{{ route('detail', $cv->slug) }}">Batal Ta'aruf</a>
                                         </div>
                                     </form>
                                 </div>

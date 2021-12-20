@@ -49,9 +49,10 @@ Route::middleware('auth')
         //user sudah verify email
         Route::middleware(['verified', 'user'])
             ->group(function () {
-                Route::get('/taaruf/{slug}/detail', [DetailController::class, 'index'])->name('detail');
-                Route::get('/taaruf/check', [CheckController::class, 'index'])->name('check');
-                Route::get('/taaruf/success', [CheckController::class, 'success'])->name('success');
+                Route::GET('/taaruf/detail/{slug}', [DetailController::class, 'index'])->name('detail');
+                Route::POST('/taaruf/check', [CheckController::class, 'store'])->name('check-store');
+                Route::GET('/taaruf/check/{slug}', [CheckController::class, 'index'])->name('check');
+                Route::GET('/taaruf/success', [CheckController::class, 'success'])->name('success');
             });
     });
 
@@ -62,7 +63,7 @@ Route::prefix('user')
     ->middleware(['auth', 'user'])
     ->group(function () {
         //dashboard user
-        Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user-dashboard');
+        Route::GET('/dashboard', [UserDashboardController::class, 'index'])->name('user-dashboard');
 
         //menu my account
         Route::GET('/account', [AccountController::class, 'index'])->name('user-account');
@@ -74,9 +75,9 @@ Route::prefix('user')
         Route::middleware('verified')
             ->group(function () {
                 //menu cv
-                Route::get('/cv', [CvController::class, 'index'])->name('user-cv');
+                Route::GET('/cv', [CvController::class, 'index'])->name('user-cv');
                 Route::POST('/cv', [CvController::class, 'storecv'])->name('user-storecv');
-                Route::get('/cv/create', [CvController::class, 'create'])->name('user-create-cv');
+                Route::GET('/cv/create', [CvController::class, 'create'])->name('user-create-cv');
                 Route::POST('/cv/profile', [CvController::class, 'profile'])->name('user-store-profile');
                 Route::POST('/cv/gambar-fisik', [CvController::class, 'gambar_fisik'])->name('user-store-gambar-fisik');
                 Route::POST('/cv/hobi', [CvController::class, 'hobi'])->name('user-store-hobi');
@@ -85,7 +86,7 @@ Route::prefix('user')
                 Route::POST('/cv/kriteria', [CvController::class, 'kriteria'])->name('user-store-kriteria');
                 Route::POST('/cv/harapan', [CvController::class, 'harapan'])->name('user-store-harapan');
                 //menu cv edit
-                Route::get('/cv/edit', [CvController::class, 'edit'])->name('user-cv-edit');
+                Route::GET('/cv/edit', [CvController::class, 'edit'])->name('user-cv-edit');
                 Route::PUT('/cv/profile/', [CvController::class, 'profile_update'])->name('user-update-profile');
                 Route::PUT('/cv/gambar-fisik', [CvController::class, 'gambar_fisik_update'])->name('user-update-gambar-fisik');
                 Route::PUT('/cv/hobi', [CvController::class, 'hobi_update'])->name('user-update-hobi');
@@ -101,21 +102,21 @@ Route::prefix('user')
                 Route::POST('/cv/pengajuan', [CvController::class, 'pengajuan_cv'])->name('user-cv-pengajuan');
 
                 //menu sent
-                Route::get('/sent', [SentController::class, 'index'])->name('user-sent');
+                Route::GET('/sent', [SentController::class, 'index'])->name('user-sent');
                 //menu incoming
-                Route::get('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
-                Route::get('/incoming/{id}/detail', [IncomingController::class, 'detail'])->name('user-incoming-detail');
+                Route::GET('/incoming', [IncomingController::class, 'index'])->name('user-incoming');
+                Route::GET('/incoming/{id}/detail', [IncomingController::class, 'detail'])->name('user-incoming-detail');
                 Route::POST('/incoming/approve', [IncomingController::class, 'approve'])->name('user-incoming-approve');
                 Route::POST('/incoming/reject', [IncomingController::class, 'reject'])->name('user-incoming-reject');
 
                 //menu approve
-                Route::get('/approve', [ApproveController::class, 'index'])->name('user-approve');
-                Route::get('/approve/{id}/detail', [ApproveController::class, 'detail'])->name('user-approve-detail');
+                Route::GET('/approve', [ApproveController::class, 'index'])->name('user-approve');
+                Route::GET('/approve/{id}/detail', [ApproveController::class, 'detail'])->name('user-approve-detail');
                 Route::POST('/approve', [ApproveController::class, 'transaction'])->name('user-approve-transaction');
 
 
                 //menu reject
-                Route::get('/reject', [RejectController::class, 'index'])->name('user-reject');
+                Route::GET('/reject', [RejectController::class, 'index'])->name('user-reject');
             });
     });
 
@@ -125,21 +126,21 @@ Route::prefix('admin')
     ->namespace('Admin')
     ->middleware(['auth', 'admin'])
     ->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::GET('/', [DashboardController::class, 'index'])->name('dashboard');
         //confirm cv
-        Route::get('/cv', [CvConfirmController::class, 'index'])->name('admin-cv');
-        Route::get('/cv/{id}/detail', [CvConfirmController::class, 'detail'])->name('admin-cv-detail');
+        Route::GET('/cv', [CvConfirmController::class, 'index'])->name('admin-cv');
+        Route::GET('/cv/{id}/detail', [CvConfirmController::class, 'detail'])->name('admin-cv-detail');
         Route::POST('/cv/confirm', [CvConfirmController::class, 'confirm'])->name('admin-cv-confirm');
         Route::DELETE('/cv/reject', [CvConfirmController::class, 'reject'])->name('admin-cv-reject');
         //taaruf list
-        Route::get('/taaruf', [TaarufHandleController::class, 'index'])->name('admin-taaruf');
+        Route::GET('/taaruf', [TaarufHandleController::class, 'index'])->name('admin-taaruf');
         //user list
-        Route::get('/userlist', [UserListController::class, 'index'])->name('admin-userlist');
+        Route::GET('/userlist', [UserListController::class, 'index'])->name('admin-userlist');
         //counselor
-        Route::get('/counselor', [CounselorController::class, 'index'])->name('admin-counselor');
+        Route::GET('/counselor', [CounselorController::class, 'index'])->name('admin-counselor');
         Route::POST('/counselor', [CounselorController::class, 'store'])->name('admin-store-counselor');
         Route::DELETE('/counselor', [CounselorController::class, 'drop'])->name('admin-drop-counselor');
-        Route::get('/counselor/create', [CounselorController::class, 'create'])->name('admin-create-counselor');
+        Route::GET('/counselor/create', [CounselorController::class, 'create'])->name('admin-create-counselor');
         //content
         Route::GET('/content', [ContentController::class, 'index'])->name('admin-content');
         Route::GET('/content/kajian', [ContentController::class, 'createKajian'])->name('admin-content-createkajian');
@@ -155,10 +156,10 @@ Route::prefix('admin')
 
 
         //configure
-        Route::get('/configure', [ConfigureController::class, 'index'])->name('admin-configure');
+        Route::GET('/configure', [ConfigureController::class, 'index'])->name('admin-configure');
         Route::PUT('/configure', [ConfigureController::class, 'update'])->name('admin-update-configure');
-        Route::get('/configure/create', [ConfigureController::class, 'create'])->name('admin-create-configure');
-        Route::get('/configure/edit', [ConfigureController::class, 'edit'])->name('admin-edit-configure');
+        Route::GET('/configure/create', [ConfigureController::class, 'create'])->name('admin-create-configure');
+        Route::GET('/configure/edit', [ConfigureController::class, 'edit'])->name('admin-edit-configure');
     });
 
 //counselor 
@@ -178,10 +179,10 @@ Route::prefix('counselor')
         Route::GET('/pendampingan/{id}/detail', [PendampinganController::class, 'detail'])->name('counselor-pendampingan-detail');
 
         //configure
-        Route::get('/configure', [CounselorConfigurController::class, 'index'])->name('counselor-configure');
+        Route::GET('/configure', [CounselorConfigurController::class, 'index'])->name('counselor-configure');
         Route::PUT('/configure', [CounselorConfigurController::class, 'update'])->name('counselor-update-configure');
         Route::POST('/configure', [CounselorConfigurController::class, 'store'])->name('counselor-store-configure');
-        Route::get('/configure/create', [CounselorConfigurController::class, 'create'])->name('counselor-create-configure');
-        Route::get('/configure/edit', [CounselorConfigurController::class, 'edit'])->name('counselor-edit-configure');
+        Route::GET('/configure/create', [CounselorConfigurController::class, 'create'])->name('counselor-create-configure');
+        Route::GET('/configure/edit', [CounselorConfigurController::class, 'edit'])->name('counselor-edit-configure');
     });
 Auth::routes(['verify' => true]);

@@ -283,7 +283,7 @@
                             @elseif ($myGender == $user_profile->gender)
                             @elseif ($user->id != Auth::user()->id)
                                 <div class="btn__ajak__taaruf">
-                                    <a href="{{ route('check') }}" class="btn btn-success">Ajak Ta'aruf</a>
+                                    <a href="{{ route('check', $cv->slug) }}" class="btn btn-success">Ajak Ta'aruf</a>
                                 </div>
                             @endif
 
