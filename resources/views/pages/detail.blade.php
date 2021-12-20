@@ -25,67 +25,237 @@
                                 <h2 class="text-right">Curriculum Vitae</h2>
                             </div>
                             <div class="cv__profile">
-                                <h4 class="cv__nama">Riska</h4>
+                                <h4 class="cv__nama">{{ $user->name }}</h4>
                                 <div class="row">
                                     <div class="col-xl-5 col-lg-5 col-md-6 col-sm-8 col-xs-8 profile__image">
-                                        <img src="{{ asset('front-end/assets/images/users/user_img.png') }}"
-                                            data-caman="stackBlur(8)" alt="user image">
+                                        <img src="{{ Storage::url($profile->image) }}" data-caman="stackBlur(8)"
+                                            alt="{{ $profile->nama }}" width="100%" height="300">
                                     </div>
                                     <div class="col-xl-7 col-lg-7 col-md-12 profile__detail">
-                                        <p><strong>Nama Panggilan : </strong>Riska</p>
-                                        <p><strong>Alamat : </strong>Ds. Khayalan RT02/RW05 kec. Pelangi,
-                                            Kab. Jombang, Indonesia</p>
-                                        <p><strong>Tempat / Tgl Lahir : </strong>Banjarmasin, 24 agustus 2020</p>
-                                        <p><strong>Umur : </strong>20 Tahun</p>
-                                        <p><strong>Agama : </strong>Islam</p>
-                                        <p><strong>Manhaj : </strong>Salafi</p>
-                                        <p><strong>Status : </strong>Mahasiswa</p>
-                                        <p><strong>Menikah : </strong>Belum</p>
-                                        <p><strong>Suku : </strong>Bugis</p>
+                                        <table class="table table-borderless table-sm">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Nama</th>
+                                                    <td class="py-0">: {{ $profile->nama }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Alamat</th>
+                                                    <td class="py-0">: {{ $user_profile->kota }},
+                                                        {{ $profile->alamat }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Tgl lahir</th>
+                                                    <td class="py-0">:
+                                                        {{ date('d-m-Y', strtotime($profile->tgl_lahir)) }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Umur</th>
+                                                    <td class="py-0">: {{ $profile->umur }} Tahun</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Agama</th>
+                                                    <td class="py-0">: {{ $profile->agama }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Manhaj</th>
+                                                    <td class="py-0">: {{ $profile->manhaj }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Status</th>
+                                                    <td class="py-0">: {{ $profile->status }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Menikah</th>
+                                                    <td class="py-0">: {{ $profile->menikah }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Suku</th>
+                                                    <td class="py-0">: {{ $profile->suku }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                             <div class="cv__gambar__fisik">
-                                <h4>Gambaran Fisik</h4>
-                                <p><strong>Bentuk Fisik : </strong>Berisi. Tidak gemuk dan tidak kurus</p>
-                                <p><strong>Warna Kulit : </strong>Putih Bersih</p>
-                                <p><strong>Berat Badan : </strong>65 kg</p>
-                                <p><strong>Tinggi Badan : </strong>168 cm</p>
-                                <p><strong>Riwayat Penyakit : </strong>Tidak ada</p>
-                                <p><strong>Gol. Darah : </strong>AB+</p>
-                                <p><strong>Cacat Fisik : </strong>Tidak</p>
-                                <p><strong>Tipe Rambut : </strong>Lurus</p>
-                                <p><strong>Warna Mata : </strong>Coklat</p>
-                                <p><strong>Ciri Khas / Tanda Lahir : </strong>Tidak Ada</p>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <h4>Gambaran Fisik</h4>
+                                        <table class="table table-borderless table-sm">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Bentuk Fisik</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->bentuk_fisik }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Warna Kulit</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->warna_kulit }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Tinggi Badan</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->tinggi }} cm</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Berat Badan</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->berat }} kg</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Riwayat Penyakit</th>
+                                                    <td class="py-0">:
+                                                        {{ $gambar_fisik->riwayat_penyakit }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Gol.Darah</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->golongan_darah }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Cacat Fisik</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->cacat_fisik }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Tipe Rambut</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->tipe_rambut }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Warna Mata</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->warna_mata }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Ciri Khas / tanda lahir</th>
+                                                    <td class="py-0">: {{ $gambar_fisik->tanda_lahir }}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cv__hobi">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <h4>Hobi dan Kebiasaan</h4>
+                                        <ul style="list-style: none;">
+                                            <li>{{ $hobi->hobi }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <div class="cv__pendidikan">
-                                <h4>Riwayat Pendidikan</h4>
-                                <p>Universitas Gadjah Mada - Yogyakarta (2020 - 2024</p>
-                                <p>SMA Negeri 1 Kandangan (2016 - 2019)</p>
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <h4>Riwayat Pendidikan</h4>
+                                        <ul style="list-style: none;">
+                                            <li><strong>{{ $pendidikan->sma }}</strong></li>
+                                            <li class="text-muted">{{ $pendidikan->jurusan_sma }}</li>
+                                            <li><strong>{{ $pendidikan->univ }}</strong></li>
+                                            <li class="text-muted">{{ $pendidikan->jurusan_univ }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <div class="cv__gambaran__diri">
-                                <h4>Gambaran Diri</h4>
-                                <p><strong>Moto : </strong>Sesungguhnya Sholatku, Hidupku dan Matiku hanya untuk Allah</p>
-                                <p><strong>Target Hidup : </strong>Menjalani hidup sesuai dengan tuntunan Syariah Islam</p>
-                                <p><strong>Kegiatan Waktu Luang : </strong>Membaca, Belajar, Menjaga Ponakan</p>
-                                <p><strong>Hal Disukai : </strong>Mengeksplor Luasnya dunia</p>
-                                <p><strong>Sisi Negatif : </strong>Sering Overthinking</p>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <h4>Gambaran Diri</h4>
+                                        <table class="table table-borderless table-sm">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Motto</th>
+                                                    <td class="py-0">: {{ $gambar_diri->moto }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Target Hidup</th>
+                                                    <td class="py-0">: {{ $gambar_diri->target_hidup }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Kegiatan Waktu Luang</th>
+                                                    <td class="py-0">: {{ $gambar_diri->kegiatan_wl }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Hal yang disukai</th>
+                                                    <td class="py-0">: {{ $gambar_diri->hal_disukai }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Sisi Negatif</th>
+                                                    <td class="py-0">: {{ $gambar_diri->sisi_negatif }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Merokok</th>
+                                                    <td class="py-0">: {{ $gambar_diri->merokok }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                             <div class="cv__kriteria__pasangan">
-                                <h4>Kriteria Pasangan</h4>
-                                <p><strong>Tinggi : </strong>Diatas 170cm</p>
-                                <p><strong>Suku : </strong>Tidak Membatasi</p>
-                                <p><strong>Usia : </strong>20 - 27 Tahun</p>
-                                <p><strong>Pekerjaan : </strong>Tidak Membatasi</p>
-                                <p><strong>Tambahan : </strong>Memiliki attitude dan omongannya bisa dipegang</p>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <h4>Kriteria Pasangan</h4>
+                                        <table class="table table-borderless table-sm">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Tinggi Badan</th>
+                                                    <td class="py-0">: {{ $kriteria->tinggi }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Suku</th>
+                                                    <td class="py-0">: {{ $kriteria->suku }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Usia</th>
+                                                    <td class="py-0">: {{ $kriteria->usia }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Pekerjaan</th>
+                                                    <td class="py-0">: {{ $kriteria->pekerjaan }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-0" width="25%">Tambahan</th>
+                                                    <td class="py-0">: {{ $kriteria->tambahan }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                             <div class="cv__harapan__pernikahan">
-                                <h4>Harapan Dalam Pernikahan</h4>
-                                <h6><strong>Visi dan Misi</strong></h6>
-                                <p>Membangun keluarga yang harmonis, berlandaskan aran ajaran dan syariat agama islam</p>
-                                <br>
-                                <h6><strong>Karir Masa Depan</strong></h6>
-                                <p>Membangun keluarga yang harmonis, berlandaskan aran ajaran dan syariat agama islam</p>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <table class="table table-borderless table-sm">
+                                            <h5>Rencana Dalam Pernikahan</h5>
+                                            <tbody>
+                                                <tr>
+                                                    <th>Visi</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-0 text-muted">{{ $harapan->visi }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Misi</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-0 text-muted">{{ $harapan->misi }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Karir Masa Depan</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-0 text-muted">{{ $harapan->karir }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,9 +271,21 @@
                                     Quran Ar-Rum [30:21]
                                 </p>
                             </div>
-                            <div class="btn__ajak__taaruf">
-                                <a href="{{ route('check') }}" class="btn btn-success">Ajak Ta'aruf</a>
-                            </div>
+
+                            @if ($approve > 0)
+                                <div class="btn__ajak__taaruf">
+                                    <a class="btn btn-primary">Anda dalam masa taaruf</a>
+                                </div>
+                            @elseif($approve2 > 0)
+                                <div class="btn__ajak__taaruf">
+                                    <a class="btn btn-primary">sedang taaruf</a>
+                                </div>
+                            @elseif ($user->id != Auth::user()->id)
+                                <div class="btn__ajak__taaruf">
+                                    <a href="{{ route('check') }}" class="btn btn-success">Ajak Ta'aruf</a>
+                                </div>
+                            @endif
+
                         </aside>
                     </div>
                 </div>
