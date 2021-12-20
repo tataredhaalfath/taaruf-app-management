@@ -46,8 +46,13 @@ use App\Models\User;
                                                 <td>{{ date('d-m-Y', strtotime($app->created_at)) }}</td>
                                                 <td>{{ $app->status }}</td>
                                                 <td><a href="{{ route('user-approve-detail', $app->id) }}"
-                                                        class="btn-cta">Lanjut</a>
+                                                        class="btn btn-success btn-sm">Lanjut</a>
                                                 </td>
+                                            </tr>
+                                            <tr class="text-center">
+                                                <td colspan="6" class="bg-info text-white">SELEBLUM MELANJUTKAN. SILAHKAN
+                                                    MENUNGGU UNTUK DI HUBUNGI
+                                                    ADMIN TERLEBIH DAHULU</td>
                                             </tr>
                                         @empty
                                             <tr class="text-center">

@@ -14,7 +14,7 @@ class TaarufCounselorController extends Controller
 {
     public function index()
     {
-        $taaruf_list = Taaruf::where('status', 'APPROVED')->paginate(15);
+        $taaruf_list = Taaruf::where('status', 'APPROVED')->orderByRaw('created_at DESC')->paginate(15);
 
         return view('pages.counselor.taaruf.index', [
             'taaruf_list' => $taaruf_list,
@@ -47,6 +47,6 @@ class TaarufCounselorController extends Controller
     {
         $data = $request->all();
         Pendampingan::create($data);
-        return redirect()->route('counselor-pendampingan')->with('message', 'pendampian baru telah dibuat');
+        return redirect()->route('counselor-pendampingan')->with('message', 'pendampingan baru telah dibuat');
     }
 }

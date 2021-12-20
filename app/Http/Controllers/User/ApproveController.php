@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\TaarufTransactionRequest;
+use App\Models\Counselor\Pendampingan;
 use App\Models\User;
 use App\Models\User\Taaruf;
 use App\Models\User\TaarufTransaction;
@@ -57,13 +58,12 @@ class ApproveController extends Controller
 
     public function batal(Request $request)
     {
-        $transaction1 = TaarufTransaction::findOrFail($request['transaction1']);
-        $transaction1->delete();
-        $transaction2 = TaarufTransaction::findOrFail($request['transaction2']);
-        $transaction2->delete();
+        $transaction1 = TaarufTransaction::findOrFail($request['transaction1'])->delete();
+        $transaction2 = TaarufTransaction::findOrFail($request['transaction2'])->delete();
         $taaruf = Taaruf::findOrFail($request['taaruf_id']);
         $taaruf->status = 'REJECTED';
         $taaruf->update();
+        $pendampingan = Pendampingan::where('taaruf_id', $request['taaruf_id'])->delete();
         return redirect()->route('user-reject');
     }
 }

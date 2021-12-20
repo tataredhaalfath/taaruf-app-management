@@ -45,7 +45,7 @@ use App\Models\User;
                                                         <td>{{ date('d-m-Y', strtotime($in->created_at)) }}</td>
                                                         <td>MENGAJUKAN</td>
                                                         <td><a href="{{ route('user-incoming-detail', $in->id) }}"
-                                                                class="btn-cta">Detail</a>
+                                                                class="btn btn-primary btn-sm">Detail</a>
                                                         </td>
                                                     </tr>
                                                 @empty

@@ -19,7 +19,7 @@ use App\Models\User;
                 <h5>Pendampingan List</h5>
                 @if (session('message'))
                     <div class="alert alert-success">
-                        {{ session('status') }}
+                        {{ session('message') }}
                     </div>
                 @endif
                 <div class="table-responsive">

@@ -14,7 +14,7 @@ class PendampinganController extends Controller
 {
     public function index()
     {
-        $pendampingan = Pendampingan::where('counselor', Auth::user()->id)->paginate(15);
+        $pendampingan = Pendampingan::where('counselor', Auth::user()->id)->orderByRaw('created_at DESC')->paginate(15);
         return view('pages.counselor.pendampingan.index', [
             'pendampingan' => $pendampingan,
         ]);

@@ -52,7 +52,7 @@
     @if (Route::current()->getName() == 'counselor-pendampingan')
         <li class="nav-item active">
             <a class="nav-link" href="{{ route('counselor-pendampingan') }}">
-                <i class="fas fa-sticky-note"></i>
+                <i class="fas fa-user-friends"></i>
                 <span>Pendampingan</span></a>
         </li>
     @else
