@@ -11,7 +11,7 @@
         <div class="col-8">
             <div class="card">
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="{{ route('admin-content-updatequotes') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <input type="hidden" name="id" value="{{ $quotes->id }}">

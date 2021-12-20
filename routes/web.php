@@ -149,6 +149,7 @@ Route::prefix('admin')
         Route::GET('/content/kajian/{id}/edit', [ContentController::class, 'editKajian'])->name('admin-content-editkajian');
         Route::GET('/content/quotes', [ContentController::class, 'createQuotes'])->name('admin-content-createquotes');
         Route::POST('/content/quotes', [ContentController::class, 'storeQuotes'])->name('admin-content-storequotes');
+        Route::PUT('/content/quotes', [ContentController::class, 'updateQuotes'])->name('admin-content-updatequotes');
         Route::GET('/content/quotes/{id}/edit', [ContentController::class, 'editQuotes'])->name('admin-content-editquotes');
 
 

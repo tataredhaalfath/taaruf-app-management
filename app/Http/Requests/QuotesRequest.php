@@ -25,7 +25,7 @@ class QuotesRequest extends FormRequest
     {
         return [
             'judul' => 'required|max:255',
-            'image' => 'required|image|max:2000',
+            'image' => 'image|max:2000',
         ];
     }
 }

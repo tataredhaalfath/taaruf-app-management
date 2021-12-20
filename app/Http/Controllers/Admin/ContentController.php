@@ -84,4 +84,18 @@ class ContentController extends Controller
             ]
         );
     }
+
+    public function updateQuotes(QuotesRequest $request)
+    {
+        $data = $request->all();
+        if ($request->image) {
+            // hapus file image lama
+            unlink(public_path('storage/' . $data['old_image']));
+            //masukan image baru
+            $data['image'] = $request->file('image')->store('assets/admin/content', 'public');
+        }
+        $quotes = Quotes::findOrFail($data['id']);
+        $quotes->update($data);
+        return redirect()->route('admin-content')->with('quotes', 'Data Quotes Berhasil Di Edit');
+    }
 }
