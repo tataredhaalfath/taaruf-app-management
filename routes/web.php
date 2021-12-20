@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ConfigureController;
+use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\CounselorController;
 use App\Http\Controllers\Admin\CvConfirmController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -139,6 +140,8 @@ Route::prefix('admin')
         Route::POST('/counselor', [CounselorController::class, 'store'])->name('admin-store-counselor');
         Route::DELETE('/counselor', [CounselorController::class, 'drop'])->name('admin-drop-counselor');
         Route::get('/counselor/create', [CounselorController::class, 'create'])->name('admin-create-counselor');
+        //content
+        Route::GET('/content', [ContentController::class, 'index'])->name('admin-content');
         //configure
         Route::get('/configure', [ConfigureController::class, 'index'])->name('admin-configure');
         Route::PUT('/configure', [ConfigureController::class, 'update'])->name('admin-update-configure');

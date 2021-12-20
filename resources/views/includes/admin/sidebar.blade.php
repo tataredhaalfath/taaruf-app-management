@@ -95,6 +95,23 @@
     @endif
     <hr class="sidebar-divider">
 
+
+    <!-- Nav Item - web content setting -->
+    @if (Route::current()->getName() == 'admin-content')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('admin-content') }}">
+                <i class="fas fa-window-restore"></i>
+                <span>Content</span></a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin-content') }}">
+                <i class="fas fa-window-restore"></i>
+                <span>Content</span></a>
+        </li>
+    @endif
+    <hr class="sidebar-divider">
+
     <!-- Nav Item - configure -->
     @if (Route::current()->getName() == 'admin-configure')
         <li class="nav-item active">
