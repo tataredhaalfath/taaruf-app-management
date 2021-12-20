@@ -51,4 +51,11 @@ class ContentController extends Controller
         $kajian->update($data);
         return redirect()->route('admin-content')->with('kajian', 'Data Kajian Berhasil Di Edit');
     }
+
+    public function destroyKajian(Request $request)
+    {
+        $kajian = Kajian::findOrFail($request['id']);
+        $kajian->delete();
+        return redirect()->route('admin-content')->with('kajian', 'Data Kajian Berhasil Di Hapus');
+    }
 }

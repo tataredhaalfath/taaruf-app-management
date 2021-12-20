@@ -40,12 +40,11 @@
                                     <td>
                                         <a href="{{ route('admin-content-editkajian', $kj->id) }}"
                                             class="btn btn-sm btn-info"><i class="fa fa-pencil"> edit</i></a>
-                                        <form action="{{ route('admin-cv-reject') }}" method="post"
+                                        <form action="{{ route('admin-content-destroykajian') }}" method="post"
                                             class="d-inline">
                                             @csrf
                                             @method('delete')
-                                            <input type="hidden" name="kajian_id" id="kajian_id"
-                                                value="{{ $kj->id }}">
+                                            <input type="hidden" name="id" id="id" value="{{ $kj->id }}">
                                             <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus ?')"><i
                                                     class="fa fa-trash"></i> Hapus</button>
                                         </form>
