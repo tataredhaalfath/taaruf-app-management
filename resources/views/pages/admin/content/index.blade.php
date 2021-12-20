@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Cv Confirm')
+@section('title', 'Content')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -65,7 +65,7 @@
         <div class="row">
             <div class="card-body">
                 <h3>Quotes</h3>
-                <a href="" class="btn btn-sm btn-primary shadow-sm my-3">
+                <a href="{{ route('admin-content-createquotes') }}" class="btn btn-sm btn-primary shadow-sm my-3">
                     <i class="fas fa-plus fa-sm text-white-50"></i>Tambah Quotes <i class="ri-travesti-line"></i></a>
                 <div class="table-responsive">
                     <table class="table table-bordered" width="100%" cellspacing="0">

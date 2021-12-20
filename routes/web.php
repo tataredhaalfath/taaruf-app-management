@@ -147,6 +147,8 @@ Route::prefix('admin')
         Route::PUT('/content/kajian', [ContentController::class, 'updateKajian'])->name('admin-content-updatekajian');
         Route::DELETE('/content/kajian', [ContentController::class, 'destroyKajian'])->name('admin-content-destroykajian');
         Route::GET('/content/kajian/{id}/edit', [ContentController::class, 'editKajian'])->name('admin-content-editkajian');
+        Route::GET('/content/quotes', [ContentController::class, 'createQuotes'])->name('admin-content-createquotes');
+
         //configure
         Route::get('/configure', [ConfigureController::class, 'index'])->name('admin-configure');
         Route::PUT('/configure', [ConfigureController::class, 'update'])->name('admin-update-configure');

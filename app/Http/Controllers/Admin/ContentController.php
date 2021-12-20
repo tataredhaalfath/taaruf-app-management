@@ -58,4 +58,9 @@ class ContentController extends Controller
         $kajian->delete();
         return redirect()->route('admin-content')->with('kajian', 'Data Kajian Berhasil Di Hapus');
     }
+
+    public function createQuotes()
+    {
+        return view('pages.admin.content.createquotes');
+    }
 }

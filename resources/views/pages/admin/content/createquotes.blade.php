@@ -1,24 +1,22 @@
 @extends('layouts.admin')
-@section('title', 'Edit Kajian')
+@section('title', 'Tambah Quotes')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Kajian</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tambah Quotes</h1>
         </div>
         <div class="col-8">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin-content-updatekajian') }}" method="POST">
+                    <form action="{{ route('admin-content-storekajian') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
-                        <input type="hidden" name="id" value="{{ $kajian->id }}">
                         <div class="form-group ">
                             <label for="judul">Judul</label>
                             <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul"
-                                name="judul" value="{{ $kajian->judul }}" required autocomplete="judul" autofocus>
+                                name="judul" value="{{ old('judul') }}" required autocomplete="judul" autofocus>
                             @error('judul')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -26,17 +24,17 @@
                             @enderror
                         </div>
                         <div class="form-group ">
-                            <label for="url">URL</label>
-                            <input type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url"
-                                value="{{ $kajian->url }}" required autocomplete="url">
-                            @error('url')
+                            <label for="image">Image</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                                name="image" value="{{ old('image') }}" required autocomplete="image">
+                            @error('image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="form-group btn-signin text-center">
-                            <button type="submit" class="btn btn-primary mb-3 float-right">Edit</button>
+                            <button type="submit" class="btn btn-primary mb-3 float-right">Tambahkan</button>
                         </div>
                     </form>
                 </div>
