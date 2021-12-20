@@ -28,7 +28,7 @@ class TaarufCounselorController extends Controller
         $user2 = User::findOrFail($taaruf->user_id_2);
         $profile1 = UserProfile::where('user_id', $user1->id)->first();
         $profile2 = UserProfile::where('user_id', $user2->id)->first();
-
+        $pendampingan = Pendampingan::where('taaruf_id', $id)->first();
         return view(
             'pages.counselor.taaruf.detail',
             [
@@ -38,6 +38,7 @@ class TaarufCounselorController extends Controller
                 'user2' => $user2,
                 'profile1' => $profile1,
                 'profile2' => $profile2,
+                'pendampingan' => $pendampingan,
             ]
         );
     }
