@@ -60,6 +60,7 @@ header img {
 
 main {
   margin-top: 100px;
+  min-height: 80vh;
 }
 
 main .kajian__pranikah h3 {

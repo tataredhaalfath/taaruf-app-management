@@ -1,3 +1,7 @@
+@php
+use App\Models\User\UserProfile;
+use App\Models\User\Cv;
+@endphp
 @extends('layouts.app')
 @section('title', "Ta'aruf Page")
 @section('content')
@@ -51,211 +55,39 @@
                 <div class="col-xl-9 col-lg-9 col-md-12">
                     <div class="content">
                         <div class="row">
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="{{ route('detail') }}" class="btn btn-sm btn-success">Lihat CV</a>
+                            @forelse ($users as $user)
+                                @php
+                                    $profile = UserProfile::where('user_id', $user->id)->first();
+                                    $cv = Cv::where('user_id', $user->id)->first();
+                                @endphp
+                                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="{{ Storage::url($profile->image) }}" width="100%"
+                                            data-caman="stackBlur(8)" class="card-img-top" id="render-img"
+                                            alt="{{ $user->name }}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ $user->name }}</h5>
+                                            <p class="text-muted">{{ $profile->kota, $profile->usia }} Tahun</p>
+                                            <p class="card-text"><strong>Tagline : </strong> {{ $profile->tagline }}
+                                            </p>
+                                            <a href="{{ route('detail', $cv->slug) }}" class="btn btn-sm btn-success">Lihat
+                                                CV</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
+                            @empty
+                                <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
                                 </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-10">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="{{ asset('front-end/assets/images/users/user_img.png') }}" width="100%"
-                                        data-caman="stackBlur(8)" class="card-img-top" id="render-img" alt="user image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Rika Safika</h5>
-                                        <p class="text-muted">Banjarmasin, 21 Tahun</p>
-                                        <p class="card-text"><strong>Tagline : </strong> Cari pria yang sholeh, baik,
-                                            bisa memimpin, punya
-                                            pendirian, mengayomi, calon ayah yang baik</p>
-                                        <a href="detail.html" class="btn btn-sm btn-success">Lihat CV</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforelse
+
+
                         </div>
                         <div class="row justify-content-center text-center">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            {{ $users->links() }}
+
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>

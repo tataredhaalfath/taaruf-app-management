@@ -81,8 +81,7 @@ class CvController extends Controller
     public function storecv(CvRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->slug);
-
+        $data['slug'] = Str::slug($request->slug . ' ' . Auth::user()->id . ' ' . Auth::user()->name);
         CV::create($data);
         return redirect(route('user-cv'))->with('message', 'CV Berhasil Dibuat');
     }

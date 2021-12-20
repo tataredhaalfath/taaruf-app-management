@@ -49,7 +49,7 @@ Route::middleware('auth')
         //user sudah verify email
         Route::middleware(['verified', 'user'])
             ->group(function () {
-                Route::get('/taaruf/detail', [DetailController::class, 'index'])->name('detail');
+                Route::get('/taaruf/{slug}/detail', [DetailController::class, 'index'])->name('detail');
                 Route::get('/taaruf/check', [CheckController::class, 'index'])->name('check');
                 Route::get('/taaruf/success', [CheckController::class, 'success'])->name('success');
             });
