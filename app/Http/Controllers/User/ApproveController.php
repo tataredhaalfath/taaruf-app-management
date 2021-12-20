@@ -20,8 +20,7 @@ class ApproveController extends Controller
             ->orWhere(function ($query) {
                 $query->where('user_id_2', Auth::user()->id)
                     ->where('status', 'APPROVED');
-            })
-            ->get();
+            })->paginate(15);
         return view('pages.user.approve.index', [
             'approve' => $approve
         ]);

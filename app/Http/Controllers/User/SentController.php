@@ -12,7 +12,7 @@ class SentController extends Controller
 {
     public function index()
     {
-        $sent = UserAnswer::where('user_id', Auth::user()->id)->get();
+        $sent = UserAnswer::where('user_id', Auth::user()->id)->paginate(15);
         return view(
             'pages.user.sent.index',
             [

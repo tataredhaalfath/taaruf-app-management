@@ -61,6 +61,7 @@ use App\Models\User;
                                         @endforelse
 
                                     </table>
+                                    {{ $approve->links() }}
                                 </div>
                             </div>
                         </div>

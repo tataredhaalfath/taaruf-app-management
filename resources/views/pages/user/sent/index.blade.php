@@ -52,6 +52,7 @@ use App\Models\User\UserQuestion;
                                             @endforelse
                                         </tbody>
                                     </table>
+                                    {{ $sent->links() }}
                                 </div>
                             </div>
                         </div>

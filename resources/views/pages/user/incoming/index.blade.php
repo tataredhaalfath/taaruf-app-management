@@ -61,6 +61,7 @@ use App\Models\User;
 
                                         </tbody>
                                     </table>
+                                    {{ $incoming->links() }}
                                 </div>
                             </div>
                         </div>

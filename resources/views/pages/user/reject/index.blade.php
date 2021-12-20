@@ -56,6 +56,7 @@ use App\Models\User;
 
                                         </tbody>
                                     </table>
+                                    {{ $menolak->links() }}
                                     <hr>
                                     <h5>List Ditolak</h5>
                                     <table class="table table-bordered">
@@ -88,6 +89,7 @@ use App\Models\User;
 
                                         </tbody>
                                     </table>
+                                    {{ $ditolak->links() }}
                                 </div>
                             </div>
                         </div>
