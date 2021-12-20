@@ -109,6 +109,15 @@ use App\Models\User;
                                         <div class="text-center">
                                             <h5>STATUS TELAH DITETAPKAN</h5>
                                         </div>
+                                        <div class="text-center">
+                                            @if ($transaction1 && $transaction2)
+                                                @if ($transaction1->status == $transaction2->status)
+                                                    <a href="" class="btn btn-primary">Bagikan Kisah Taaruf Anda</a>
+                                                @else
+                                                    <a href="" class="btn btn-warning">Mulai Taaruf Lagi</a>
+                                                @endif
+                                            @endif
+                                        </div>
                                     @else
                                         <form action="{{ route('user-approve-transaction') }}" method="POST">
                                             @csrf
