@@ -14,11 +14,11 @@ class RejectController extends Controller
     {
         //MENOLAK
         $menolak = Taaruf::where('user_id_1', Auth::user()->id)
-            ->where('status', 'REJECTED')->paginate(15);
+            ->where('status', 'REJECTED')->orderByRaw('created_at DESC')->paginate(15);
 
         //DITOLAK
         $ditolak = Taaruf::where('user_id_2', Auth::user()->id)
-            ->where('status', 'REJECTED')->paginate(15);
+            ->where('status', 'REJECTED')->orderByRaw('created_at DESC')->paginate(15);
 
         return view('pages.user.reject.index', [
             'menolak' => $menolak,

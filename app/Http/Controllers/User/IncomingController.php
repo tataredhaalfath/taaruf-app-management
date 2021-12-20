@@ -26,7 +26,7 @@ class IncomingController extends Controller
         $question = UserQuestion::where('user_id', Auth::user()->id)->first();
         $incoming = null;
         if ($question) {
-            $incoming = UserAnswer::where('uq_id', $question->id)->paginate(15);
+            $incoming = UserAnswer::where('uq_id', $question->id)->orderByRaw('created_at DESC')->paginate(15);
         }
         return view('pages.user.incoming.index', [
             'incoming' => $incoming,
