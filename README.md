@@ -20,8 +20,8 @@
 # ROLES
 ### USER
 - status user (PENDING, ACTIVE)
-pending = Belum acc cv oleh admin
-active = sudah aktive dan bisa mengajukan taaruf
+- pending = Belum acc cv oleh admin
+- active = sudah aktive dan bisa mengajukan taaruf
 
 1. user belum login / regist . 
 -> hanya bisa akses halaman home, stories, login/regist page
