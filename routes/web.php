@@ -143,6 +143,9 @@ Route::prefix('admin')
         //content
         Route::GET('/content', [ContentController::class, 'index'])->name('admin-content');
         Route::GET('/content/kajian', [ContentController::class, 'createKajian'])->name('admin-content-createkajian');
+        Route::POST('/content/kajian', [ContentController::class, 'storeKajian'])->name('admin-content-storekajian');
+        Route::PUT('/content/kajian', [ContentController::class, 'updateKajian'])->name('admin-content-updatekajian');
+        Route::GET('/content/kajian/{id}/edit', [ContentController::class, 'editKajian'])->name('admin-content-editkajian');
         //configure
         Route::get('/configure', [ConfigureController::class, 'index'])->name('admin-configure');
         Route::PUT('/configure', [ConfigureController::class, 'update'])->name('admin-update-configure');

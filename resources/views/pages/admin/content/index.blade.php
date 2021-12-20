@@ -13,6 +13,11 @@
         <div class="row">
             <div class="card-body">
                 <h3>Kajian</h3>
+                @if (session('kajian'))
+                    <div class="alert alert-success">
+                        {{ session('kajian') }}
+                    </div>
+                @endif
                 <a href="{{ route('admin-content-createkajian') }}" class="btn btn-sm btn-primary shadow-sm my-3">
                     <i class="fas fa-plus fa-sm text-white-50"></i>Tambah Kajian <i class="ri-travesti-line"></i></a>
                 <div class="table-responsive">
@@ -22,7 +27,6 @@
                                 <th>No</th>
                                 <th>Judul</th>
                                 <th>Url</th>
-                                <th>Created At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -33,23 +37,23 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $kj->judul }}</td>
                                     <td>{{ $kj->url }}</td>
-                                    <td>{{ $kj->created_at }}</td>
                                     <td>
-                                        <a href="" class="btn btn-info"><i class="fa fa-pencil"> edit</i></a>
+                                        <a href="{{ route('admin-content-editkajian', $kj->id) }}"
+                                            class="btn btn-sm btn-info"><i class="fa fa-pencil"> edit</i></a>
                                         <form action="{{ route('admin-cv-reject') }}" method="post"
                                             class="d-inline">
                                             @csrf
                                             @method('delete')
                                             <input type="hidden" name="kajian_id" id="kajian_id"
-                                                value="{{ $kajian->id }}">
-                                            <button class="btn btn-danger" onclick="return confirm('Hapus ?')"><i
+                                                value="{{ $kj->id }}">
+                                            <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus ?')"><i
                                                     class="fa fa-trash"></i> Hapus</button>
                                         </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7" class="text-center">Data Kosong</td>
+                                    <td colspan="4" class="text-center">Data Kosong</td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -71,7 +75,6 @@
                                 <th>No</th>
                                 <th>Judul</th>
                                 <th>Image</th>
-                                <th>Created At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -83,7 +86,6 @@
                                     <td>{{ $qt->judul }}</td>
                                     <td><img src="{{ Storege::url($qt->image) }}" alt="quotes image" style="width: 150px"
                                             class="img-thumbnail"></td>
-                                    <td>{{ $qt->created_at }}</td>
                                     <td>
                                         <a href="" class="btn btn-info"><i class="fa fa-pencil"> Edit</i></a>
                                         <form action="" method="post" class="d-inline">
@@ -107,7 +109,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7" class="text-center">Data Kosong</td>
+                                    <td colspan="4" class="text-center">Data Kosong</td>
                                 </tr>
                             @endforelse
                         </tbody>
