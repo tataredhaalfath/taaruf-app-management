@@ -29,9 +29,15 @@ use App\Models\User;
                                             </p>
                                             <p class="card-text"><strong>Tagline : </strong> {{ $profile->tagline }}
                                             </p>
-                                            <a href="{{ route('detail', $cv->slug) }}"
-                                                class="btn btn-sm btn-success float-right">Lihat
-                                                CV</a>
+                                            @if (Auth::user()->status == 'PENDING')
+                                                <a href="{{ route('user-cv') }}"
+                                                    class="btn btn-sm btn-success float-right">Lihat CV</a>
+                                            @else
+                                                <a href="{{ route('detail', $cv->slug) }}"
+                                                    class="btn btn-sm btn-success float-right">Lihat
+                                                    CV</a>
+                                            @endif
+
                                         </div>
                                     </div>
                                 </div>
