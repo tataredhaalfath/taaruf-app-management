@@ -54,4 +54,16 @@ class ApproveController extends Controller
         TaarufTransaction::create($data);
         return redirect()->route('user-approve-detail', $data['taaruf_id']);
     }
+
+    public function batal(Request $request)
+    {
+        $transaction1 = TaarufTransaction::findOrFail($request['transaction1']);
+        $transaction1->delete();
+        $transaction2 = TaarufTransaction::findOrFail($request['transaction2']);
+        $transaction2->delete();
+        $taaruf = Taaruf::findOrFail($request['taaruf_id']);
+        $taaruf->status = 'REJECTED';
+        $taaruf->update();
+        return redirect()->route('user-reject');
+    }
 }

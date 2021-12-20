@@ -42,8 +42,7 @@ use App\Models\User;
                                                         <span class="fa fa-star-o" data-rating="3"></span>
                                                         <span class="fa fa-star-o" data-rating="4"></span>
                                                         <span class="fa fa-star-o" data-rating="5"></span>
-                                                        <input type="hidden" name="rating" class="rating-value"
-                                                            value="4.1">
+                                                        <input type="hidden" name="rating" class="rating-value" value="5">
                                                     </div>
                                                 </div>
                                             </div>

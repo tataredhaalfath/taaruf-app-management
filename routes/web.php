@@ -117,7 +117,7 @@ Route::prefix('user')
                 Route::GET('/approve', [ApproveController::class, 'index'])->name('user-approve');
                 Route::GET('/approve/{id}/detail', [ApproveController::class, 'detail'])->name('user-approve-detail');
                 Route::POST('/approve', [ApproveController::class, 'transaction'])->name('user-approve-transaction');
-
+                Route::POST('/approve/batal', [ApproveController::class, 'batal'])->name('user-approve-batal');
 
                 //menu reject
                 Route::GET('/reject', [RejectController::class, 'index'])->name('user-reject');

@@ -115,7 +115,18 @@ use App\Models\User;
                                                     <a href="{{ route('stories-create') }}"
                                                         class="btn btn-primary">Bagikan Kisah Taaruf Anda</a>
                                                 @else
-                                                    <a href="" class="btn btn-warning">Mulai Taaruf Lagi</a>
+                                                    <form action="{{ route('user-approve-batal') }}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="transaction1"
+                                                            value="{{ $transaction1->id }}">
+                                                        <input type="hidden" name="transaction2"
+                                                            value="{{ $transaction2->id }}">
+                                                        <input type="hidden" name="taaruf_id"
+                                                            value="{{ $transaction1->taaruf_id }}">
+                                                        <button class="btn btn-warning text-white"
+                                                            onclick="return confirm('Mulai Taaruf Lagi ?')">Mulai Taaruf
+                                                            Lagi</button>
+                                                    </form>
                                                 @endif
                                             @endif
                                         </div>
