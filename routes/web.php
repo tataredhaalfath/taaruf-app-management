@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UserListController;
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\Counselor\CounselorConfigurController;
 use App\Http\Controllers\Counselor\CounselorDashboardController;
+use App\Http\Controllers\Counselor\PendampinganController;
 use App\Http\Controllers\Counselor\TaarufCounselorController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
@@ -151,15 +152,20 @@ Route::prefix('counselor')
     ->middleware(['auth', 'counselor'])
     ->group(function () {
         Route::GET('/', [CounselorDashboardController::class, 'index'])->name('counselor-dashboard');
-        Route::get('/configure', [CounselorConfigurController::class, 'index'])->name('counselor-configure');
-        Route::PUT('/configure', [CounselorConfigurController::class, 'update'])->name('counselor-update-configure');
-        Route::POST('/configure', [CounselorConfigurController::class, 'store'])->name('counselor-store-configure');
-        Route::get('/configure/create', [CounselorConfigurController::class, 'create'])->name('counselor-create-configure');
-        Route::get('/configure/edit', [CounselorConfigurController::class, 'edit'])->name('counselor-edit-configure');
 
         //taaruf
         Route::GET('/taaruf', [TaarufCounselorController::class, 'index'])->name('counselor-taaruf');
         Route::POST('/taaruf', [TaarufCounselorController::class, 'store'])->name('counselor-store-pendampingan');
         Route::GET('/taaruf/{id}/detail', [TaarufCounselorController::class, 'detail'])->name('counselor-taaruf-detail');
+
+        //pendampingan
+        Route::GET('/pendampingan', [PendampinganController::class, 'index'])->name('counselor-pendampingan');
+
+        //configure
+        Route::get('/configure', [CounselorConfigurController::class, 'index'])->name('counselor-configure');
+        Route::PUT('/configure', [CounselorConfigurController::class, 'update'])->name('counselor-update-configure');
+        Route::POST('/configure', [CounselorConfigurController::class, 'store'])->name('counselor-store-configure');
+        Route::get('/configure/create', [CounselorConfigurController::class, 'create'])->name('counselor-create-configure');
+        Route::get('/configure/edit', [CounselorConfigurController::class, 'edit'])->name('counselor-edit-configure');
     });
 Auth::routes(['verify' => true]);

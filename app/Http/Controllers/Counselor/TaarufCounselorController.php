@@ -46,6 +46,6 @@ class TaarufCounselorController extends Controller
     {
         $data = $request->all();
         Pendampingan::create($data);
-        return redirect()->route('counselor-taaruf')->with('message', 'pendampian baru telah dibuat');
+        return redirect()->route('counselor-pendampingan')->with('message', 'pendampian baru telah dibuat');
     }
 }
