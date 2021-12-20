@@ -25,7 +25,8 @@ use App\Models\User;
                                             class="card-img-top" id="render-img" alt="{{ $user->name }}">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $user->name }}</h5>
-                                            <p class="text-muted">{{ $profile->kota, $profile->usia }} Tahun</p>
+                                            <p class="text-muted">{{ $profile->kota }}, {{ $profile->umur }} Tahun
+                                            </p>
                                             <p class="card-text"><strong>Tagline : </strong> {{ $profile->tagline }}
                                             </p>
                                             <a href="{{ route('detail', $cv->slug) }}"
