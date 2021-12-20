@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UserListController;
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\Counselor\CounselorConfigurController;
 use App\Http\Controllers\Counselor\CounselorDashboardController;
+use App\Http\Controllers\Counselor\TaarufCounselorController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoriesController;
@@ -155,5 +156,8 @@ Route::prefix('counselor')
         Route::POST('/configure', [CounselorConfigurController::class, 'store'])->name('counselor-store-configure');
         Route::get('/configure/create', [CounselorConfigurController::class, 'create'])->name('counselor-create-configure');
         Route::get('/configure/edit', [CounselorConfigurController::class, 'edit'])->name('counselor-edit-configure');
+
+        //taaruf
+        Route::GET('/taaruf', [TaarufCounselorController::class, 'index'])->name('counselor-taaruf');
     });
 Auth::routes(['verify' => true]);

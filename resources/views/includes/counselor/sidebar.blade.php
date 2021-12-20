@@ -32,15 +32,15 @@
     <hr class="sidebar-divider">
 
     <!-- Nav Item - Ta'aruf -->
-    @if (Route::current()->getName() == 'admin-taaruf')
+    @if (Route::current()->getName() == 'counselor-taaruf')
         <li class="nav-item active">
-            <a class="nav-link" href="{{ route('admin-taaruf') }}">
+            <a class="nav-link" href="{{ route('counselor-taaruf') }}">
                 <i class="fas fa-sticky-note"></i>
                 <span>Ta'aruf</span></a>
         </li>
     @else
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin-taaruf') }}">
+            <a class="nav-link" href="{{ route('counselor-taaruf') }}">
                 <i class="fas fa-sticky-note"></i>
                 <span>Ta'aruf</span></a>
         </li>
