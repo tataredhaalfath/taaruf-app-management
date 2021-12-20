@@ -19,4 +19,9 @@ class ContentController extends Controller
             'quotes' => $quotes,
         ]);
     }
+
+    public function createKajian()
+    {
+        return view('pages.admin.content.createkajian');
+    }
 }

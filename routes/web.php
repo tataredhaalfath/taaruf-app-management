@@ -142,6 +142,7 @@ Route::prefix('admin')
         Route::get('/counselor/create', [CounselorController::class, 'create'])->name('admin-create-counselor');
         //content
         Route::GET('/content', [ContentController::class, 'index'])->name('admin-content');
+        Route::GET('/content/kajian', [ContentController::class, 'createKajian'])->name('admin-content-createkajian');
         //configure
         Route::get('/configure', [ConfigureController::class, 'index'])->name('admin-configure');
         Route::PUT('/configure', [ConfigureController::class, 'update'])->name('admin-update-configure');

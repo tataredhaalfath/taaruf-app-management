@@ -13,7 +13,7 @@
         <div class="row">
             <div class="card-body">
                 <h3>Kajian</h3>
-                <a href="" class="btn btn-sm btn-primary shadow-sm my-3">
+                <a href="{{ route('admin-content-createkajian') }}" class="btn btn-sm btn-primary shadow-sm my-3">
                     <i class="fas fa-plus fa-sm text-white-50"></i>Tambah Kajian <i class="ri-travesti-line"></i></a>
                 <div class="table-responsive">
                     <table class="table table-bordered" width="100%" cellspacing="0">
