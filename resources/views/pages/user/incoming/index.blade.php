@@ -58,10 +58,11 @@ use App\Models\User;
                                                     <td colspan="5">BELUM ADA PERMINTAAN TAARUF MASUK</td>
                                                 </tr>
                                             @endif
-
                                         </tbody>
                                     </table>
-                                    {{ $incoming->links() }}
+                                    @if ($incoming !== null)
+                                        {{ $incoming->links() }}
+                                    @endif
                                 </div>
                             </div>
                         </div>
