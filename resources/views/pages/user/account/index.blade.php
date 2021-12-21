@@ -29,7 +29,7 @@
                                 <!-- Content Row -->
                                 <div class="row justify-content-center">
                                     <div class="col-xl-6 col-lg-8 col-md-8 col-10">
-                                        <div class="card mx-auto my-3" style="width: 18rem;">
+                                        <div class="card mx-auto my-3" style="width: 100%;">
                                             @if ($profile)
                                                 <img src="{{ Storage::url($profile->image) }}" class="card-img-top"
                                                     alt="...">
@@ -138,9 +138,8 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-8 col-md-8 col-10">
-                                        <div class="card mx-auto my-3" style="width: 18rem;">
-                                            <div class="card-body" style="              
-                                                                                        @if (Auth::user()->status == 'PENDING')
+                                        <div class="card mx-auto my-3" style="width: 100%;">
+                                            <div class="card-body" style="    @if (Auth::user()->status == 'PENDING')
                                                 background-color:orange;
                                                 color:white !important;
                                             @elseif (Auth::user()->status == 'ACTIVE')
@@ -185,11 +184,6 @@
                                                         </td>
                                                     </tr>
                                                 </table>
-
-                                                {{-- <div class="text-center mt-3">
-                                                    <a href="#" class="btn btn-info"><i class="fas fa-cogs">
-                                                            Setting</i></a>
-                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>

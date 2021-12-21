@@ -125,8 +125,8 @@
                 </div>
             </div>
             <div class="col-xl-6 col-lg-8 col-md-8 col-10">
-                <div class="card mx-auto my-3" style="width: 18rem;">
-                    <div class="card-body" style="    @if (Auth::user()->status ==
+                <div class="card mx-auto my-3" style="width: 25rem;">
+                    <div class="card-body" style="       @if (Auth::user()->status ==
                         'PENDING')
                         background-color:orange;
                         color:white !important;
