@@ -40,7 +40,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th class="py-0" width="25%">Alamat</th>
-                                                    <td class="py-0">: {{ $user_profile->kota }},
+                                                    <td class="py-0">:
                                                         {{ $profile->alamat }}</td>
                                                 </tr>
                                                 <tr>
