@@ -14,7 +14,7 @@ class TaarufCounselorController extends Controller
 {
     public function index()
     {
-        $taaruf_list = Taaruf::where('status', 'APPROVED')->orderByRaw('created_at DESC')->paginate(15);
+        $taaruf_list = Taaruf::where('status', 'APPROVED')->orderByRaw('created_at DESC')->get();
 
         return view('pages.counselor.taaruf.index', [
             'taaruf_list' => $taaruf_list,

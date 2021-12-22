@@ -14,11 +14,11 @@ use App\Models\User;
         </div>
 
         <!-- Content Row -->
-        <div class="row">
+        <div class="card shadow mb-4">
             <div class="card-body">
                 <h5>Taaruf List</h5>
                 <div class="table-responsive">
-                    <table class="table table-bordered text-center" width="100%" cellspacing="0">
+                    <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -51,7 +51,6 @@ use App\Models\User;
                         </tbody>
                     </table>
                 </div>
-                {{ $taaruf_list->links() }}
             </div>
         </div>
     </div>
