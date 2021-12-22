@@ -25,7 +25,7 @@ use App\Models\User;
                             <h3>Incoming Ta'aruf</h3>
                             <div class="row my-3">
                                 <div class="col-lg-12 col-md-10">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-responsive">
                                         <tbody>
                                             <tr class="text-center">
                                                 <th>No</th>

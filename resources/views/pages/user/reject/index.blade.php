@@ -26,7 +26,7 @@ use App\Models\User;
                             <div class="row my-3">
                                 <div class="col-lg-12 col-md-10">
                                     <h5>List Menolak</h5>
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-responsive">
                                         <tbody>
                                             <tr class="text-center">
                                                 <th>No</th>
@@ -59,7 +59,7 @@ use App\Models\User;
                                     {{ $menolak->links() }}
                                     <hr>
                                     <h5>List Ditolak</h5>
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-responsive">
                                         <tbody>
                                             <tr class="text-center">
                                                 <th>No</th>

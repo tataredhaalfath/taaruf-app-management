@@ -27,15 +27,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-8 mx-auto">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-10 mx-auto">
                     <div class="" style="height:auto;
-                                    background: #ffffff;
-                                    border: 1px solid #c9c4c4;
-                                    box-sizing: border-box;
-                                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                                    border-radius: 8px;
-                                    padding: 20px 50px;
-                                    margin-bottom: 50px;">
+                                        background: #ffffff;
+                                        border: 1px solid #c9c4c4;
+                                        box-sizing: border-box;
+                                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                                        border-radius: 8px;
+                                        padding: 20px 50px;
+                                        margin-bottom: 50px;">
 
                         <form method="POST" action="{{ route('password.email') }}" class="text-center">
                             @csrf

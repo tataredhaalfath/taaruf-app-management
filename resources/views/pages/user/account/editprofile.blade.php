@@ -22,9 +22,9 @@
                         <div class="user__dashboard">
                             <div class="row">
                                 <div class="col-xl-7 col-lg-7 col-md-12 profile__detail">
-                                    <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                    <div class="profile__container content bg-white mb-5">
                                         <form action="{{ route('user-account-update-profile') }}" method="POST"
-                                            class="px-sm-5 px-2 py-sm-4 py-2 mb-5" enctype="multipart/form-data">
+                                            class="px-md-5 py-md-4 mb-5" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <h5>Profile</h5>

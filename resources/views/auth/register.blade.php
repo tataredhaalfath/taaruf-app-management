@@ -28,7 +28,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-8 mx-auto">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-10 mx-auto">
                     <div class="form-signin">
                         <form action="{{ route('register') }}" method="POST">
                             @csrf

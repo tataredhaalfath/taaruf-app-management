@@ -23,7 +23,7 @@ use App\Models\User;
                                     <div class="card" style="width: 18rem;">
                                         <img src="{{ Storage::url($profile->image) }}" data-caman="stackBlur(8)"
                                             class="card-img-top" id="render-img" alt="{{ $user->name }}">
-                                        <div class="card-body">
+                                        <div class="card-body mt-2">
                                             <h5 class="card-title">{{ $user->name }}</h5>
                                             <p class="text-muted">{{ $profile->kota }}, {{ $profile->umur }} Tahun
                                             </p>

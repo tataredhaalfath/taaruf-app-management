@@ -28,7 +28,7 @@
                                 </div>
                                 <!-- Content Row -->
                                 <div class="row justify-content-center">
-                                    <div class="col-xl-6 col-lg-8 col-md-8 col-10">
+                                    <div class="col-xl-6 col-lg-8 col-md-8 col-sm-12 col-12">
                                         <div class="card mx-auto my-3" style="width: 100%;">
                                             @if ($profile)
                                                 <img src="{{ Storage::url($profile->image) }}" class="card-img-top"
@@ -137,9 +137,9 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-8 col-md-8 col-10">
+                                    <div class="col-xl-6 col-lg-8 col-md-8 col-12">
                                         <div class="card mx-auto my-3" style="width: 100%;">
-                                            <div class="card-body" style="    @if (Auth::user()->status == 'PENDING')
+                                            <div class="card-body" style="          @if (Auth::user()->status == 'PENDING')
                                                 background-color:orange;
                                                 color:white !important;
                                             @elseif (Auth::user()->status == 'ACTIVE')
@@ -147,7 +147,7 @@
                                                 color:white !important;
                                                 @endif">
                                                 <h5 class="card-title text-center">My Account</h5>
-                                                <table class="my-3">
+                                                <table class="my-3 table-responsive">
                                                     <tr>
                                                         <th>
                                                             <p class="card-text">Name </p>

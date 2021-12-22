@@ -76,9 +76,9 @@
                                     </div>
                                 </div>
                             @else
-                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                <div class="profile__container content bg-white mb-5">
                                     <form action="{{ route('user-store-profile') }}" method="POST"
-                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5" enctype="multipart/form-data">
+                                        class="px-md-5 py-md-4 mb-5" enctype="multipart/form-data">
                                         @csrf
                                         <h5>Profile</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
@@ -248,9 +248,9 @@
                                 </div>
                             @else
                                 <hr>
-                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                <div class="profile__container content bg-white mb-5">
                                     <form action="{{ route('user-store-gambar-fisik') }}" method="POST"
-                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        class="px-md-5 py-md-4 mb-5">
                                         @csrf
                                         <h5>Gambaran Fisik</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
@@ -389,9 +389,9 @@
                                 </div>
                             @else
                                 <hr>
-                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                <div class="profile__container content bg-white mb-5">
                                     <form action="{{ route('user-store-hobi') }}" method="POST"
-                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        class="px-md-5 py-md-4 mb-5">
                                         @csrf
                                         <h5>Hobi</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
@@ -426,9 +426,9 @@
                                 </div>
                             @else
                                 <hr>
-                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                <div class="profile__container content bg-white  mb-5">
                                     <form action="{{ route('user-store-pendidikan') }}" method="POST"
-                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        class="px-md-5 py-md-4 mb-5">
                                         @csrf
                                         <h5>Riwayat Pendidikan</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
@@ -524,9 +524,9 @@
                                 </div>
                             @else
                                 <hr>
-                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                <div class="profile__container content bg-white mb-5">
                                     <form action="{{ route('user-store-gambar-diri') }}" method="POST"
-                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        class="px-md-5 py-md-4 mb-5">
                                         @csrf
                                         <h5>Gambaran Diri</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
@@ -638,9 +638,9 @@
                                 </div>
                             @else
                                 <hr>
-                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                <div class="profile__container content bg-white mb-5">
                                     <form action="{{ route('user-store-kriteria') }}" method="POST"
-                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        class="px-md-5 py-md-4 mb-5">
                                         @csrf
                                         <h5>Kriteria Pasangan</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
@@ -735,9 +735,9 @@
                                 </div>
                             @else
                                 <hr>
-                                <div class="profile__container content bg-white px-sm-3 px-2 py-sm-3 py-2 mb-5">
+                                <div class="profile__container content bg-white mb-5">
                                     <form action="{{ route('user-store-harapan') }}" method="POST"
-                                        class="px-sm-5 px-2 py-sm-4 py-2 mb-5">
+                                        class="px-md-5 py-md-4 mb-5">
                                         @csrf
                                         <h5>Rencana Dalam Pernikahan</h5>
                                         <input type="hidden" name="cv_id" value="{{ $cv->id }}">
