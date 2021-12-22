@@ -111,6 +111,13 @@
                                                                     class="text-white">Klik
                                                                     disini untuk mulai!</a>
                                                             </td>
+                                                        @elseif (Auth::user()->status =='INACTIVE')
+                                                            <td class="text-center" width="50%"
+                                                                style="background: orange; color: white">
+                                                                <small>Selamat atas selesainya masa Taaruf anda. saat ini
+                                                                    akun telah di disable oleh admin selepas masa
+                                                                    taaruf</small>
+                                                            </td>
                                                         @endif
                                                     </tr>
                                                 </tbody>

@@ -139,11 +139,14 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-8 col-md-8 col-12">
                                         <div class="card mx-auto my-3" style="width: 100%;">
-                                            <div class="card-body" style="          @if (Auth::user()->status == 'PENDING')
+                                            <div class="card-body" style="           @if (Auth::user()->status == 'PENDING')
                                                 background-color:orange;
                                                 color:white !important;
                                             @elseif (Auth::user()->status == 'ACTIVE')
                                                 background-color:green;
+                                                color:white !important;
+                                            @elseif (Auth::user()->status == 'INACTIVE')
+                                                background-color:red;
                                                 color:white !important;
                                                 @endif">
                                                 <h5 class="card-title text-center">My Account</h5>

@@ -138,6 +138,8 @@ Route::prefix('admin')
         Route::DELETE('/cv/reject', [CvConfirmController::class, 'reject'])->name('admin-cv-reject');
         //taaruf list
         Route::GET('/taaruf', [TaarufHandleController::class, 'index'])->name('admin-taaruf');
+        Route::POST('/taaruf', [TaarufHandleController::class, 'disable'])->name('admin-disable-taaruf');
+        Route::GET('/taaruf/{id}/detail', [TaarufHandleController::class, 'detail'])->name('admin-detail-taaruf');
         //user list
         Route::GET('/userlist', [UserListController::class, 'index'])->name('admin-userlist');
         //counselor

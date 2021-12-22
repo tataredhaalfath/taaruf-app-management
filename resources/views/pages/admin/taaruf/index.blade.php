@@ -26,20 +26,28 @@ use App\Models\User;
                                 <th>Nama</th>
                                 <th>Status</th>
                                 <th>Alasan</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ( $taaruf_success as $success)
-                                <tr>
-                                    @php
-                                        $user = User::findOrFail($success->user_id);
-                                    @endphp
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $success->taaruf_id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td class="text-success">{{ $success->status }}</td>
-                                    <td>{{ $success->alasan }}</td>
-                                </tr>
+                                @php
+                                    $user = User::where('id', $success->user_id)
+                                        ->where('status', 'ACTIVE')
+                                        ->first();
+                                @endphp
+                                @if ($user)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $success->taaruf_id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td class="text-success">{{ $success->status }}</td>
+                                        <td>{{ $success->alasan }}</td>
+                                        <td><a href="{{ route('admin-detail-taaruf', $success->taaruf_id) }}"
+                                                class="btn btn-sm btn-primary">Disable Account</a></td>
+                                    </tr>
+                                @endif
+
                             @empty
                                 <tr>
                                     <td colspan="6" class="text-center">Data Kosong</td>
