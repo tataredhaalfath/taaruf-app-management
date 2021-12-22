@@ -20,11 +20,11 @@ use App\Models\User;
             </div>
         @endif
         <!-- Content Row -->
-        <div class="row">
+        <div class="card shadow mb-4">
             <div class="card-body">
                 <h5>Counselor</h5>
                 <div class="table-responsive">
-                    <table class="table table-bordered text-center" width="100%" cellspacing="0">
+                    <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -63,16 +63,13 @@ use App\Models\User;
                                     <td colspan="6" class="text-center">Data Kosong</td>
                                 </tr>
                             @endif
-
-
                         </tbody>
                     </table>
                 </div>
-                {{ $counselors->links() }}
             </div>
         </div>
         <!-- Content Row -->
-        <div class="row">
+        <div class="card shadow mb-4">
             <div class="card-body">
                 <h5>List Pendampingan</h5>
                 <div class="table-responsive">

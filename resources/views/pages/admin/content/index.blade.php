@@ -10,7 +10,7 @@
         </div>
 
         <!-- Content Row -->
-        <div class="row">
+        <div class="card shadow mb-4">
             <div class="card-body">
                 <h3>Kajian</h3>
                 @if (session('kajian'))
@@ -62,7 +62,7 @@
             </div>
         </div>
         <!-- Content Row -->
-        <div class="row">
+        <div class="card shadow mb-4">
             <div class="card-body">
                 <h3>Quotes</h3>
                 @if (session('quotes'))

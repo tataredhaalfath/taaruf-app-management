@@ -13,12 +13,12 @@ use App\Models\User;
             <h1 class="h3 mb-0 text-gray-800">Taaruf in Proccess</h1>
         </div>
 
-        <!-- Content Row -->
-        <div class="row">
+        <!-- Content -->
+        <div class="card shadow mb-4">
             <div class="card-body">
                 <h5>LIST SUCCESS</h5>
                 <div class="table-responsive">
-                    <table class="table table-bordered text-center" width="100%" cellspacing="0">
+                    <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -49,9 +49,10 @@ use App\Models\User;
                         </tbody>
                     </table>
                 </div>
-                {{ $taaruf_success->links() }}
-
-                <hr>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-body">
                 <h5>LIST FAILED</h5>
                 <div class="table-responsive">
                     <table class="table table-bordered text-center" width="100%" cellspacing="0">
@@ -81,7 +82,6 @@ use App\Models\User;
                                     <td colspan="6" class="text-center">Data Kosong</td>
                                 </tr>
                             @endforelse
-
                         </tbody>
                     </table>
                 </div>

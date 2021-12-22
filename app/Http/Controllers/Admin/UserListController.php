@@ -10,7 +10,7 @@ class UserListController extends Controller
 {
     public function index()
     {
-        $users = User::where('roles', 'USER')->orderByRaw('created_at DESC')->paginate(15);
+        $users = User::where('roles', 'USER')->orderByRaw('created_at DESC')->get();
         $user_active = User::where('roles', 'USER')->where('status', 'ACTIVE')->orderByRaw('updated_at DESC')->paginate(15);
         $user_pending = User::where('roles', 'USER')->where('status', 'PENDING')->orderByRaw('created_at DESC')->paginate(15);
 

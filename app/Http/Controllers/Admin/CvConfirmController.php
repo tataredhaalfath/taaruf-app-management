@@ -22,7 +22,7 @@ class CvConfirmController extends Controller
 
     public function index()
     {
-        $pengajuan_cv = Pengajuan_Cv::paginate(15);
+        $pengajuan_cv = Pengajuan_Cv::get();
         return  view('pages.admin.cv.index', [
             'pengajuan_cv' => $pengajuan_cv,
         ]);

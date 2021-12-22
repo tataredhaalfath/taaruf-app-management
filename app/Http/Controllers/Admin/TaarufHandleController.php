@@ -11,7 +11,7 @@ class TaarufHandleController extends Controller
     public function index()
     {
 
-        $taaruf_success = TaarufTransaction::where('status', 'melanjutkan')->paginate(15);
+        $taaruf_success = TaarufTransaction::where('status', 'melanjutkan')->get();
         $taaruf_fail = TaarufTransaction::where('status', 'membatalkan')->paginate(15);
         return  view('pages.admin.taaruf.index', [
             'taaruf_success' => $taaruf_success,

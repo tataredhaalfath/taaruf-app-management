@@ -14,7 +14,7 @@ class CounselorController extends Controller
 {
     public function index()
     {
-        $counselors = User::where('roles', 'COUNSELOR')->paginate(15);
+        $counselors = User::where('roles', 'COUNSELOR')->orderByRaw('created_at DESC')->get();
         $pendampingan = Pendampingan::paginate(15);
         return view('pages.admin.counselor.index', [
             'counselors' => $counselors,

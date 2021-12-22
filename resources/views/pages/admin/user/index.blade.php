@@ -9,12 +9,12 @@
             <h1 class="h3 mb-0 text-gray-800">Data User</h1>
         </div>
 
-        <!-- Content Row -->
-        <div class="row">
+        <!-- Content -->
+        <div class="card shadow mb-4">
             <div class="card-body">
                 <h5>LIST User</h5>
                 <div class="table-responsive">
-                    <table class="table table-bordered text-center" width="100%" cellspacing="0">
+                    <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -42,9 +42,10 @@
                         </tbody>
                     </table>
                 </div>
-                {{ $users->links() }}
-
-                <hr>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-body">
                 <h5>ACTIVE</h5>
                 <div class="table-responsive">
                     <table class="table table-bordered text-center" width="100%" cellspacing="0">
@@ -71,13 +72,14 @@
                                     <td colspan="6" class="text-center">Data Kosong</td>
                                 </tr>
                             @endforelse
-
                         </tbody>
                     </table>
                 </div>
                 {{ $user_active->links() }}
-
-                <hr>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-body">
                 <h5>PENDING</h5>
                 <div class="table-responsive">
                     <table class="table table-bordered text-center" width="100%" cellspacing="0">
@@ -110,6 +112,7 @@
                 {{ $user_pending->links() }}
             </div>
         </div>
+
     </div>
     <!-- /.container-fluid -->
 @endsection
