@@ -3,25 +3,41 @@
 
 ### migrate database
 - php artisan migrate
+### akses file storage
+- php artisan storage:link
 ### run project
 - php artisan serve
 
 ### database
 - mysql
+
 ### library
 - JQuery
 - Bootstrap
 - CAMANJS
 
-### template
+### API statis wilayah indonesia
+- http://www.emsifa.com/api-wilayah-indonesia/
+
+### backend framework
+- laravel8
+
+### template admin
 - SBAdmin2
+
+### wireframe
+- https://whimsical.com/ta-aruf-app-CdKrJiTi4PMe4XSMU7fPnk
+### mainmap 
+- https://whimsical.com/website-ta-aruf-app-8fKKEGszDTnouftbs8H8jH
+
 ---------------------------------------------------------------------------------
 
 # ROLES
 ### USER
-- status user (PENDING, ACTIVE)
+- status user (PENDING, ACTIVE, INACTIVE)
 - pending = Belum acc cv oleh admin
 - active = sudah aktive dan bisa mengajukan taaruf
+- inactive = sudah selesai taaruf. akun di disable oleh admin
 
 1. user belum login / regist . 
 -> hanya bisa akses halaman home, stories, login/regist page
@@ -65,10 +81,10 @@ setelah profile, cv, dan user question lengkap. pilih menu cv -> kirim cv
 -cv akan di tinjau oleh admin
 
 4. user login . cv approve oleh admin
--> status user ACTICE
--> bisa akses semua menu di halaman user
--> bisa mulai taaruf
--> profile/cv nya sudah bisa dilihat oleh orang lain
+- status user ACTIVE
+- bisa akses semua menu di halaman user
+- bisa mulai taaruf
+- profile/cv nya sudah bisa dilihat oleh orang lain
 
 dashboard user menampilkan
 - status user (PENDING, ACTIVE)
@@ -77,6 +93,28 @@ dashboard user menampilkan
 - data approve
 - data reject
 
+5. alur mulai taaruf
+- masuk menu taaruf
+- pilih user
+- detail
+- ajak taaruf
+- jawab pertanyaan taaruf
+- ajak taaruf
+- masuk ke menu user -> taaruf sent. untuk melihat permintaan taaruf yg terkirim
+
+6. alur menerima taaruf
+- masuk menu incoming taaruf
+- lihat detail permintaan taaruf
+- terima taaruf / tolak taaruf
+
+7. taaruf approve
+- masuk menu taaruf approve
+- lihat list approve
+- pilih lanjutkan
+- tentukan keputusan untuk melanjutkan ke pernikahan atau tidak
+- berikan feedback pada website
+
+8. user yang selesai taaruf secara otomatis account nya akan di disable oleh admin dalam kurun waktu tertentu
 ---------------------------------------------------------------------------------
 
 ### ADMIN
@@ -94,6 +132,7 @@ dashboard user menampilkan
   - admin bisa menerima dan menolak pengajuan cv dari user
 4. taaruf
   - admin bisa melihat list taaruf success dan failed
+  - bisa mendisable akun user yang selesai taaruf
 5. users 
   - admin bisa melihat list user yang active dan pending
 6. counselor
