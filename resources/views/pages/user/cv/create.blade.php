@@ -159,7 +159,7 @@
                                             <label for="status">Status</label>
                                             <input type="text" class="form-control @error('status') is-invalid @enderror"
                                                 id="status" name="status" value="{{ old('status') }}"
-                                                placeholder="status">
+                                                placeholder="pelajar/mahasiswa/pekerja">
                                             @error('status')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
