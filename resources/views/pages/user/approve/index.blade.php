@@ -54,7 +54,7 @@ use App\Models\User;
                                                         </td>
                                                     </tr>
                                                     <tr class="text-center">
-                                                        <td colspan="6" class="bg-info text-white">SELEBLUM MELANJUTKAN.
+                                                        <td colspan="6" class="bg-info text-white">SEBELUM MELANJUTKAN.
                                                             SILAHKAN
                                                             MENUNGGU UNTUK DI HUBUNGI
                                                             ADMIN TERLEBIH DAHULU</td>
