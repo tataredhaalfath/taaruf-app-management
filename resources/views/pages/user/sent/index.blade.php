@@ -26,32 +26,36 @@ use App\Models\User\UserQuestion;
                             <h3>Ta'aruf Sent</h3>
                             <div class="row my-3">
                                 <div class="col-lg-12 col-md-10">
-                                    <table class="table table-bordered table-responsive">
-                                        <tbody>
-                                            <tr class="text-center">
-                                                <th>No</th>
-                                                <th>Penerima</th>
-                                                <th>Tanggal</th>
-                                                <th>Status</th>
-                                            </tr>
-                                            @forelse ($sent as $send )
-                                                @php
-                                                    $question = UserQuestion::findOrFail($send->uq_id);
-                                                    $penerima = User::findOrFail($question->user_id);
-                                                @endphp
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
                                                 <tr class="text-center">
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $penerima->name }}</td>
-                                                    <td>{{ $send->created_at }}</td>
-                                                    <td>TERKIRIM</td>
+                                                    <th>No</th>
+                                                    <th>Penerima</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Status</th>
                                                 </tr>
-                                            @empty
-                                                <tr class="text-center">
-                                                    <td colspan="6">BELUM ADA PERMINTAAN TAARUF TERKIRIM</td>
-                                                </tr>
-                                            @endforelse
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($sent as $send )
+                                                    @php
+                                                        $question = UserQuestion::findOrFail($send->uq_id);
+                                                        $penerima = User::findOrFail($question->user_id);
+                                                    @endphp
+                                                    <tr class="text-center">
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $penerima->name }}</td>
+                                                        <td>{{ $send->created_at }}</td>
+                                                        <td>TERKIRIM</td>
+                                                    </tr>
+                                                @empty
+                                                    <tr class="text-center">
+                                                        <td colspan="6">BELUM ADA PERMINTAAN TAARUF TERKIRIM</td>
+                                                    </tr>
+                                                @endforelse
+                                            </tbody>
+                                        </table>
+                                    </div>
                                     {{ $sent->links() }}
                                 </div>
                             </div>

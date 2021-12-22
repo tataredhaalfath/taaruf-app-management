@@ -1,6 +1,8 @@
- <!-- Bootstrap CSS -->
+ {{-- <!-- Bootstrap CSS -->
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" /> --}}
+ <!-- bootstrap -->
+ <link rel="stylesheet" href="{{ asset('front-end/assets/libraries/bootstrap/css/bootstrap.css') }}">
  <!-- css  -->
  <link rel="stylesheet" href="{{ asset('front-end/assets/styles/main.css') }}">
  <!-- font-family -->

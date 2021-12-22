@@ -26,70 +26,78 @@ use App\Models\User;
                             <div class="row my-3">
                                 <div class="col-lg-12 col-md-10">
                                     <h5>List Menolak</h5>
-                                    <table class="table table-bordered table-responsive">
-                                        <tbody>
-                                            <tr class="text-center">
-                                                <th>No</th>
-                                                <th>User 1</th>
-                                                <th>User 2</th>
-                                                <th>Tanggal</th>
-                                                <th>Status</th>
-                                            </tr>
-                                            @forelse ($menolak as $ml)
-                                                @php
-                                                    $user1 = User::findOrFail($ml->user_id_1);
-                                                    $user2 = User::findOrFail($ml->user_id_2);
-                                                @endphp
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
                                                 <tr class="text-center">
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $user1->name }}</td>
-                                                    <td>{{ $user2->name }}</td>
-                                                    <td>{{ $ml->created_at }}</td>
-                                                    <td>{{ $ml->status }}</td>
-
+                                                    <th>No</th>
+                                                    <th>User 1</th>
+                                                    <th>User 2</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Status</th>
                                                 </tr>
-                                            @empty
-                                                <tr class="text-center">
-                                                    <td colspan="6">BELUM ADA DATA</td>
-                                                </tr>
-                                            @endforelse
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($menolak as $ml)
+                                                    @php
+                                                        $user1 = User::findOrFail($ml->user_id_1);
+                                                        $user2 = User::findOrFail($ml->user_id_2);
+                                                    @endphp
+                                                    <tr class="text-center">
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $user1->name }}</td>
+                                                        <td>{{ $user2->name }}</td>
+                                                        <td>{{ $ml->created_at }}</td>
+                                                        <td>{{ $ml->status }}</td>
 
-                                        </tbody>
-                                    </table>
+                                                    </tr>
+                                                @empty
+                                                    <tr class="text-center">
+                                                        <td colspan="5">BELUM ADA DATA</td>
+                                                    </tr>
+                                                @endforelse
+
+                                            </tbody>
+                                        </table>
+                                    </div>
                                     {{ $menolak->links() }}
                                     <hr>
                                     <h5>List Ditolak</h5>
-                                    <table class="table table-bordered table-responsive">
-                                        <tbody>
-                                            <tr class="text-center">
-                                                <th>No</th>
-                                                <th>User 1</th>
-                                                <th>User 2</th>
-                                                <th>Tanggal</th>
-                                                <th>Status</th>
-                                            </tr>
-                                            @forelse ($ditolak as $dl)
-                                                @php
-                                                    $user1 = User::findOrFail($dl->user_id_1);
-                                                    $user2 = User::findOrFail($dl->user_id_2);
-                                                @endphp
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
                                                 <tr class="text-center">
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $user1->name }}</td>
-                                                    <td>{{ $user2->name }}</td>
-                                                    <td>{{ $dl->created_at }}</td>
-                                                    <td>{{ $dl->status }}</td>
-
+                                                    <th>No</th>
+                                                    <th>User 1</th>
+                                                    <th>User 2</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Status</th>
                                                 </tr>
-                                            @empty
-                                                <tr class="text-center">
-                                                    <td colspan="6">BELUM ADA DATA</td>
-                                                </tr>
-                                            @endforelse
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($ditolak as $dl)
+                                                    @php
+                                                        $user1 = User::findOrFail($dl->user_id_1);
+                                                        $user2 = User::findOrFail($dl->user_id_2);
+                                                    @endphp
+                                                    <tr class="text-center">
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $user1->name }}</td>
+                                                        <td>{{ $user2->name }}</td>
+                                                        <td>{{ $dl->created_at }}</td>
+                                                        <td>{{ $dl->status }}</td>
 
-                                        </tbody>
-                                    </table>
-                                    {{ $ditolak->links() }}
+                                                    </tr>
+                                                @empty
+                                                    <tr class="text-center">
+                                                        <td colspan="5">BELUM ADA DATA</td>
+                                                    </tr>
+                                                @endforelse
+
+                                            </tbody>
+                                        </table>
+                                        {{ $ditolak->links() }}
+                                    </div>
                                 </div>
                             </div>
                         </div>

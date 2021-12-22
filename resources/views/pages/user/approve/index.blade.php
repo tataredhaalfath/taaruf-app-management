@@ -25,42 +25,48 @@ use App\Models\User;
                             <h3>Approved Ta'aruf</h3>
                             <div class="row my-3">
                                 <div class="col-lg-12 col-md-10">
-                                    <table class="table table-bordered table-responsive">
-                                        <tr class="text-center">
-                                            <th>No</th>
-                                            <th>User 1</th>
-                                            <th>User 2</th>
-                                            <th>Tanggal</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        @forelse ($approve as $app )
-                                            @php
-                                                $user1 = User::findOrFail($app->user_id_1);
-                                                $user2 = User::findOrFail($app->user_id_2);
-                                            @endphp
-                                            <tr class="text-center">
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $user1->name }}</td>
-                                                <td>{{ $user2->name }}</td>
-                                                <td>{{ date('d-m-Y', strtotime($app->created_at)) }}</td>
-                                                <td>{{ $app->status }}</td>
-                                                <td><a href="{{ route('user-approve-detail', $app->id) }}"
-                                                        class="btn btn-success btn-sm">Lanjut</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="text-center">
-                                                <td colspan="6" class="bg-info text-white">SELEBLUM MELANJUTKAN. SILAHKAN
-                                                    MENUNGGU UNTUK DI HUBUNGI
-                                                    ADMIN TERLEBIH DAHULU</td>
-                                            </tr>
-                                        @empty
-                                            <tr class="text-center">
-                                                <td colspan="6">BELUM ADA PERMINTAAN TAARUF DITERIMA</td>
-                                            </tr>
-                                        @endforelse
-
-                                    </table>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-responsive">
+                                            <thead>
+                                                <tr class="text-center">
+                                                    <th>No</th>
+                                                    <th>User 1</th>
+                                                    <th>User 2</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($approve as $app )
+                                                    @php
+                                                        $user1 = User::findOrFail($app->user_id_1);
+                                                        $user2 = User::findOrFail($app->user_id_2);
+                                                    @endphp
+                                                    <tr class="text-center">
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $user1->name }}</td>
+                                                        <td>{{ $user2->name }}</td>
+                                                        <td>{{ date('d-m-Y', strtotime($app->created_at)) }}</td>
+                                                        <td>{{ $app->status }}</td>
+                                                        <td><a href="{{ route('user-approve-detail', $app->id) }}"
+                                                                class="btn btn-success btn-sm">Lanjut</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="text-center">
+                                                        <td colspan="6" class="bg-info text-white">SELEBLUM MELANJUTKAN.
+                                                            SILAHKAN
+                                                            MENUNGGU UNTUK DI HUBUNGI
+                                                            ADMIN TERLEBIH DAHULU</td>
+                                                    </tr>
+                                                @empty
+                                                    <tr class="text-center">
+                                                        <td colspan="6">BELUM ADA PERMINTAAN TAARUF DITERIMA</td>
+                                                    </tr>
+                                                @endforelse
+                                            </tbody>
+                                        </table>
+                                    </div>
                                     {{ $approve->links() }}
                                 </div>
                             </div>
