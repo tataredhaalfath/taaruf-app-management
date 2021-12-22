@@ -55,7 +55,7 @@
                                                     <select name="gender" id="gender" class="p-1" required>
                                                         <option value="">Pilih Gender</option>
                                                         <option value="L">Laki Laki</option>
-                                                        <option value="P">Perempan</option>
+                                                        <option value="P">Perempuan</option>
                                                     </select>
                                                 </div>
                                             </div>
