@@ -170,7 +170,7 @@
                                             <label for="menikah">Menikah ?</label>
                                             <input type="text" class="form-control @error('menikah') is-invalid @enderror"
                                                 id="menikah" name="menikah" value="{{ old('menikah') }}"
-                                                placeholder="sudah menikah ?">
+                                                placeholder="sudah / belum">
                                             @error('menikah')
                                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                                     {{ $message }}
