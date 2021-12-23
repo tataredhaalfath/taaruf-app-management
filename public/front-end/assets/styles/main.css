@@ -193,7 +193,7 @@ main .content .card .card-body p {
 
 main .content .card .card-body p.card-text {
   height: 63px;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 main .content .card .card-body a {
