@@ -1,5 +1,5 @@
-@extends('layouts.check');
-@section('title', 'Success Page');
+@extends('layouts.check')
+@section('title', 'Success Page')
 @section('content')
     <!-- main -->
     <main>
