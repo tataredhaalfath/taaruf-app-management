@@ -30,6 +30,8 @@
 ### mainmap 
 - https://whimsical.com/website-ta-aruf-app-8fKKEGszDTnouftbs8H8jH
 
+### link deployment
+- http://18.142.27.133/
 ---------------------------------------------------------------------------------
 
 # ROLES
